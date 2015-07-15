@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The &lt;source&gt; element</title>
+</head>
+
+<body>
+    <h1> The &lt;source&gt; tag</h1>
+    
+    <p>The &lt;source&gt; element indicates the source of multimedia content
+        that is included in &lt;audio&gt;, &lt;picture&gt;, and &lt;video&gt;
+        tags. You can specify multiple sources, and a browser will choose one
+        that works correctly. If none works, the content inside the multimedia
+        tag is displayed instead.
+    </p>
+    
+    <hr>
+    
+    <h2>Example 1</h2>
+    <p> &lt;source&gt; elements nested inside a &lt;picture&gt; element describe
+        multiple sources the content in the &lt;img&gt; tag can come
+        from. Typically the 'media' attribute is defined. It contains a boolean
+        expression that, when evaluated to 'true', indicates that this source
+        element is the one to use. Resize the window to see the source change!</p>
+    
+    <picture>
+    <source srcset=butterflies.png media="(min-width: 600px)">
+    <source srcset="fluff.png" media="(min-width: 395px)">
+    <img src="butterflies.png" alt="animals">
+    </picture>
+    
+    <hr>
+    
+    <h2>Example 2</h2>
+    <p>Here is video markup that includes multiple sources that can be used to
+        insert content. Note: the examples do not link to actual files. </p>
+        
+        <video controls>
+            <source src="example1.mp4">
+            <source src="example2.ogg">
+            <source src="example3.webm">
+            Your browser does not support any of the provided video formats.
+        </video>
+                
+</body>
+</html>

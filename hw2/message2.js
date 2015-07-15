@@ -1,0 +1,3 @@
+function ext() {
+    alert('Hello!');
+}

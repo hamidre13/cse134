@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The &lt;tbody&gt; element</title>
+    
+    <style>
+        tbody {
+            font-family: cursive;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> The &lt;tbody&gt; tag</h1>
+    
+    <p>The &lt;tbody&gt; element denotes that the encased &lt;tr&gt; elements
+        represent the body of the table. This tag, along with &lt;thead&gt;
+        and &lt;tfoot&gt; provide useful information for some displays and
+        printers.</p>
+    
+    <hr>
+    
+    <h2>Example 1</h2>
+    <p> The body of this table is styled differently because a style was applied
+        to the &lt;tbody&gt; tag. 
+    </p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John Smith</td>
+            <td>Jane Doe</td>
+        </tr>
+        
+        <tr>
+            <td>21</td>
+            <td>23</td>
+        </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td>Info</td>
+                <td>More Info</td>
+            </tr>
+        </tfoot>
+    </table>       
+    
+    <hr>
+    
+    <h2>Example 2</h2>
+    <p> In this example, the &lt;tbody&gt; tag is placed below the header and
+        the footer, but it still renders between the header and the footer.
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        
+        <tfoot>
+            <tr>
+                <td>Info</td>
+                <td>More Info</td>
+            </tr>
+        </tfoot>
+        
+        <tbody>
+        <tr>
+            <td>John Smith</td>
+            <td>Jane Doe</td>
+        </tr>
+        
+        <tr>
+            <td>21</td>
+            <td>23</td>
+        </tr>
+        </tbody>
+    </table>                
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The &lt;template&gt; element</title>
+</head>
+
+<body>
+    <h1> The &lt;template&gt; tag</h1>
+    
+    <p>The &lt;template&gt; element contains content that is withheld from the
+        parser when the page is loaded. It can be inserted at a later time.
+    </p>
+    
+    <hr>
+    
+    <h2>Example 1</h2>
+    <p> The button below fires a javascript method that inserts a new row into
+        the table. Each row is generated from a template.
+    </p>
+    
+    <button type="button" onclick="insertTemplate()">click me!</button>
+    
+    <table id="infoTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            
+        </tbody>
+    </table>
+    
+    <p id="temp"></p>
+
+    <template id="row">
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    </template>
+    
+    <!-- Javascript to instantiate the template -->
+    <script type="text/javascript">
+        function insertTemplate() {
+            if ('content' in document.createElement('template')) {
+                var t = document.querySelector("#row");
+                td = t.content.querySelectorAll("td");
+                var tb =  document.getElementsByTagName("tbody");
+                
+                td[0].textContent = "John Smith";
+                td[1].textContent = "22";
+                
+                var clone = document.importNode(t.content, true)
+                
+                tb[0].appendChild(clone);
+            }
+        }
+    </script>
+                
+</body>
+</html>
