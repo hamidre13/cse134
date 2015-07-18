@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="HTML,example">
+<meta name="author" content="Me">
+<title>Template Element</title>
+</head>
+
+<body>
+<h1>Template Element</h1>
+
+<div id="appended">
+	Template tag will be appended here:
+</div>
+	<template id="willShow">
+		<p>The content of this template wont show up. We have to use javascript!!!</p>
+	</template>
+	<template id="wion'tShow">
+		<p>The content of this template wont show up. We do not intend to show it either!!!</p>
+	</template>
+	<script type="text/javascript">
+	var append = document.querySelector('#appended');
+	appended.appendChild(document.getElementById('willShow').content);
+	</script>
+</body>
+</html>

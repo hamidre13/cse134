@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name = "description" content="Syntax page for HTML5 ------ tag"/>
+	<meta name="author" content="Hamid tavakoli">
+	<title>HTML5 Syntax Example Page</title>
+</head>
+<body>
+<header>
+	<nav>
+		<ul>
+			<li><a href="#">Previous</a></li>
+			<li><a href="#">Next</a></li>
+		</ul>
+	</nav>
+</header>
+	<main>
+		<section>
+		<header>
+			<h1> &lt;input type="text"&gt; Input</h1>
+			<p>Input tags will be used to collect information from user. This information can be processed either locally or on the server.If type does not get specified thedefalut type will be set which is text.</p>
+		</header>
+		</section>
+		<section>
+			<h2>Specification</h2>
+			<article>
+				<header>
+					<h3>XML DTD Syntax</h3>
+				</header>
+				<p> DTD only (without attr list)</p>
+				
+				<pre>
+					<code>
+						&lt;ENTITY % InputType
+						  '(TEXT | PASSWORD | CHECKBOX |
+						    RADIO | SUBMIT | RESET |
+						    FILE | HIDDEN | IMAGE | BUTTON|
+						    datetime |datetime-local |date|
+						    month|time|week|number|range |email|url |search|tel|color )'
+						   &gt;
+					</code>
+				</pre>
+				
+			</article>
+			<article>
+				<header>
+					<h3>Syntax</h3>
+				</header>
+				<pre>
+				<code>
+					&lt;input
+					type="TEXT | PASSWORD | CHECKBOX |
+					    RADIO | SUBMIT | RESET |
+					    FILE | HIDDEN | IMAGE | BUTTON|
+					    datetime |datetime-local |date|
+					    month|time|week|number|range |email|url |search|tel|color" 
+					    <a href="#"> GlobalAttribuites </a>
+					    name = "string"
+					    disabled = ""|"disabled" 
+					    form= "id" 
+					    maxlength = "non negative intiger" 
+					    readonly = "readonly"|"" 
+					    size = "positive integer" 
+					    value = ""
+					    autocomplete = "on"|'off' 
+					    autofocus = "autofocus"|"" 
+					    list ="id" 
+					    pattern = "" 
+					    required = "required" | "" 
+					    placeholder = 
+					    dirname = 
+					/ &gt;
+				</code>
+			</pre>
+			</article>
+			<article>
+				<header>
+					<h3> Example</h3>
+					
+						The following code :
+						<pre><code>
+							&lt;label for="name" &gt; Name : &lt;/label&gt;
+							&lt;input type="text" dir="rtl" required="required" placeholder="This is a place holder" value="توماس" autocomplete = "on" name= "name"&gt;
+						</code></pre>
+
+					</header>
+					gives us :<br>
+					<form>
+						<label for="name" > Name : </label>
+						<input type="text" required="required" dir="rtl" placeholder="This is a place holder" value="توماس" autocomplete = "on" id= "name">
+					</form>
+
+			</article>
+			<article>
+				<header>
+					<h3>Element Attributes</h3>
+				</header>
+				<dl>
+					<dt>disabled</dt>
+					<dd>Represents disabled control</dd>
+					<dt>form</dt>
+					<dd>The form id that this elment is inside it</dd>
+					<dt>maxlength</dt>
+					<dd>the maximum lenth </dd>
+					<dt>readonly</dt>
+					<dd>the form elemnt is not editable</dd>
+					<dt>size</dt>
+					<dd>The number of charachters that will be shown to user agent in browsing area.</dd>
+					<dt>value</dt>
+					<dd>Default vlaue for the input,(Any string that contains no line feed)</dd>
+					<dt>autocomplete</dt>
+					<dd>Browser can complete the form or not</dd>
+					<dt>autofocus</dt>
+					<dd>The first elemtnt ot focus to as soon as the document gets loaded</dd>
+					<dt>list</dt>
+					<dd>THe list value id wich this input is associated with</dd>
+					<dt>pattern</dt>
+					<dd>Regex pattern that validates the form input</dd>
+					<dt>required</dt>
+					<dd>Specifies that the input should be filled in order for the form to gets submitted"</dd>
+					<dt>placeholder</dt>
+					<dd>Hint on how to fill out the input </dd>
+					<dt>dirname</dt>
+					<dd>Enables for right to left languages to have the attr name with the rtl value </dd>
+				</dl>
+			</article>
+		</section>
+	</main>
+	<aside>
+		<h6>Related tags</h6>
+		<ul>
+			<li>&lt;input type="file"&gt; Input</li>
+			<li>&lt;input type="color"&gt; Input</li>
+			<li>&lt;input type="text"&gt; Input</li>
+		</ul>
+	</aside>
+<footer>
+<address>
+	Contact us via email <a href="mailto:info@example.com">info@example.com</a>
+	Phone : <a href="tel:+1888555555">888-555-555</a>
+</address>
+<details>
+<summary>&copy; 1900-2015.</summary>
+<p> Thank you</p>
+</details>
+</footer>
+</body>
+</html>
