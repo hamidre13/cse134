@@ -1,65 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>The &lt;template&gt; element</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="HTML,example">
+<meta name="author" content="Me">
+<title>Template Element</title>
 </head>
 
 <body>
-    <h1> The &lt;template&gt; tag</h1>
-    
-    <p>The &lt;template&gt; element contains content that is withheld from the
-        parser when the page is loaded. It can be inserted at a later time.
-    </p>
-    
-    <hr>
-    
-    <h2>Example 1</h2>
-    <p> The button below fires a javascript method that inserts a new row into
-        the table. Each row is generated from a template.
-    </p>
-    
-    <button type="button" onclick="insertTemplate()">click me!</button>
-    
-    <table id="infoTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            
-        </tbody>
-    </table>
-    
-    <p id="temp"></p>
+<h1>Template Element</h1>
 
-    <template id="row">
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    </template>
-    
-    <!-- Javascript to instantiate the template -->
-    <script type="text/javascript">
-        function insertTemplate() {
-            if ('content' in document.createElement('template')) {
-                var t = document.querySelector("#row");
-                td = t.content.querySelectorAll("td");
-                var tb =  document.getElementsByTagName("tbody");
-                
-                td[0].textContent = "John Smith";
-                td[1].textContent = "22";
-                
-                var clone = document.importNode(t.content, true)
-                
-                tb[0].appendChild(clone);
-            }
-        }
-    </script>
-                
+<div id="appended">
+	Template tag will be appended here:
+</div>
+	<template id="willShow">
+		<p>The content of this template wont show up. We have to use javascript!!!</p>
+	</template>
+	<template id="wion'tShow">
+		<p>The content of this template wont show up. We do not intend to show it either!!!</p>
+	</template>
+	<script type="text/javascript">
+	var append = document.querySelector('#appended');
+	appended.appendChild(document.getElementById('willShow').content);
+	</script>
 </body>
 </html>
