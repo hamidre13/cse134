@@ -7,9 +7,38 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<style>
+      
+      h1 {
 
+          text-align: center;
+
+      }
+      h1.education {
+
+        font-family: "Times New Roman", Times, serif;
+
+      }
+     
+    #rcorners {
+    border-radius: 15px 50px;
+    border: 2px solid #8AC007;
+    padding: 20px; 
+    width: 200px;
+    height: 120px;    
+    }
+      .cat {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    height:100px;
+    width: 70% !important;
+
+    }
+    </style>
 </head>
-<body>
+<body style="background: url(../img/paper4.jpg);">
 <header>
 	
 		<nav class="navbar navbar-default">
@@ -36,7 +65,7 @@
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Login</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
 				</ul>
 				<form class="navbar-form navbar-right" role="search">
 			        <div class="form-group">
@@ -51,8 +80,6 @@
 		  <li><a href="#">Category</a></li>
 		  <li class="active">Tag</li>
 		</ol>
-		
-		<!-- Modals for the login page -->
 		
 		<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login">
     <div class="modal-dialog" role="document">
@@ -183,7 +210,14 @@
 </header>
 
 <main>
+<h1 class="education">HTML5 Educational Outline </h1>
+  
     
+      <button id="rcorners" class="btn btn-large btn-block btn-info cat" type="button" style="margin-bottom: 20px">1. Category + Description</button>
+      <button id="rcorners" class="btn btn-large btn-block btn-info cat" type="button" style="margin-bottom: 20px">2. Category + Description</button>
+      <button id="rcorners" class="btn btn-large btn-block btn-info cat" type="button" style="margin-bottom: 20px">3. Category + Description</button>
+      <button id="rcorners" class="btn btn-large btn-block btn-info cat" type="button" style="margin-bottom: 20px">4. Category + Description</button>
+      <button id="rcorners" class="btn btn-large btn-block btn-info cat" type="button" style="margin-bottom: 20px">5. Category + Description</button>
 </main>
 
 <footer>
@@ -195,9 +229,6 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<!-- Div within which we are going to include the modals -->
-<div id="accountModals"></div>
 
 </body>
 </html>
