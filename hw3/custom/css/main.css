@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b1 | 201101 
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define visible focus styles! 
+:focus {
+	outline: ?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Done with css resets lets get started*/
+body {
+	/* The rest sizes should be relative!!!*/
+	font-size: 16px; 
+	font-family: Arial, Helvetica, sans-serif;
+	color: #575c7a;
+    line-height: 1.5em;
+}
+h1 { color: #a6430a; margin: 0em 0em .5em 0em; font-size: 2em; font-weight: normal; }
+h2 { font-size: 1.7em; margin: 0em 0em 1em 0em; }
+h3 { font-size: 1.5em; margin: 0em 0em 1em 0em; }
+
+p { margin: 0px 0px .75em 0px; }
+a {  text-decoration: none;}
+a:hover { color: #1ED495; }
+.mainHeader {
+	width: 100%;
+}
+.topNavWrapper {
+	  padding: 0px 0px;
+  position: fixed;
+  background-color: #28ABE3;
+  top: 0;
+  width: 100%;
+}
+.topNav {
+	width: 100%;
+	min-height: 50px;	
+}
+.rightNav {
+	float: right;
+}
+.rightNav li {
+	float: left;
+	color: white;
+	position: relative;
+	padding: 9px 30px 9px 0px;
+	height: 30px;
+}
+.rightNav li input {
+	display: inline-block;
+	float: left;
+	position: relative;
+	height: 30px;
+	border-radius: 5px;
+	padding: 6px 12px;
+}
+.hasInput {
+
+}
+
+.rightNav li a {
+	color: white;
+	margin-top: 5px;
+  	display: inline-block;
+}
+
+.rightNav li a:hover {
+	color: white;
+}
+.textLogo{
+  font-size: 6em;
+  font-family: monospace;
+  margin-top: 30px;
+  display: block;
+  height: 50px;
+}
+.mainNavWrapper {
+	width: 100%;
+	padding: 0 30px;
+}
+.mainNav ul li {
+	float: left;
+	position: relative;
+	padding: 0 35px 0 0;
+}
+.mainNav ul li a {
+	color: #fff;
+	display: block;
+	padding: 10px 0 0 0;
+}
+.mainNav ul li a:hover {
+ 	color: #B6B6B6;
+}
+.mainNav ul .active a {
+	color:#000;
+}
+.clear {
+	clear: both;
+}
+
+main {
+	margin-top:100px;
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+.mainNav ul li {
+	clear: both;
+	margin: 0 auto;
+  	width: 60%;
+}
+.mainNav ul li a {
+  padding: 10px 0 0 0;
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+.rightNav { 
+	clear:both;
+}
+
+}
+
+
+/* CSS for a tag info page */
+

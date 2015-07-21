@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The &lt;tfoot&gt; element</title>
+    
+    <style>
+        tfoot {
+            font-family: cursive;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> The &lt;tfoot&gt; tag</h1>
+    
+    <p>The &lt;tfoot&gt; element defines a set of rows (usually at the foot of
+        the table) that are supposed to summarize the columns of the table.</p>
+    
+    <hr>
+    
+    <h2>Example 1</h2>
+    <p> The foot of this table is styled differently because a style was applied
+        to the &lt;tfoot&gt; tag. 
+    </p>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John Smith</td>
+            <td>Jane Doe</td>
+        </tr>
+        
+        <tr>
+            <td>21</td>
+            <td>23</td>
+        </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td>Info</td>
+                <td>More Info</td>
+            </tr>
+        </tfoot>
+    </table>       
+    
+    <hr>
+    
+    <h2>Example 2</h2>
+    <p> In this example, the &lt;tfoot&gt; tag is placed above the body and
+        below the footer, but it still renders at the bottom of the table.
+    
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        
+        <tfoot>
+            <tr>
+                <td>Info</td>
+                <td>More Info</td>
+            </tr>
+        </tfoot>
+        
+        <tbody>
+        <tr>
+            <td>John Smith</td>
+            <td>Jane Doe</td>
+        </tr>
+        
+        <tr>
+            <td>21</td>
+            <td>23</td>
+        </tr>
+        </tbody>
+    </table>                
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+       
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> 
+        
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="css/tag-page.css">
+  </head>
+    <body>
+    <!-- jQuery -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <h1 class="text-center">&lt;input&gt;</h1>
+    
+    <div class="container-fluid">
+        <div class="row nav">
+            <div class="col-xs-offset-3 col-xs-2 col-centered">
+                <button class="btn btn-primary glyphicon glyphicon-menu-left" title="See previous tag">Previous</button>
+            </div>
+            <div class="col-xs-2 text-center col-centered">
+                <button class="btn btn-success glyphicon glyphicon-star" title="Favorite Tag"> Favorite</button>
+            </div>
+            <div class="col-xs-2 text-right col-centered">
+                <button class="btn btn-primary glyphicon glyphicon-menu-right" title="See next tag"> Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-info">
+        <div class="panel-heading panel-title">Definition</div>
+        <div class="panel-body">
+            <p> The &lt;input&gt; tag defines an input field where
+                the user can enter data. This element is used inside the 
+                &lt;form&gt; tag to provide interactive controls for user 
+                data entry.</p>
+
+        </div>
+    </div>
+    
+    <div class="panel panel-info">
+        <div class="panel-heading panel-info panel-title">Compatible Attributes</div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" 
+                            aria-expanded="true" aria-controls="collapseOne">
+                            type
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" 
+                        aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <p>Specifies the type of input the user can enter,
+                                and provides the correct controls. This attribute
+                                can be numerous values.</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="dropdown">
+                                            <button id="dLabel" type="button" data-toggle="dropdown" 
+                                            aria-haspopup="true" aria-expanded="false">
+                                            type
+                                            <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                                <li class="text-center">button</li>
+                                                <li class="text-center">checkbox</li>
+                                                <li class="text-center">color</li>
+                                                <li class="text-center">date</li>
+                                                <li class="text-center">...</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                    <p>After list item is selected on left, data
+                                        about the type of input will appear, along
+                                        with a picture of the default controls 
+                                        maybe.
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                            href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            accept
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" 
+                        aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                        <p>If input type is file, then this indicates what type of 
+                        files are accepted by the server.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                            href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            autocapitalize
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" 
+                        role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                        <p>Nonstandard, used by iOS and Safari. Controls whether and 
+                        how the data entered should be capitalized as it is entered 
+                        by the user.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="panel panel-info">
+        <div class="panel-heading panel-info panel-title">Compatible Browsers</div>
+        <div class="panel-body">
+            <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#chrome" aria-controls="home" role="tab" data-toggle="tab">
+                    <img src="http://www.iconarchive.com/download/i59249/franksouza183/fs/Apps-google-chrome.ico" alt="google chrome" height="100px" width="100px">
+                </a></li>
+                <li role="presentation"><a href="#firefox" aria-controls="profile" role="tab" data-toggle="tab">
+                    <img src="https://mozorg.cdn.mozilla.net/media/img/firefox/desktop/index/animations/firefox-logo.bee1d85af18f.png" alt="firefox" height="100px" width="100px">
+                </a></li>
+                <li role="presentation"><a href="#safari" aria-controls="messages" role="tab" data-toggle="tab">
+                    <img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/safari/yosemite-safai_icon.png" alt="safari" height="100px" width="100px">
+                </a></li>
+                <li role="presentation"><a href="#internet-explorer" aria-controls="settings" role="tab" data-toggle="tab">
+                    <img src="https://pbs.twimg.com/profile_images/378800000859413957/H7zBWwEm.png" alt="Internet Explorer" height="100px" width="100px">
+                </a></li>
+                <li role="presentation"><a href="#opera" aria-controls="options" role="tab" data-toggle="tab">
+                    <img src="http://img1.findthebest.com/sites/default/files/494/media/images/Opera_Web_Browser_60205.jpg" alt="Opera" height="100px" width="100px">                
+                </a></li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active browser" id="chrome">
+                    <p class="text-center">Supported since version <var>x</var></p>
+                </div>
+                <div role="tabpanel" class="tab-pane browser" id="firefox">
+                    <p class="text-center">Supported since version <var>x</var></p>
+                </div>
+                <div role="tabpanel" class="tab-pane browser" id="safari">
+                    <p class="text-center">Supported since version <var>x</var></p>
+                </div>
+                <div role="tabpanel" class="tab-pane browser" id="internet-explorer">
+                    <p class="text-center">Supported since version <var>x</var></p>
+                </div>
+                <div role="tabpanel" class="tab-pane browser" id="opera">
+                    <p class="text-center">Supported since version <var>x</var></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-info">
+        <div class="panel-heading panel-info panel-title">Examples</div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <p class="text-center">An HTML editor and interpreter will go 
+                    here for desktop version when javascript added.</p>
+                    
+                <div class="row">
+                    <div class="col-xs-6" id="code1">
+                        <pre id="code1">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Input example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;A checkbox input!&lt;/p&gt;
+        &lt;input type="checkbox" onclick="action()"&gt;
+        
+        &lt;p&lt;A password input!&lt;/p&gt;
+        &lt;input type="password" onclick="action()"&gt;
+        
+        &lt;p&gt;You can also make an input of 
+            type button, but using the &lt;button&gt; 
+            tag is more common.
+        &lt;/p&gt;
+        &lt;input type="button" onclick="action()" 
+            value="click!"&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    </div>
+                    <div class="col-xs-6" id="res1">
+                        <p>A checkbox input!</p>
+                        <input type="checkbox" onclick="action()">
+                        
+                        <p>A password input!</p>
+                        <input type="password" onclick="action()">
+                        
+                        <p>You can also make an input of type button, but using the &lt;button&gt;
+                            tag is more common.
+                        </p>
+                        <input type="button" onclick="action()" value="click!">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-info">
+        <div class="panel-heading panel-info panel-title">Related Tags</div>
+        <div class="panel-body">
+            <a href="#">&lt;button&gt;</a>, <a href="#">&lt;form&gt;</a>, 
+            <a href="#">&lt;label&gt;</a>
+        </div>
+    </div>
+    
+  </body>
+</html>

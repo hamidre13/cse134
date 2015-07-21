@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The &lt;area&gt; element </title>
+</head>
+<body>
+  <h1>The &lt;area&gt; tag</h1>
+  <ul>
+    <li>&lt;area&gt; tag defines a piece of hot-spot region on an image</li>
+    <li>&lt;area&gt; can be optionally associated with a hyperlink, making the hot-spot region clickable and link to other pages</li>
+    <li>&lt;area&gt; should be nested within the &lt;map&gt; tag</li>
+  </ul>
+  <hr>
+  <h2>Example</h2>
+  <p>Do you know which avegners character they each are? Click on one of the corgis to find out!</p>
+  <img src="corgi_avengers.jpg" alt="corgi" usemap="#corgimap">
+  <map name="corgimap">
+    <area shape="circle" coords="85,110,83" alt="ironman" href="http://marvelcinematicuniverse.wikia.com/wiki/Iron_Man">
+    <area shape="rect" coords="190,0,310,195" alt="captainamerica" href="http://marvelcinematicuniverse.wikia.com/wiki/Captain_America">
+    <area shape="poly" coords="405,35,340,170,450,170" alt="thor" href="http://marvelcinematicuniverse.wikia.com/wiki/Thor">
+    <area shape="poly" coords="550,35,450,150,545,165,580,50" alt="hulk" href="http://marvelcinematicuniverse.wikia.com/wiki/Hulk">
+  </map>
+
+</body>
+</html>

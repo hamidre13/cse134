@@ -1,0 +1,46 @@
+#dLabel {
+    width: 160px;
+}
+
+.browser {
+    margin-top: 10px;
+}
+
+#code1 {
+    margin: 0;
+}
+
+#res1 {
+    border: 1px solid black;
+    margin: 20px;
+}
+
+/*Tag Page - Show All*/
+.container-center{
+  margin:auto;
+  padding:20px 5% 5%;
+}
+
+.btn-toolbar-center{
+  text-align: center
+}
+
+.tag-grid{
+  margin-top: 20px;
+}
+
+.tag-button{
+  width: 90%;
+  margin: 0 auto;
+  height: 120px;
+  display:block;
+}
+
+#accordion {
+    margin-top: 20px;
+}
+
+.nav {
+    margin-bottom: 10px;
+}
+

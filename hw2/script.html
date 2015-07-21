@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The &lt;script&gt; element</title>
+</head>
+
+<body>
+    <h1> The &lt;script&gt; tag</h1>
+    
+    <p>The &lt;script&gt; element is used to embed or reference a client-side
+        script in a document. The default scripting language is Javascript,
+        but the language can be changed via the type attribute.
+    </p>
+    
+    <hr>
+    
+    <h2>Example 1</h2>
+    <p> There is javascript directly inserted into the document here. It adds
+        one to a number every time the button is pressed.
+    </p>
+    
+    <button type="button" onclick="hello()">Click for a message!</button>
+    <p id="message1"></p>
+    
+    <script>
+        function hello() {
+            document.getElementById("message1").innerHTML = "Hello!";
+        }
+    </script>
+    
+    <hr>
+    
+    <h2>Example 2</h2>
+    <p> There is a script tag here that references an external javascript file
+        in the same directory.
+    </p>
+    
+    <button type="button" onclick="ext()">Click for an alert!</button>
+    
+    <script src="message2.js"></script>
+                
+</body>
+</html>
