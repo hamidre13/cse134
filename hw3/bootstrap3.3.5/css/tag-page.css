@@ -1,4 +1,23 @@
-/*.aspect {
+#dLabel {
+    width: 160px;
+}
+
+.browser {
+    margin-top: 10px;
+}
+
+#code1 {
+    margin: 0;
+}
+
+#res1 {
     border: 1px solid black;
-    margin: 20px;
-}*/
+}
+
+#accordion {
+    margin-top: 20px;
+}
+
+.nav {
+    margin-bottom: 10px;
+}
