@@ -2,6 +2,8 @@
 var tabLinks = new Array();
 var contentDivs = new Array();
 
+//Problem: Is waiting until the page loads, then is hiding all tabs. Need to
+//hide immediately
 function init() {
 	//Get the links and content from the page, put them in their arrays
 	var tabListItems = document.getElementById('tabs').childNodes;
