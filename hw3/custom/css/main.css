@@ -138,3 +138,93 @@ a:hover { color: #1ED495; }
 }
 
 /* CSS for a tag info page */
+
+#tagBody {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+#tagName {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: black;
+    margin: .67em;
+    display: block;
+}
+
+.section {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-color: #bce8f1;
+    border-radius: 4px;
+    
+}
+
+.secHead {
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: block;
+    color: #31708f;
+    background-color: #d9edf7;
+    font-size: 16px;
+    color: #31708f;
+}
+
+.secBody {
+    padding: 15px;
+    
+}
+
+
+
+
+
+/* CSS for tab styling */
+ul#tabs {
+	list-style-type: none;
+	margin: 30px 0 0 0;
+	padding: 0 0 0.3em 0;
+}
+
+ul#tabs li {
+	display: inline;
+}
+
+ul#tabs li a {
+	color: #42454a;
+	background-color: #debde;
+	border: 1px solid #c9c3ba;
+	border-bottom: none;
+	padding: 0.3em;
+	text-decoration: none;
+}
+
+ul#tabs li a:hover {
+	background-color: #f1f0ee;
+}
+ul#tabs li a.selected {
+	color: #000;
+	background-color: #f1f0ee;
+	font-weight: bold;
+	padding: 0.7em 0.3em 0.38em;
+}
+
+div.tabContent {
+	border: 1px solid #c9c3ba;
+	padding: 0.5em;
+	background-color: #f1f0ee;
+}
+
+div.tabContent.hide {
+	display: none;
+}
+
+.browserInfo {
+    text-align: center;
+}
