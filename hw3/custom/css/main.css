@@ -73,7 +73,11 @@ h2 { font-size: 1.7em; margin: 0em 0em 1em 0em; }
 h3 { font-size: 1.5em; margin: 0em 0em 1em 0em; }
 
 p { margin: 0px 0px .75em 0px; }
-a { color: #DB3340; text-decoration: none;}
+
+a { color: #337ab7; 
+    text-decoration: none;
+}
+
 a:hover { color: #1ED495; }
 .mainHeader {
 	width: 100%;
@@ -165,6 +169,10 @@ a:hover { color: #1ED495; }
     
 }
 
+#examples {
+    overflow: hidden;  /* Why does this work? */
+}
+
 .secHead {
     padding: 10px 15px;
     border-top-left-radius: 3px;
@@ -187,38 +195,45 @@ a:hover { color: #1ED495; }
 
 /* CSS for tab styling */
 ul#tabs {
-	list-style-type: none;
-	margin: 30px 0 0 0;
-	padding: 0 0 0.3em 0;
+	list-style-type: none;	
 }
 
 ul#tabs li {
 	display: inline;
 }
 
-ul#tabs li a {
-	color: #42454a;
-	background-color: #debde;
-	border: 1px solid #c9c3ba;
-	border-bottom: none;
-	padding: 0.3em;
-	text-decoration: none;
+/* tabs for 'compatible browsers' section */
+#compatBrowsers a {
+    position: relative;
+    padding: 10px 15px;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
 }
+
 
 ul#tabs li a:hover {
 	background-color: #f1f0ee;
 }
+
 ul#tabs li a.selected {
 	color: #000;
-	background-color: #f1f0ee;
-	font-weight: bold;
-	padding: 0.7em 0.3em 0.38em;
+	border-top: 1px;
+	border-left: 1px;
+	border-bottom: 0;
+	border-right: 1px;
+	border-color: #ddd;
+	border-style: solid;
+}
+
+#compatBrowsers #tabs {
+    border-bottom: 1px solid #ddd;
 }
 
 div.tabContent {
-	border: 1px solid #c9c3ba;
-	padding: 0.5em;
-	background-color: #f1f0ee;
+	margin-top: 10px;
 }
 
 div.tabContent.hide {
@@ -227,4 +242,41 @@ div.tabContent.hide {
 
 .browserInfo {
     text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/* tag info page - examples section */
+#exFrames {
+    display: inline;
+}
+
+#exCode {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 48%;
+    float: left;
+}
+
+#exResult {
+    border: 1px solid #ccc;
+    width: 48%;
+    float: right;
+    padding: 15px 10px;
+    border-radius: 4px;
+}
+
+/* make sure we're clear after the floating examples */
+#relatedTags {
+    clear: both;
 }
