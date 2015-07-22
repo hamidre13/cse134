@@ -16,15 +16,19 @@
 }
 
 /*Tag Page - Show All*/
+.navtab-showall{
+  border-style:double;
+  border-width:10px;
+  border-color:#46b8da;
+  padding:10px;
+}
+
 .container-center{
   margin:auto;
   padding:20px 5% 5%;
 }
 
-.btn-toolbar-center{
-  text-align: center
-}
-
+/*Tag Page - Favorite*/
 .tag-grid{
   margin-top: 20px;
 }
