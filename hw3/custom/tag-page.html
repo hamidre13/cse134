@@ -1,18 +1,151 @@
 <DOCTYPE html>
-<html>
+<html lang="en-US">
     <head>
         <title>Custom page for information about a tag</title>
         <meta charset="utf-8">
         <meta name="author" content="earlyBird">
         
-        <link rel="stylesheet" src="custom/css/main.css"
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/main.js"></script>
     </head>
-    <body>
+    <body id="tagBody" onload="init()">
         <header>
             
         </header>
         <main>
-            <h1>&lt;Input&gt;</h1>
+            <h1 id="tagName">&lt;input&gt;</h1>
+            
+            <section id="definition" class="section">
+                <div class="secHead">
+                    <p>Definition</p>
+                </div>
+                <div class="secBody">
+                    <p>The &lt;input&gt; tag defines an input field where
+                the user can enter data. This element is used inside the 
+                &lt;form&gt; tag to provide interactive controls for user 
+                data entry.</p>
+
+                </div>
+            </section>
+            
+            <section id="compatAttr" class="section">
+                <div class="secHead">
+                    Compatible Attributes
+                </div>
+                <div class="secBody">
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        
+                    </div>
+                </div>
+            </section>
+            <section id="compatBrowsers" class="section">
+                <div class="secHead">
+                    Compatible Browsers
+                </div>
+                <div class="secBody">
+                    <!-- The actual tabs are marked up as an unordered list -->
+                    <ul id="tabs">
+                        <li><a href="#chrome" class="selected">
+                            <img src="http://www.iconarchive.com/download/i59249/franksouza183/fs/Apps-google-chrome.ico" alt="google chrome"
+                            height="100px" width="100px">
+                            </a>
+                        </li>
+                        <li><a href="#firefox">
+                            <img src="https://mozorg.cdn.mozilla.net/media/img/firefox/desktop/index/animations/firefox-logo.bee1d85af18f.png" 
+                            alt="firefox" height="100px" width="100px">
+                            </a>
+                        </li>
+                        <li><a href="#safari">
+                            <img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/safari/yosemite-safai_icon.png" 
+                            alt="safari" height="100px" width="100px">
+                            </a>
+                        </li>
+                        <li><a href="#internetExplorer">
+                            <img src="https://pbs.twimg.com/profile_images/378800000859413957/H7zBWwEm.png" alt="Internet Explorer" height="100px" 
+                            width="100px">                    
+                            </a>
+                        </li>
+                        <li><a href="#opera">
+                            <img src="http://img1.findthebest.com/sites/default/files/494/media/images/Opera_Web_Browser_60205.jpg" alt="Opera"
+                             height="100px" width="100px">                  
+                            </a>
+                        </li>
+                    </ul>
+                                        
+                    <!-- The content for each tag is in its own <div> container -->
+                    <!-- Adding 'hide' class to other contents to prevent them
+                        from flashing -->
+                    <div class="tabContent" id="chrome">
+                    	<p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                    <div class="tabContent hide" id="firefox">
+                    	<p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                    <div class="tabContent hide" id="safari">
+                    	<p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                    <div class="tabContent hide" id="internetExplorer">
+                    	<p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                    <div class="tabContent hide" id="opera">
+                    	<p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                </div>
+            </section>
+            <section id="examples" class="section">
+                <div class="secHead">
+                    Examples
+                </div>
+                <div class="secBody">
+                    <!-- Place the code and result in separate iframes -->
+                    <div id="exCode">
+                        <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Input example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;A checkbox input!&lt;/p&gt;
+        &lt;input type="checkbox" onclick="action()"&gt;
+        
+        &lt;p&lt;A password input!&lt;/p&gt;
+        &lt;input type="password" onclick="action()"&gt;
+        
+        &lt;p&gt;You can also make an input of 
+            type button, but using the &lt;button&gt; 
+            tag is more common.
+        &lt;/p&gt;
+        &lt;input type="button" onclick="action()"
+            value="click!"&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    </div>
+                    
+                    <div id="exResult">
+                        <p>A checkbox input!</p>
+                        <input type="checkbox" onclick="action()">
+                        
+                        <p>A password input!</p>
+                        <input type="password" onclick="action()">
+                        
+                        <p>You can also make an input of type button, but using the &lt;button&gt;
+                            tag is more common.
+                        </p>
+                        <input type="button" onclick="action()" value="click!">
+                    </div>
+                </div>
+            </section>
+            <section id="relatedTags" class="section">
+                <div class="secHead">
+                    Related Tags
+                </div>
+                <div class="secBody">
+                    <a href="#">&lt;button&gt;</a>, <a href="#">&lt;form&gt;</a>, 
+                    <a href="#">&lt;label&gt;</a>
+                </div>
+            </section>
         </main>
         <footer>
         </footer>

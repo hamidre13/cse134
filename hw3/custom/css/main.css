@@ -229,3 +229,141 @@ main {
 }
 
 /* CSS for a tag info page */
+
+#tagBody {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+#tagName {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: black;
+    margin: .67em;
+    display: block;
+}
+
+.section {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-color: #bce8f1;
+    border-radius: 4px;
+    
+}
+
+#examples {
+    overflow: hidden;  /* Why does this work? */
+}
+
+.secHead {
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: block;
+    color: #31708f;
+    background-color: #d9edf7;
+    font-size: 16px;
+    color: #31708f;
+}
+
+.secBody {
+    padding: 15px;
+    
+}
+
+
+
+
+
+/* CSS for tab styling */
+ul#tabs {
+	list-style-type: none;	
+}
+
+ul#tabs li {
+	display: inline;
+}
+
+/* tabs for 'compatible browsers' section */
+#compatBrowsers a {
+    position: relative;
+    padding: 10px 15px;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
+}
+
+
+ul#tabs li a:hover {
+	background-color: #f1f0ee;
+}
+
+ul#tabs li a.selected {
+	color: #000;
+	border-top: 1px;
+	border-left: 1px;
+	border-bottom: 0;
+	border-right: 1px;
+	border-color: #ddd;
+	border-style: solid;
+}
+
+#compatBrowsers #tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+div.tabContent {
+	margin-top: 10px;
+}
+
+div.tabContent.hide {
+	display: none;
+}
+
+.browserInfo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/* tag info page - examples section */
+#exFrames {
+    display: inline;
+}
+
+#exCode {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 48%;
+    float: left;
+}
+
+#exResult {
+    border: 1px solid #ccc;
+    width: 48%;
+    float: right;
+    padding: 15px 10px;
+    border-radius: 4px;
+}
+
+/* make sure we're clear after the floating examples */
+#relatedTags {
+    clear: both;
+}
