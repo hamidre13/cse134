@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>HTML5 Refrence</title>
+	<title>HTML5 Reference</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
                         <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="#">Learn</a></li>
                         
                         <li><a href="#">Reference</a></li>
-                        <li><a href="#">Fourm</a></li>
+                        <li><a href="#">Forum</a></li>
                         <li><a href="#">About us</a></li>
                         <li><a href="#">Contact us</a></li>
                     </ul>
@@ -36,7 +36,7 @@
 <div class="clear"></div>
 <main>
 <span class="textLogo">HTML5</span>
-<h1>HTML5 Refrence guide</h1>
+<h1>HTML5 Reference guide</h1>
     <section>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at urna molestie, dapibus quam at, eleifend leo. Nunc aliquam sagittis mauris, ut semper magna pulvinar a. Etiam non quam quis odio egestas aliquet. Vestibulum eu aliquet magna. Quisque eu rutrum ipsum, quis vehicula mi. Pellentesque faucibus, nisl sed tristique imperdiet, est ex pellentesque turpis, nec scelerisque eros nulla non neque. Curabitur ac lacus vitae velit vehicula auctor. Etiam ac volutpat libero. Praesent laoreet sapien sed massa imperdiet, in porta felis eleifend. Vivamus mauris velit, condimentum sit amet lacus ac, ornare rutrum nisl. Nullam suscipit elementum feugiat. Mauris pulvinar magna vel hendrerit fringilla. Maecenas dictum imperdiet pharetra.
 

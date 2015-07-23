@@ -4,21 +4,11 @@ var contentDivs = new Array();
 
 function init() {
 	//Get the links and content from the page, put them in their arrays
-	
-	//get two NodeLists, convert to arrays, concatenate
-	var attrTabs = document.querySelectorAll('#attrTabs>li');
-	var browsTabs = document.querySelectorAll('#browsTabs>li');
-	
-	console.log(attrTabs);
-	console.log(browsTabs);
-	
-	attrTabs = Array.prototype.slice.call(attrTabs);
-	browsTabs = Array.prototype.slice.call(browsTabs);
-	
-	var tabListItems = attrTabs.concat(browsTabs);
-	console.log(tabListItems);
 
-	for (i = 0; i < tabListItems.length; i++) {
+	
+	var tabListItems = document.getElementById('tabs').childNodes;
+
+	for (var i = 0; i < tabListItems.length; i++) {
 		//make sure that this child node is a list item <li>
 		if (tabListItems[i].nodeName == "LI") {
 			//get this list item's child link element <a> 
@@ -29,7 +19,6 @@ function init() {
             console.log(id);
 			//place 
 			tabLinks[id] = tabLink;
-			console.log(document.getElementById(id));
 			contentDivs[id] = document.getElementById(id);
 		}
 	}
@@ -58,7 +47,6 @@ function init() {
 
 	for (var id in contentDivs) {
 		if (i != 0) {
-			console.log(contentDivs[id]);
 			contentDivs[id].className = 'tabContent hide';
 		}
 
@@ -117,3 +105,16 @@ function getHash(url) {
 	//chop off everything up to and including the #
 	return url.substring(hashPos + 1);
 }
+
+/* Compatible Attributes tabs */
+$(function() {
+	$(".attr").click(function() {
+		//remove all, add relevant one back
+		$(".attr").removeClass("selected");
+		$(this).addClass("selected");
+
+		//hide all, uncover relevant one
+		$("#attributes").children().addClass("hide");
+		$($(this).attr("name")).removeClass("hide");
+	});
+});

@@ -245,6 +245,7 @@ main {
     color: black;
     margin: .67em;
     display: block;
+    clear: both;
 }
 
 .section {
@@ -281,11 +282,11 @@ main {
 
 
 /* CSS for tab styling */
-ul.tabs {
+ul#tabs {
 	list-style-type: none;	
 }
 
-ul.tabs li {
+ul#tabs li {
 	display: inline;
 }
 
@@ -301,11 +302,11 @@ ul.tabs li {
 }
 
 
-ul.tabs li a:hover {
+ul#tabs li a:hover {
 	background-color: #f1f0ee;
 }
 
-ul.tabs li a.selected {
+ul#tabs li a.selected {
 	color: #000;
 	border-top: 1px;
 	border-left: 1px;
@@ -315,7 +316,7 @@ ul.tabs li a.selected {
 	border-style: solid;
 }
 
-#compatBrowsers .tabs {
+#compatBrowsers #tabs {
     border-bottom: 1px solid #ddd;
 }
 
