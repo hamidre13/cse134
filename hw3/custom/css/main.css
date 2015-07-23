@@ -181,10 +181,12 @@ main {
 	background-color: #28ABE3;
 	padding: 40px;
 	text-align: center;
-	display: inline-block;
-	margin: 10px;
 	color: white;
-	vertical-align: middle;
+	-vertical-align: middle;
+	-display: inline-block;
+	-margin: 10px;
+	float: left;
+	border: solid 2px white;
 }
 .ctgs li a {
 	color: #fff;
