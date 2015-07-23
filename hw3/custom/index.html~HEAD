@@ -1,0 +1,56 @@
+<!doctype <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML5 Refrence</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<!-- Page tilte-->
+<header class="mainHeader">
+    <div class="topNavWrapper">
+        <div class="topNav">
+            <nav class="mainNav">
+                <div class="mainNavWrapper">
+                    <ul>
+                        <li><img src="#" alt="Brand"></li>
+                        <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="#">Learn</a></li>
+                        
+                        <li><a href="#">Reference</a></li>
+                        <li><a href="#">Fourm</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="rightNav">
+                <li class ="hasInput"> <input type="text" placeholder="search"></li>
+                <li><a href=#>Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+	
+</header>
+<div class="clear"></div>
+<main>
+<span class="textLogo">HTML5</span>
+<h1>HTML5 Refrence guide</h1>
+    <section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at urna molestie, dapibus quam at, eleifend leo. Nunc aliquam sagittis mauris, ut semper magna pulvinar a. Etiam non quam quis odio egestas aliquet. Vestibulum eu aliquet magna. Quisque eu rutrum ipsum, quis vehicula mi. Pellentesque faucibus, nisl sed tristique imperdiet, est ex pellentesque turpis, nec scelerisque eros nulla non neque. Curabitur ac lacus vitae velit vehicula auctor. Etiam ac volutpat libero. Praesent laoreet sapien sed massa imperdiet, in porta felis eleifend. Vivamus mauris velit, condimentum sit amet lacus ac, ornare rutrum nisl. Nullam suscipit elementum feugiat. Mauris pulvinar magna vel hendrerit fringilla. Maecenas dictum imperdiet pharetra.
+
+Etiam suscipit finibus ornare. Pellentesque dapibus est imperdiet, accumsan sapien eu, placerat augue. Proin bibendum sed lorem sed consectetur. In vitae elit et arcu tristique ultricies non sit amet elit. Suspendisse potenti. Fusce vel vulputate dui, sed mattis est. Duis eu ullamcorper diam. Curabitur augue massa, pretium sit amet nunc a, mollis tristique sapien. Vestibulum egestas rhoncus ligula nec dapibus. Morbi a ante urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur eget arcu imperdiet, cursus lorem quis, iaculis enim. Curabitur sit amet gravida leo.
+
+Pellentesque convallis velit vel lectus cursus, euismod posuere est ornare. Duis scelerisque ex auctor, scelerisque nunc sed, vestibulum quam. Donec a ultricies turpis, vel fringilla turpis. In ac posuere tellus. Nullam a augue urna. Pellentesque nec lacus interdum, pulvinar velit in, accumsan risus. Fusce consectetur justo faucibus, suscipit erat laoreet, vestibulum lectus. Phasellus gravida interdum turpis, vitae porta nibh venenatis vel. Vestibulum eu nibh in elit rutrum bibendum quis non velit. Aliquam porttitor sapien sed porttitor pretium. Fusce luctus ut lacus eu aliquam. Aliquam laoreet volutpat commodo. Morbi efficitur dui mi, sed convallis enim congue eget. In aliquam tellus ante, vitae tristique nunc dapibus nec. Vestibulum fringilla elit sed porta lacinia.
+
+Cras dapibus libero sit amet lacinia maximus. Morbi eu sodales urna. Duis pharetra libero arcu, elementum pulvinar lectus fringilla eget. In at efficitur nisi. Phasellus sit amet pharetra arcu. Suspendisse potenti. In hac habitasse platea dictumst. Ut dapibus, purus nec ultrices facilisis, dui arcu maximus justo, et fermentum tellus orci quis tortor.
+
+Duis tincidunt augue bibendum risus fermentum varius. Nam nisi ante, vestibulum vel dolor sed, sagittis porta dui. Etiam pretium enim non mi laoreet molestie. Praesent eu nisi ac dolor cursus mollis. Vestibulum nec ipsum metus. Sed molestie elementum arcu, id consectetur nisl blandit in. Fusce a purus et eros rutrum fringilla sed at enim.
+    </section>
+</main>
+<footer>
+    
+</footer>
+</body>
+</html>
