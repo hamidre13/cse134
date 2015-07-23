@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
     <head>
         <title>Custom page for information about a tag</title>
@@ -6,6 +6,10 @@
         <meta name="author" content="earlyBird">
         
         <link rel="stylesheet" href="css/main.css">
+        
+        <!-- jQuery -->    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
         <script src="js/main.js"></script>
     </head>
     <body id="tagBody" onload="init()">
@@ -34,7 +38,24 @@
                 </div>
                 <div class="secBody">
                     <div id="accordion" role="tablist" aria-multiselectable="true">
-                        
+                        <ul id="attrTabs" class="tabs">
+                            <li><a href="#type" class="attr">type</a></li>
+                            <li><a href="#accept" class="attr">accept</a></li>
+                            <li><a href="#autocap" class="attr">autocapitalize</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- The content for each tag is in its own <div> container -->
+                    <!-- Adding 'hide' class to other contents to prevent them
+                        from flashing -->
+                    <div class="tabContent" id="type">
+                        <p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                    <div class="tabContent hide" id="accept">
+                        <p class="browserInfo">Supported since version <var>x</var></p>
+                    </div>
+                    <div class="tabContent hide" id="autocap">
+                        <p class="browserInfo">Supported since version <var>x</var></p>
                     </div>
                 </div>
             </section>
@@ -44,30 +65,30 @@
                 </div>
                 <div class="secBody">
                     <!-- The actual tabs are marked up as an unordered list -->
-                    <ul id="tabs">
+                    <ul id="browsTabs" class="tabs">
                         <li><a href="#chrome" class="selected">
                             <img src="http://www.iconarchive.com/download/i59249/franksouza183/fs/Apps-google-chrome.ico" alt="google chrome"
-                            height="100px" width="100px">
+                            height="100" width="100">
                             </a>
                         </li>
                         <li><a href="#firefox">
                             <img src="https://mozorg.cdn.mozilla.net/media/img/firefox/desktop/index/animations/firefox-logo.bee1d85af18f.png" 
-                            alt="firefox" height="100px" width="100px">
+                            alt="firefox" height="100" width="100">
                             </a>
                         </li>
                         <li><a href="#safari">
                             <img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/mac_apps/safari/yosemite-safai_icon.png" 
-                            alt="safari" height="100px" width="100px">
+                            alt="safari" height="100" width="100">
                             </a>
                         </li>
                         <li><a href="#internetExplorer">
-                            <img src="https://pbs.twimg.com/profile_images/378800000859413957/H7zBWwEm.png" alt="Internet Explorer" height="100px" 
-                            width="100px">                    
+                            <img src="https://pbs.twimg.com/profile_images/378800000859413957/H7zBWwEm.png" alt="Internet Explorer" height="100" 
+                            width="100">                    
                             </a>
                         </li>
                         <li><a href="#opera">
                             <img src="http://img1.findthebest.com/sites/default/files/494/media/images/Opera_Web_Browser_60205.jpg" alt="Opera"
-                             height="100px" width="100px">                  
+                             height="100" width="100">                  
                             </a>
                         </li>
                     </ul>
