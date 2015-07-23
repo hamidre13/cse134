@@ -129,6 +129,17 @@ a:hover { color: #1ED495; }
   margin-top: 30px;
   display: block;
   height: 50px;
+  background-color: white;
+  width: 23%;
+  padding: 1%;
+  padding-top: 6%;
+  text-align: center;
+}
+.tagLine {
+	background-color: white;
+	width: 18%;
+	text-align: center;
+	padding: 13px;
 }
 .mainNavWrapper {
 	width: 100%;
@@ -167,13 +178,12 @@ main {
 	border: solid 2px #28ABE3;
 }
 .homectgs {
-	width: 90%;
-	margin: 0 auto;
+	width: 100%;
 }
+
 .ctgs {
 	width: 100%;
-	margin: 0 auto;
-	padding-left: 6%;
+	text-align: center;
 }
 .ctgs li {
 	width: 12%;
@@ -182,10 +192,10 @@ main {
 	padding: 40px;
 	text-align: center;
 	color: white;
-	-vertical-align: middle;
-	-display: inline-block;
+	vertical-align: middle;
+	display: inline-block;
 	-margin: 10px;
-	float: left;
+	-float: left;
 	border: solid 2px white;
 }
 .ctgs li a {
@@ -193,8 +203,11 @@ main {
 	font-size: 1.5em;
 	line-height: 1.2em;
 }
-.ulwrapper{
+.headerImg {
 	width: 90%;
+	background-image: url("../img/headr-modified.jpg");
+	height: 60%;
+	background-attachment: fixed;
 	margin: 0 auto;
 }
 
