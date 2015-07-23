@@ -2,11 +2,21 @@
 var tabLinks = new Array();
 var contentDivs = new Array();
 
-//Problem: Is waiting until the page loads, then is hiding all tabs. Need to
-//hide immediately
 function init() {
 	//Get the links and content from the page, put them in their arrays
-	var tabListItems = document.getElementById('tabs').childNodes;
+	
+	//get two NodeLists, convert to arrays, concatenate
+	var attrTabs = document.querySelectorAll('#attrTabs>li');
+	var browsTabs = document.querySelectorAll('#browsTabs>li');
+	
+	console.log(attrTabs);
+	console.log(browsTabs);
+	
+	attrTabs = Array.prototype.slice.call(attrTabs);
+	browsTabs = Array.prototype.slice.call(browsTabs);
+	
+	var tabListItems = attrTabs.concat(browsTabs);
+	console.log(tabListItems);
 
 	for (i = 0; i < tabListItems.length; i++) {
 		//make sure that this child node is a list item <li>
@@ -16,15 +26,17 @@ function init() {
 
 			//get the link's destination (removes the hash symbol)
 			var id = getHash(tabLink.getAttribute('href'));
-
+            console.log(id);
 			//place 
 			tabLinks[id] = tabLink;
+			console.log(document.getElementById(id));
 			contentDivs[id] = document.getElementById(id);
 		}
 	}
 
 	//assign onclick events to the tab links, and highlight the first tab
 	var i = 0;
+	console.log(tabLinks);
 
 	for (var id in tabLinks) {
 		//assign showTab function to the onclick event for each tab
@@ -46,11 +58,15 @@ function init() {
 
 	for (var id in contentDivs) {
 		if (i != 0) {
+			console.log(contentDivs[id]);
 			contentDivs[id].className = 'tabContent hide';
 		}
 
 		i++;
 	}
+	
+	/* Now initialize the accordion tabs */
+	
 }
 
 /* This is called whenever a certain tab is clicked.
