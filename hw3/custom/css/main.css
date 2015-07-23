@@ -71,12 +71,10 @@ body {
 h1 { font-size: 2em; font-weight: normal; }
 h2 { font-size: 1.7em; margin: 0em 0em 1em 0em; }
 h3 { font-size: 1.5em; margin: 0em 0em 1em 0em; }
-
-p { margin: 0px 0px .75em 0px; }
 a {  text-decoration: none;}
 a:hover { color: #1ED495; }
 .mainNav {
-	margin-left: 8%;
+	margin-top: -49px;
 }
 .mainHeader {
 	width: 100%;
@@ -89,12 +87,14 @@ a:hover { color: #1ED495; }
 	width: 100%;
 }
 .topNav {
-	width: 100%;
+	width: 1100px;
 	min-height: 50px;
-	position: relative;	
+	position: relative;
+	margin: 0 auto;	
 }
 .rightNav {
 	float: right;
+	width: 35%;
 }
 .rightNav li {
 	float: left;
@@ -129,6 +129,17 @@ a:hover { color: #1ED495; }
   margin-top: 30px;
   display: block;
   height: 50px;
+  background-color: white;
+  width: 285px;
+  padding: 1%;
+  padding-top: 6%;
+  text-align: center;
+}
+.tagLine {
+	background-color: white;
+	width: 250px;
+	text-align: center;
+	padding: 13px;
 }
 .mainNavWrapper {
 	width: 100%;
@@ -146,7 +157,7 @@ a:hover { color: #1ED495; }
 }
 .mainNav ul li a:hover {
  	border-top: solid 7px white;
-  	padding-top: 8px;
+  	padding-top: 9px;
 }
 .mainNav ul .active a {
 	color:#000;
@@ -160,20 +171,19 @@ main {
 	padding: 0 30px;
 }
 .logo {
-	width: 5%;
-	position: absolute;
-	margin-left: 30px;
-	margin-right: 20px;
-	border: solid 2px #28ABE3;
+	  width: 8%;
+  position: absolute;
+  margin-left: -100px;
+  margin-right: 19px;
+  border: solid 2px #28ABE3;
 }
 .homectgs {
-	width: 90%;
-	margin: 0 auto;
+	width: 100%;
 }
+
 .ctgs {
 	width: 100%;
-	margin: 0 auto;
-	padding-left: 6%;
+	text-align: center;
 }
 .ctgs li {
 	width: 12%;
@@ -181,45 +191,188 @@ main {
 	background-color: #28ABE3;
 	padding: 40px;
 	text-align: center;
-	display: inline-block;
-	margin: 10px;
 	color: white;
 	vertical-align: middle;
+	display: inline-block;
+	-margin: 10px;
+	-float: left;
+	border: solid 2px white;
+	border-top: solid 4px white;
 }
 .ctgs li a {
 	color: #fff;
 	font-size: 1.5em;
 	line-height: 1.2em;
 }
-.ulwrapper{
+.headerImg {
 	width: 90%;
+	background-image: url("../img/headr-modified.jpg");
+	height: 60%;
+	background-attachment: fixed;
 	margin: 0 auto;
+	margin-top: 55px;
+}
+.mainFooter {
+	background-color: #282A2B;
+	margin-top: 20px;
+}
+.footer {
+	min-height: 350px;
+	background-color: #363839;
+	padding: 30px;
+}
+.copyRight {
+	color: white;
+	padding: 10px;
+}
+.copyRight ul li {
+	display: inline-block;
+	color: white;
+	padding: 5px;
+}
+.copyRight ul li a {
+	color: white;
+}
+.copyRight ul li a:hover {
+	text-decoration: underline;
+}
+.footerMenu {
+	margin: 20px;
+	float: left;
+}
+.footerMenu li a {
+	color: white;
+}
+.footerContactForm {
+  background-color: #ECECEC;
+  width: 25%;
+  padding: 30px;
+  float: right;
+}
+.footerContactForm input, .footerContactForm textarea{
+	width: 100%;
+	margin-bottom: 15px;
+}
+#menuToggle {
+	display: none;
+}
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+.footerMenu {
+	display: none;
+}
+.logo {
+	margin: 0;
+}
 }
 
-/* ----------- iPad 3 and 4 ----------- */
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
 
-.mainNav ul li {
-	clear: both;
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1300px) { 
+
+.headerImg {
+	width: 100%;
+}
+.topNav {
+	width: 100%;
+}	
+.mainNavWrapper ul {
+	margin-left: 110px;
+}
+.logo {
+	margin: 0;
+	margin-top: -43px;
+}
+.mainNav {
+	margin-top: 0;
+}
+.rightNav {
 	margin: 0 auto;
-  	width: 60%;
+ 	float: none;
+}
+.footerContactForm {
+	float: none;
+	margin: 0 auto;
+}
+.footerMenu {
+	display: none;
+}
+.textLogo {
+	margin-top: 70px;
 }
 .mainNav ul li a {
-  padding: 10px 0 0 0;
-  text-align: center;
-  font-size: 2em;
-  line-height: 1.5em;
+	  padding: 15px 25px;
+}
 }
 
-.rightNav { 
-	clear:both;
+/* Large desktop */
+@media (min-width: 1200px) { }
+
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+.topNav {
+	width: 100%;
+}	
+.textLogo {
+	margin-top: 130px;
 }
+.footerMenu {
+	display: none;
+}
+.footerContactForm {
+	float: none;
+	margin: 0 auto;
+}
+.logo {
+  margin: 0;
+  width: 15%;
+}
+.rightNav {
+	width: 75%;
+}
+.mainNav ul li {
+	float: none;
+}
+.topNavWrapper {
+	min-height: 60px;
+}
+.mainNavWrapper ul{
+	position: absolute;
+	right: -161px;
+	display: block;
+	background-color: blue;
+	top: 50px;
+}
+.headerImg {
+	  margin-top: -45px;
+	  height: inherit;
+	  width: 100%;
 
 }
+#menuToggle {
+	display: block;
+	float: right;
+	margin-top: -35px;
+	background-color: #EBEDED;
+	padding: 3px;
+}
+.ctgs li a {
+  font-size: 1em;
+}
+.ctgs li {
+  width: 100%;
+}
+.main {
+  padding: 0;
+}
+.footer {
+	width: 100%
+}
+}
+
 
 
 /* CSS for a tag info page */
