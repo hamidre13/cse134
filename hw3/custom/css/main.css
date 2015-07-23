@@ -68,26 +68,30 @@ body {
 	color: #575c7a;
     line-height: 1.5em;
 }
-h1 { color: #a6430a; margin: 0em 0em .5em 0em; font-size: 2em; font-weight: normal; }
+h1 { font-size: 2em; font-weight: normal; }
 h2 { font-size: 1.7em; margin: 0em 0em 1em 0em; }
 h3 { font-size: 1.5em; margin: 0em 0em 1em 0em; }
 
 p { margin: 0px 0px .75em 0px; }
 a {  text-decoration: none;}
 a:hover { color: #1ED495; }
+.mainNav {
+	margin-left: 8%;
+}
 .mainHeader {
 	width: 100%;
 }
 .topNavWrapper {
-	  padding: 0px 0px;
-  position: fixed;
-  background-color: #28ABE3;
-  top: 0;
-  width: 100%;
+	padding: 0px 0px;
+	position: fixed;
+	background-color: #28ABE3;
+	top: 0;
+	width: 100%;
 }
 .topNav {
 	width: 100%;
-	min-height: 50px;	
+	min-height: 50px;
+	position: relative;	
 }
 .rightNav {
 	float: right;
@@ -104,7 +108,6 @@ a:hover { color: #1ED495; }
 	float: left;
 	position: relative;
 	height: 30px;
-	border-radius: 5px;
 	padding: 6px 12px;
 }
 .hasInput {
@@ -134,15 +137,16 @@ a:hover { color: #1ED495; }
 .mainNav ul li {
 	float: left;
 	position: relative;
-	padding: 0 35px 0 0;
+	
 }
 .mainNav ul li a {
 	color: #fff;
 	display: block;
-	padding: 10px 0 0 0;
+	padding: 15px 35px;
 }
 .mainNav ul li a:hover {
- 	color: #B6B6B6;
+ 	border-top: solid 7px white;
+  	padding-top: 8px;
 }
 .mainNav ul .active a {
 	color:#000;
@@ -153,6 +157,43 @@ a:hover { color: #1ED495; }
 
 main {
 	margin-top:100px;
+	padding: 0 30px;
+}
+.logo {
+	width: 5%;
+	position: absolute;
+	margin-left: 30px;
+	margin-right: 20px;
+	border: solid 2px #28ABE3;
+}
+.homectgs {
+	width: 90%;
+	margin: 0 auto;
+}
+.ctgs {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 6%;
+}
+.ctgs li {
+	width: 12%;
+	height: 60px;
+	background-color: #28ABE3;
+	padding: 40px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px;
+	color: white;
+	vertical-align: middle;
+}
+.ctgs li a {
+	color: #fff;
+	font-size: 1.5em;
+	line-height: 1.2em;
+}
+.ulwrapper{
+	width: 90%;
+	margin: 0 auto;
 }
 
 /* ----------- iPad 3 and 4 ----------- */
@@ -183,3 +224,8 @@ main {
 
 /* CSS for a tag info page */
 
+.clear {
+	clear: both;
+}
+
+/* CSS for a tag info page */
