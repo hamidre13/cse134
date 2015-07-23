@@ -1,0 +1,175 @@
+<!doctype <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 Refrence</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <style>
+    .text-center{
+      text-align: center;
+    }
+    .a:link{
+      color: #0000EE;
+    }
+    .a:visited{
+      color:#551A88;
+    }
+
+    .tabs {
+      position: relative;
+      width: 94%;
+      margin: 3%; 
+      min-height: 100%; /* This part sucks */
+      clear: both;
+      /*margin: 25px 0;*/
+    }
+    .tab {
+      float: left;
+    }
+    .tab label {
+      background: #eee; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      margin-left: -1px; 
+      position: relative;
+      left: 1px; 
+    }
+    .tab [type=radio] {
+      display: none;   
+    }
+    .content {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      border: 1px solid #ccc; 
+    }
+    [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 1px solid white;
+      z-index: 2;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+
+    .ul{
+      list-style-type: square;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Page tilte-->
+<header class="mainHeader">
+    <div class="topNavWrapper">
+        <div class="topNav">
+            <ul>
+                <li><a href=#>Learn</a></li>
+                <li><a href=#>Favorite</a></li>
+            </ul>
+        </div>
+    </div>
+
+<span class="textLogo">HTML5</span>
+
+  <nav class="mainNav">
+        <div class="mainNavWrapper">
+        <ul>
+          <li><a href=#>About us</a></li>
+                <li><a href=#>Contact us </a></li>
+                <li><a href=#>Log in</a></li>
+        </ul>
+        </div>
+  </nav>
+</header>
+
+<main>
+<h1 class="text-center" style="margin:20 0 20 0">The HTML5 Refrence guide</h1>
+<h2 class="text-center">All Tags</h2>
+
+
+  <div class="tabs">
+      
+    <div class="tab">
+      <input type="radio" id="tab-1" name="tab-group-1" checked>
+      <label for="tab-1">Alphabetical</label>
+     
+      <div class="content">
+          <h4>A</h4>
+          <ul>
+            <li><a href="#"> &lt;a&gt;</a></li>
+            <li><a href="#"> &lt;abbr&gt;</a></li>
+            <li><a href="#"> &lt;address&gt;</a></li>
+            <li><a href="#"> &lt;applet&gt;</a></li>
+            <li><a href="#"> &lt;area&gt;</a></li>
+            <li><a href="#"> &lt;article&gt;</a></li>
+            <li><a href="#"> &lt;aside&gt;</a></li>
+            <li><a href="#"> &lt;audio&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>B</h4>
+          <ul>
+            <li><a href="#"> &lt;b&gt;</a></li>
+            <li><a href="#"> &lt;base&gt;</a></li>
+            <li><a href="#"> &lt;bdi&gt;</a></li>
+            <li><a href="#"> &lt;bdo&gt;</a></li>
+            <li><a href="#"> &lt;blockquote&gt;</a></li>
+            <li><a href="#"> &lt;body&gt;</a></li>
+            <li><a href="#"> &lt;br&gt;</a></li>
+            <li><a href="#"> &lt;button&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>C</h4>
+          <ul>
+            <li><a href="#"> &lt;canvas&gt;</a></li>
+            <li><a href="#"> &lt;caption&gt;</a></li>
+            <li><a href="#"> &lt;center&gt;</a></li>
+            <li><a href="#"> &lt;cite&gt;</a></li>
+            <li><a href="#"> &lt;code&gt;</a></li>
+            <li><a href="#"> &lt;col&gt;</a></li>
+            <li><a href="#"> &lt;colgroup&gt;</a></li>
+          </ul>
+      </div> 
+    </div>
+      
+    <div class="tab">
+      <input type="radio" id="tab-2" name="tab-group-1">
+      <label for="tab-2">Category</label>
+         
+      <div class="content">
+        <h4>Basic Elements</h4>
+        <ul>
+          <li><a href="#"> &lt;html&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Content Sectioning</h4>
+        <ul>
+          <li><a href="#"> &lt;address&gt;</a></li>
+          <li><a href="#"> &lt;article&gt;</a></li>
+          <li><a href="#"> &lt;body&gt;</a></li>
+          <li><a href="#"> &lt;footer&gt;</a></li>
+          <li><a href="#"> &lt;header&gt;</a></li>
+          <li><a href="#"> &lt;h1&gt;-&lt;h6&gt;</a></li>
+          <li><a href="#"> &lt;hgroup&gt;</a></li>
+          <li><a href="#"> &lt;nav&gt;</a></li>
+          <li><a href="#"> &lt;section&gt;</a></li>
+        </ul>
+        <hr>
+      </div> 
+    </div>
+      
+  </div>
+
+
+
+</main>
+<footer>
+    
+</footer>
+</body>
+</html>
