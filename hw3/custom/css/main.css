@@ -208,14 +208,14 @@ main {
 	font-size: 1.5em;
 	line-height: 1.2em;
 }
-.headerImg {
+/*.headerImg {
 	width: 90%;
 	background-image: url("../img/headr-modified.jpg");
-	height: 60%;
+	height: 20%;
 	background-attachment: fixed;
 	margin: 0 auto;
 	margin-top: 55px;
-}
+}*/
 .mainFooter {
 	background-color: #282A2B;
 	margin-top: 20px;
