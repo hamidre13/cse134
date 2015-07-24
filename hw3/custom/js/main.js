@@ -169,4 +169,8 @@ $(function() {
 		//slide in forgot password modal
 		$("#loginModal").slideDown();
 	});
+	 $("#menuToggle").click(function(){
+        $(".mainNavWrapper ul").slideToggle(); 
+        //animate({width: 'toggle'});
+    });
 });
