@@ -279,7 +279,9 @@ main {
 }
 }
 
-
+.favoritMain {
+	margin-top: 100px;
+}
 .pageTitle {
     font-size: 36px;
     font-weight: 700;
