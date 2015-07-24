@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-<!-- Page tilte-->
+<!-- Page title-->
 <header class="mainHeader">
     <div class="topNavWrapper">
         <div class="topNav">

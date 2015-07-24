@@ -271,6 +271,11 @@ main {
 }
 
 
+.pageTitle {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1300px) { 
@@ -540,7 +545,11 @@ div.tabContent.hide {
     margin: auto;
     border: 1px solid #ccc;
     border-radius: 12px;
-    z-index: 1050;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    z-index: 2;
+    background-color: #fff;
 }
 
 .modalHeader {
