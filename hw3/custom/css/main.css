@@ -313,6 +313,14 @@ main {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
+.rightNav {
+	width: 41%;
+    float: none;
+    margin: 0 auto;
+}
+.rightNav li {
+	padding: 2px;
+}
 .topNav {
 	width: 100%;
 }	
@@ -360,6 +368,7 @@ main {
 	margin-top: 10px;
 	width: 70px;
 	height: 25px;
+	margin-right: 60px;
 }
 .ctgs li a {
   font-size: 1em;
@@ -372,6 +381,9 @@ main {
 }
 .footer {
 	width: 100%
+}
+.mainNavWrapper {
+	width: inherit;
 }
 }
 
