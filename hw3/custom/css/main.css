@@ -287,18 +287,19 @@ main {
 }
 /*This si for educational view page*/
 .ctgsedu li {
-	width: 100%;
-	height: 60px;
-	background-color: #28ABE3;
-	padding: 40px;
-	text-align: center;
-	color: white;
-	vertical-align: middle;
-	display: inline-block;
-	-margin: 10px;
-	-float: left;
-	border: solid 2px white;
-	border-top: solid 4px white;
+	    width: 100%;
+    height: 10px;
+    background-color: #28ABE3;
+    padding: 36px;
+    text-align: center;
+    color: white;
+    /* vertical-align: middle; */
+    display: inline-block;
+    -margin: 10px;
+    -float: left;
+    border: solid 2px white;
+    border-top: solid 7px white;
+    padding-top: 16px;
 }
 .ctgsedu li a {
 	color: #fff;
