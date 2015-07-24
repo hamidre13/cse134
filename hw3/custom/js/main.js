@@ -127,6 +127,7 @@ $(function() {
 
 	/* Attach handler to login modal */
 	$(".login").click(function() {
+		console.log("we here");
 		$("#loginModal").slideDown();
 
 		$("body > *").not(".modal").css("opacity", 0.5);
@@ -168,14 +169,4 @@ $(function() {
 		//slide in forgot password modal
 		$("#loginModal").slideDown();
 	});
-
-	//have modals slide up when you click anywhere on the document that isn't on them
-	/*$("#loginModal").click(function(){ return false; });
-	$(document).one("click", function() { $("#loginModal").slideUp(); });
-
-	$("#forgotPasswd").click(function(){ return false; });
-	$(document).one("click", function() { $("#forgotPasswd").slideUp(); });
-
-	$("#createAccount").click(function(){ return false; });
-	$(document).one("click", function() { $("#createAccount").slideUp(); });*/
 });
