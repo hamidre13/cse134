@@ -82,6 +82,8 @@ a:hover { color: #241ED4; }
 }
 .mainHeader {
 	width: 100%;
+    position: fixed;
+    z-index: 2;
 }
 .topNavWrapper {
 	padding: 0px 0px;
@@ -173,6 +175,7 @@ a:hover { color: #241ED4; }
 }
 .small {
 	display: none;
+    float: right;
 }
 main {
 	margin-top:20px;
@@ -488,7 +491,7 @@ main {
 
 /* CSS for tab styling */
 ul#tabs {
-	list-style-type: none;	
+	list-style-type: none;
 }
 
 ul#tabs li {
