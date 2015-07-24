@@ -14,33 +14,116 @@
 
 </head>
     <body id="tagBody" onload="init()">
-    <header class="mainHeader">
-    <div class="topNavWrapper">
-        <div class="topNav">
-            <img src="img/logo.jpg" alt="Brand" class="logo" width="10">
-            <nav class="mainNav">
-                <div class="mainNavWrapper">
-                    <ul>
-                        <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="#">Learn</a></li>
-                        
-                        <li><a href="#">Reference</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <ul class="rightNav">
-                <li class ="hasInput"> <input type="text" placeholder="search"></li>
-                <li><a href=#>Login</a></li>
-            </ul>
+    <!-- Modals -->
+    <section id="loginModal" class="modal" style="display: none;">
+        <div class="modalHeader">
+            <a class="exit" href="#">Exit</a>
+            <h4 class="modalTitle">Login</h4>
         </div>
-    </div>
+        <div class="modalBody">
+            <label for="eml" class="mdlLabl">Email</label>
+            <br>
+            <input class="txtin" type="email" id="eml" name="email">
+            <br>
+            <label for="passwd" class="mdlLabl">Password</label>
+            <br>
+            <input class="txtin" type="password" id="passwd" name="password">
+            <br>
+            <label for="rememb" class="mdlLabl">Remember me: </label>
+            <input type="checkbox" id="rememb" name="rememberMe">
+        </div>
+        <div class="modalFooter">
+            <button type="button" id="signin">Sign in</button>
+            <a class="forgot" href="#forgotPasswd">Forgot password</a>
+            <a class="createAcc" href="#createAccount">Create Account</a>
+        </div>
+    </section>
 
+    <section id="forgotPasswd" class="modal" style="display: none;">
+        <div class="modalHeader">
+            <a class="exit" href="#">Exit</a>
+            <h4 class="modalTitle">Forgot Password</h4>
+        </div>
+        <div class="modalBody">
+            <label for="eml" class="mdlLabl">Email</label>
+            <br>
+            <input class="txtin" type="email" id="eml" name="email">
+            <br>
+            <!-- Going to display security question here -->
+            <label for="passwd" class="mdlLabl">Answer to Security Question</label>
+            <br>
+            <input class="txtin" type="text" id="passwd" name="password">
+            <br>
+        </div>
+        <div class="modalFooter">
+            <button type="button" id="sendpasswd">Send Email</button>
+            <a class="backToLogin" href="#loginModal">Back to Login</a>
+            <a class="createAcc" href="#createAccount">Create Account</a>
+        </div>
+    </section>
 
-    
-</header>
+    <section id="createAccount" class="modal" style="display: none;">
+        <div class="modalHeader">
+            <a class="exit" href="#">Exit</a>
+            <h4 class="modalTitle">Create Account</h4>
+        </div>
+        <div class="modalBody">
+            <label for="eml" class="mdlLabl">Email</label>
+            <br>
+            <input class="txtin" type="email" id="eml" name="email">
+            <br>
+            <label for="passwd" class="mdlLabl">Password</label>
+            <br>
+            <input class="txtin" type="password" id="passwd" name="password">
+            <br>
+            <label for="secQues" class="mdlLabl">Password</label>
+            <br>
+            <input class="txtin" type="text" id="secQues" name="securityQuestion">
+            <br>
+            <label for="secAns" class="mdlLabl">Password</label>
+            <br>
+            <input class="txtin" type="text" id="secAns" name="securityAnswer">
+        </div>
+        <div class="modalFooter">
+            <button type="button" id="newAcc">Create Account</button>
+            <a class="backToLogin" href="#loginModal">Back to Login</a>
+            <a class="forgot" href="#forgotPasswd">Forgot password</a>
+        </div>
+    </section>
+    <header class="mainHeader">
+        <div class="topNavWrapper">
+            <div class="topNav">
+            <a href="#" id="menuToggle">  Menue </a>
+                <ul class="rightNav">
+                    <li class ="hasInput"> <input type="text" placeholder="search"></li>
+                    <li><a id="login" href=#>Login</a></li>
+                </ul>
+
+                <div class="clear"></div>
+                <nav class="mainNav">
+
+                    <div class="mainNavWrapper">
+                        <a href="#"><img src="img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
+                        <ul>
+                            <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="#">Learn</a></li>
+                            
+                            <li><a href="#">Reference</a></li>
+                            <li><a href="#">Forum</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                 
+            </div>
+            
+        </div>
+    </header>
     <div class="clear"></div>
+    <section class="headerImg">
+    <h1 class="textLogo">HTML5</h1>
+    <h2 class="tagLine">Reference guide</h2>
+    </section>
     <main>
                 <h3 id="tagName">&lt;input&gt;</h3>
             

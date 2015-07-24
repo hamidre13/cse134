@@ -23,6 +23,10 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+h4 {
+    font-size: 18px;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -267,6 +271,11 @@ main {
 }
 
 
+.pageTitle {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1300px) { 
@@ -539,4 +548,74 @@ div.tabContent.hide {
 /* Styling related to accordion list for attributes on tag info page */
 .attr {
     width: 100%;
+}
+
+
+/* Styling for modals */
+.modal {
+    width: 40%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.modalHeader {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modalTitle {
+    font-weight: 900;
+    line-height: 1.42857143;
+    color: black;
+}
+
+.modalBody {
+    padding: 15px;
+   border-bottom: 1px solid #e5e5e5; 
+}
+
+.modalFooter {
+    padding: 15px;
+}
+
+.mdlLabl {
+    padding-top: 7px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.backToLogin, .forgot, .createAcc {
+    float: right;
+    padding-right: 15px;
+    font-size: 14px;
+    color: #337ab7;
+}
+
+#signin, #sendPasswd, #newAcc {
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.exit {
+    float: right;
+    color: #337ab7;
+}
+
+.txtin {
+    border: 2px inset;
 }

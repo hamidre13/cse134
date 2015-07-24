@@ -106,8 +106,10 @@ function getHash(url) {
 	return url.substring(hashPos + 1);
 }
 
-/* Compatible Attributes tabs */
+
+/* document.ready() */
 $(function() {
+	/* Compatible Attributes tabs */
 	$(".attr").click(function() {
 		//remove all, add relevant one back
 		$(".attr").removeClass("selected");
@@ -117,4 +119,63 @@ $(function() {
 		$("#attributes").children().addClass("hide");
 		$($(this).attr("name")).removeClass("hide");
 	});
+
+	//no modals should be seen when document first loads
+	$("#loginModal").hide();
+	$("#forgotPasswd").hide();
+	$("#createAccount").hide();
+
+	/* Attach handler to login modal */
+	$("#login").click(function() {
+		$("#loginModal").slideDown();
+
+		$("body > *").not(".modal").css("opacity", 0.5);
+		//$("body *").css("background-color", "#fff");
+
+		//disable everything else on the page
+		$("body > *").not(".modal").prop('disabled', true);
+	});
+
+	$(".forgot").click(function() {
+		//get rid of login modal
+		$(".modal:visible").slideUp();
+
+		//slide in forgot password modal
+		$("#forgotPasswd").slideDown();
+	});
+
+	$(".createAcc").click(function() {
+		$(".modal:visible").slideUp();
+
+		//slide in create account modal
+		$("#createAccount").slideDown();
+	});
+
+	$(".exit").click(function() {
+		$(this).parent().parent().slideUp();
+
+		$("body *").css("opacity", 1);
+
+		//re-enable everything else on the page
+		$("body > *").not(".modal").prop('disabled', false);
+
+	});
+
+	$(".backToLogin").click(function() {
+		//get rid of login modal
+		$(".modal:visible").slideUp();
+
+		//slide in forgot password modal
+		$("#loginModal").slideDown();
+	});
+
+	//have modals slide up when you click anywhere on the document that isn't on them
+	/*$("#loginModal").click(function(){ return false; });
+	$(document).one("click", function() { $("#loginModal").slideUp(); });
+
+	$("#forgotPasswd").click(function(){ return false; });
+	$(document).one("click", function() { $("#forgotPasswd").slideUp(); });
+
+	$("#createAccount").click(function(){ return false; });
+	$(document).one("click", function() { $("#createAccount").slideUp(); });*/
 });

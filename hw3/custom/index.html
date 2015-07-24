@@ -5,8 +5,88 @@
     <title>HTML5 Reference</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
 </head>
 <body>
+
+<!-- Modals -->
+<section id="loginModal" class="modal" style="display: none;">
+    <div class="modalHeader">
+        <a class="exit" href="#">Exit</a>
+        <h4 class="modalTitle">Login</h4>
+    </div>
+    <div class="modalBody">
+        <label for="eml" class="mdlLabl">Email</label>
+        <br>
+        <input class="txtin" type="email" id="eml" name="email">
+        <br>
+        <label for="passwd" class="mdlLabl">Password</label>
+        <br>
+        <input class="txtin" type="password" id="passwd" name="password">
+        <br>
+        <label for="rememb" class="mdlLabl">Remember me: </label>
+        <input type="checkbox" id="rememb" name="rememberMe">
+    </div>
+    <div class="modalFooter">
+        <button type="button" id="signin">Sign in</button>
+        <a class="forgot" href="#forgotPasswd">Forgot password</a>
+        <a class="createAcc" href="#createAccount">Create Account</a>
+    </div>
+</section>
+
+<section id="forgotPasswd" class="modal" style="display: none;">
+    <div class="modalHeader">
+        <a class="exit" href="#">Exit</a>
+        <h4 class="modalTitle">Forgot Password</h4>
+    </div>
+    <div class="modalBody">
+        <label for="eml" class="mdlLabl">Email</label>
+        <br>
+        <input class="txtin" type="email" id="eml" name="email">
+        <br>
+        <!-- Going to display security question here -->
+        <label for="passwd" class="mdlLabl">Answer to Security Question</label>
+        <br>
+        <input class="txtin" type="text" id="passwd" name="password">
+        <br>
+    </div>
+    <div class="modalFooter">
+        <button type="button" id="sendpasswd">Send Email</button>
+        <a class="backToLogin" href="#loginModal">Back to Login</a>
+        <a class="createAcc" href="#createAccount">Create Account</a>
+    </div>
+</section>
+
+<section id="createAccount" class="modal" style="display: none;">
+    <div class="modalHeader">
+        <a class="exit" href="#">Exit</a>
+        <h4 class="modalTitle">Create Account</h4>
+    </div>
+    <div class="modalBody">
+        <label for="eml" class="mdlLabl">Email</label>
+        <br>
+        <input class="txtin" type="email" id="eml" name="email">
+        <br>
+        <label for="passwd" class="mdlLabl">Password</label>
+        <br>
+        <input class="txtin" type="password" id="passwd" name="password">
+        <br>
+        <label for="secQues" class="mdlLabl">Password</label>
+        <br>
+        <input class="txtin" type="text" id="secQues" name="securityQuestion">
+        <br>
+        <label for="secAns" class="mdlLabl">Password</label>
+        <br>
+        <input class="txtin" type="text" id="secAns" name="securityAnswer">
+    </div>
+    <div class="modalFooter">
+        <button type="button" id="newAcc">Create Account</button>
+        <a class="backToLogin" href="#loginModal">Back to Login</a>
+        <a class="forgot" href="#forgotPasswd">Forgot password</a>
+    </div>
+</section>
+
 <!-- Page tilte-->
 <header class="mainHeader">
 
@@ -15,7 +95,7 @@
         <a href="#" id="menuToggle">  Menue </a>
             <ul class="rightNav">
                 <li class ="hasInput"> <input type="text" placeholder="search"></li>
-                <li><a href=#>Login</a></li>
+                <li><a id="login" href=#>Login</a></li>
             </ul>
 
             <div class="clear"></div>
@@ -42,13 +122,10 @@
 <div class="clear"></div>
 <section class="headerImg">
     <h1 class="textLogo">HTML5</h1>
-    <h2 class="tagLine">Refrence guide</h2>
+    <h2 class="tagLine">Reference guide</h2>
 </section>
 <main>
     <section class="homectgs">
-        <p>
-            Welcome to HTML5 refrence. Select each category
-        </p>
         <section class="ulwrapper">
             <ul class="ctgs">
                 <li ><a href="#">Basic Html</a></li>
@@ -78,7 +155,7 @@
             <li><a href="#">Contact us</a></li>
         </ul>
         <form class="footerContactForm">
-            <h3>Contac us</h3>
+            <h3>Contact us</h3>
             <label for="name"> Name :</label>
             <input type="text" id="name" placeholder="What's your name?" required>
             <label for="email">Email :</label>
@@ -99,6 +176,9 @@
 </footer>
 <!-- jQuery -->    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- custom script -->
+    <script src="js/main.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $("#menuToggle").click(function(){
