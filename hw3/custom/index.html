@@ -11,7 +11,8 @@
 
     <div class="topNavWrapper">
         <div class="topNav">
-        <ul class="rightNav">
+        <a href="#" id="menuToggle">  Menue </a>
+            <ul class="rightNav">
                 <li class ="hasInput"> <input type="text" placeholder="search"></li>
                 <li><a href=#>Login</a></li>
             </ul>
@@ -33,8 +34,9 @@
             </nav>
              
         </div>
-        <div id="menuToggle"> &lt; Menue </div>
+        
     </div>
+
 </header>
 <div class="clear"></div>
 <section class="headerImg">
@@ -94,5 +96,15 @@
         <p>&copy; 2015. All rights reserved.</p>
     </section>
 </footer>
+<!-- jQuery -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#menuToggle").click(function(){
+        $(".mainNavWrapper ul").slideToggle(); 
+        //animate({width: 'toggle'});
+    });
+});
+</script>
 </body>
 </html>

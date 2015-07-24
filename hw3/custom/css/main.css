@@ -111,7 +111,7 @@ a:hover { color: #1ED495; }
 	display: inline-block;
 	float: left;
 	position: relative;
-	height: 30px;
+	height: 20px;
 	padding: 6px 12px;
 }
 .hasInput {
@@ -335,7 +335,7 @@ main {
   width: 15%;
 }
 .rightNav {
-	width: 75%;
+	width: 50%;
 }
 .mainNav ul li {
 	float: none;
@@ -345,10 +345,10 @@ main {
 }
 .mainNavWrapper ul{
 	position: absolute;
-	right: -161px;
-	display: block;
+	right: 0px;
+	display: none;
 	background-color: blue;
-	top: 50px;
+	top: 45px;
 }
 .headerImg {
 	  margin-top: -45px;
@@ -359,9 +359,11 @@ main {
 #menuToggle {
 	display: block;
 	float: right;
-	margin-top: -35px;
 	background-color: #EBEDED;
-	padding: 3px;
+	padding: 5px;
+	margin-top: 10px;
+	width: 70px;
+	height: 25px;
 }
 .ctgs li a {
   font-size: 1em;
