@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <title>Custom page for information about a tag</title>
+        <title>Tag</title>
         <meta charset="utf-8">
         <meta name="author" content="earlyBird">
         
@@ -11,13 +11,38 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     
         <script src="js/main.js"></script>
-    </head>
+
+</head>
     <body id="tagBody" onload="init()">
-        <header>
-            
-        </header>
-        <main>
-            <h1 id="tagName">&lt;input&gt;</h1>
+    <header class="mainHeader">
+    <div class="topNavWrapper">
+        <div class="topNav">
+            <img src="img/logo.jpg" alt="Brand" class="logo" width="10">
+            <nav class="mainNav">
+                <div class="mainNavWrapper">
+                    <ul>
+                        <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="#">Learn</a></li>
+                        
+                        <li><a href="#">Reference</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="rightNav">
+                <li class ="hasInput"> <input type="text" placeholder="search"></li>
+                <li><a href=#>Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    
+</header>
+    <div class="clear"></div>
+    <main>
+                <h3 id="tagName">&lt;input&gt;</h3>
             
             <section id="definition" class="section">
                 <div class="secHead">
@@ -37,25 +62,32 @@
                     Compatible Attributes
                 </div>
                 <div class="secBody">
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-                        <ul id="attrTabs" class="tabs">
-                            <li><a href="#type" class="attr">type</a></li>
-                            <li><a href="#accept" class="attr">accept</a></li>
-                            <li><a href="#autocap" class="attr">autocapitalize</a></li>
+                    <div id="accordion" role="tablist">
+                        <ul id="attrTabs">
+                            <li><a href="javascript:;" name="#type" class="attr">type</a></li>
+                            <li><a href="javascript:;" name="#accept" class="attr">accept</a></li>
+                            <li><a href="javascript:;" name="#autocap" class="attr">autocapitalize</a></li>
                         </ul>
                     </div>
 
                     <!-- The content for each tag is in its own <div> container -->
                     <!-- Adding 'hide' class to other contents to prevent them
                         from flashing -->
-                    <div class="tabContent" id="type">
-                        <p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
-                    <div class="tabContent hide" id="accept">
-                        <p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
-                    <div class="tabContent hide" id="autocap">
-                        <p class="browserInfo">Supported since version <var>x</var></p>
+                    <div id="attributes">
+                        <div class="tabContent" id="type">
+                            <p>Specifies the type of input the user can enter,
+                                    and provides the correct controls. This attribute
+                                    can be numerous values.</p>
+                        </div>
+                        <div class="tabContent hide" id="accept">
+                            <p>If input type is file, then this indicates what type of 
+                            files are accepted by the server.</p>
+                        </div>
+                        <div class="tabContent hide" id="autocap">
+                            <p>Nonstandard, used by iOS and Safari. Controls whether and 
+                            how the data entered should be capitalized as it is entered 
+                            by the user.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -65,8 +97,8 @@
                 </div>
                 <div class="secBody">
                     <!-- The actual tabs are marked up as an unordered list -->
-                    <ul id="browsTabs" class="tabs">
-                        <li><a href="#chrome" class="selected">
+                    <ul id="tabs">
+                        <li><a href="#chrome">
                             <img src="http://www.iconarchive.com/download/i59249/franksouza183/fs/Apps-google-chrome.ico" alt="google chrome"
                             height="100" width="100">
                             </a>
