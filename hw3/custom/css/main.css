@@ -91,7 +91,7 @@ a:hover { color: #1ED495; }
 	width: 100%;
 }
 .topNav {
-	width: 1100px;
+	width: 1300px;
 	min-height: 50px;
 	position: relative;
 	margin: 0 auto;	
@@ -169,7 +169,9 @@ a:hover { color: #1ED495; }
 .clear {
 	clear: both;
 }
-
+.small {
+	display: none;
+}
 main {
 	margin-top:100px;
 	padding: 0 30px;
@@ -208,14 +210,7 @@ main {
 	font-size: 1.5em;
 	line-height: 1.2em;
 }
-/*.headerImg {
-	width: 90%;
-	background-image: url("../img/headr-modified.jpg");
-	height: 20%;
-	background-attachment: fixed;
-	margin: 0 auto;
-	margin-top: 55px;
-}*/
+
 .mainFooter {
 	background-color: #282A2B;
 	margin-top: 20px;
@@ -321,7 +316,19 @@ main {
 
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
+.small {
+	display: block;
+} 
+.rightNav {
+	width: 41%;
+    float: none;
+    margin: 0 auto;
+    display: none;
+}
+.rightNav li {
+	padding: 2px;
+}
 .topNav {
 	width: 100%;
 }	
@@ -381,6 +388,9 @@ main {
 }
 .footer {
 	width: 100%
+}
+.mainNavWrapper {
+	width: inherit;
 }
 }
 

@@ -3,76 +3,48 @@
 <head>
   <meta charset="utf-8">
   <title>HTML5 Refrence</title>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-  <!-- jQuery -->    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- jQuery -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-  <script src="js/main.js"></script>
-
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <!--<link rel="stylesheet" href="https://jqueryui/resources/demos/style.css">-->
-  <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
-  </script>
+    <!-- custom script -->
+    <script src="js/main.js"></script>
   <style>
     .text-center{
+      text-align:center;
+    }
+
+    /*.tag-btn-info {
+      color:#fff;
+      background-color:#5bc0de;
+      border-color:#46b8da;
+      border-radius: 10px;
+      cursor:pointer;
+      font-size:15px;
+      width: 88%;
+      margin: 5%;
+      height:85%;
+    }
+
+    .tag-table{
+      border-style:double;
+      border-width:10px;
+      border-color:#46b8da;
+      width:96%;
+      height:30%;
+      margin:2%;
+      min-height:200px;
+    }
+    th,td, tr{
+      height:33%;
       text-align: center;
-    }
-    /*.a:link{
-      color: #0000EE;
-    }
-    .a:visited{
-      color:#551A88;
-    }
-
-    .tabs {
-      position: relative;
-      width: 94%;
-      margin: 3%; 
-      height: 90%;
-      clear: both;
-      /*margin: 25px 0;
-    }
-    .tab {
-      float: left;
-    }
-    .tab label {
-      background: #eee; 
-      padding: 10px; 
-      border: 1px solid #ccc; 
-      margin-left: -1px; 
-      position: relative;
-      left: 1px; 
-    }
-    .tab [type=radio] {
-      display: none;   
-    }
-    .content {
-      position: absolute;
-      top: 29px;
-      left: 0;
-      background: white;
-      right: 0;
-      bottom: 0;
-      padding: 20px;
-      border: 1px solid #ccc; 
-    }
-    [type=radio]:checked ~ label {
-      background: white;
-      border-bottom: 1px solid white;
-      z-index: 2;
-    }
-    [type=radio]:checked ~ label ~ .content {
-      z-index: 1;
     }*/
-
   </style>
 </head>
 <body>
+<<<<<<< HEAD
+<!-- Modals -->
 <section id="loginModal" class="modal" style="display: none;">
     <div class="modalHeader">
         <a class="exit" href="#">Exit</a>
@@ -148,7 +120,6 @@
         <a class="forgot" href="#forgotPasswd">Forgot password</a>
     </div>
 </section>
-
 <!-- Page title-->
 <header class="mainHeader">
         <div class="topNavWrapper">
@@ -184,73 +155,95 @@
     <h1 class="textLogo">HTML5</h1>
     <h2 class="tagLine">Reference guide</h2>
     </section>
-
 <main>
-  <h3 class="pageTitle">All tags</h3>
-    <section>
-    <div id="tabs">
-      <ul>
-        <li><a href="#alphabetical">Alphabetical</a></li>
-        <li><a href="#category">Category</a></li>
+  <h3 class="pageTitle">Forms and Input</h3>
+  <div>
+<main>
+  <section class="homectgs">
+    <section class="ulwrapper">
+      <ul class="ctgs">
+        <li ><a href="#">&lt;form&gt;</a></li>
+        <li ><a href="#">&lt;input&gt;</a></li>
+        <li ><a href="#">&lt;textarea&gt;</a></li>
+        <li ><a href="#">&lt;button&gt;</a></li>
+        <li ><a href="#">&lt;select&gt;</a></li>
+        <li ><a href="#">&lt;optgroup&gt;</a></li>
+        <li ><a href="#">&lt;option&gt;</a></li>
+        <li ><a href="#">&lt;label&gt;</a></li>
+        <li ><a href="#">&lt;fieldset&gt;</a></li>
+        <li ><a href="#">&lt;legend&gt;</a></li>
+        <li ><a href="#">&lt;datalist&gt;</a></li>
+        <li ><a href="#">&lt;output&gt;</a></li>
       </ul>
-      <div id="alphabetical">
-          <h4>A</h4>
-          <ul>
-            <li><a href="#"> &lt;a&gt;</a></li>
-            <li><a href="#"> &lt;abbr&gt;</a></li>
-            <li><a href="#"> &lt;address&gt;</a></li>
-            <li><a href="#"> &lt;applet&gt;</a></li>
-            <li><a href="#"> &lt;area&gt;</a></li>
-            <li><a href="#"> &lt;article&gt;</a></li>
-            <li><a href="#"> &lt;aside&gt;</a></li>
-            <li><a href="#"> &lt;audio&gt;</a></li>
-          </ul>
-          <hr>
+      <div class="clear"></div>
+    </section>
+  </section>
 
-          <h4>B</h4>
-          <ul>
-            <li><a href="#"> &lt;b&gt;</a></li>
-            <li><a href="#"> &lt;base&gt;</a></li>
-            <li><a href="#"> &lt;bdi&gt;</a></li>
-            <li><a href="#"> &lt;bdo&gt;</a></li>
-            <li><a href="#"> &lt;blockquote&gt;</a></li>
-            <li><a href="#"> &lt;body&gt;</a></li>
-            <li><a href="#"> &lt;br&gt;</a></li>
-            <li><a href="#"> &lt;button&gt;</a></li>
-          </ul>
-      </div>
-      <div id="category">
-        <h4>Basic Elements</h4>
-        <ul>
-          <li><a href="#"> &lt;html&gt;</a></li>
-        </ul>
-        <hr>
-        <h4>Content Sectioning</h4>
-        <ul>
-          <li><a href="#"> &lt;address&gt;</a></li>
-          <li><a href="#"> &lt;article&gt;</a></li>
-          <li><a href="#"> &lt;body&gt;</a></li>
-          <li><a href="#"> &lt;footer&gt;</a></li>
-          <li><a href="#"> &lt;header&gt;</a></li>
-          <li><a href="#"> &lt;h1&gt;-&lt;h6&gt;</a></li>
-          <li><a href="#"> &lt;hgroup&gt;</a></li>
-          <li><a href="#"> &lt;nav&gt;</a></li>
-          <li><a href="#"> &lt;section&gt;</a></li>
-        </ul>
-      </div>
-    </div>
-</section>
+  <!--<div>
+>>>>>>> 1bf7b002182084a4a67e21f69335ec8499bb8f31
+    <table class="tag-table">
+      <tr>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+        <td>
+          <button href="#" class="tag-btn-info">Tag</button>
+        </td>
+      </tr>
+    </table>
+  </div>-->
 </main>
-
 <footer class="mainFooter">
-  <section class ="copyRight"> 
+  <section class = "copyRight"> 
     <ul >
-        <li><a href="#">Terms of use</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Cookies policy</a></li>
+      <li><a href="#">Terms of use</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Cookies policy</a></li>
     </ul>
     <p>&copy; 2015. All rights reserved.</p>
   </section>
+    
 </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("#menuToggle").click(function(){
+        $(".mainNavWrapper ul").slideToggle(); 
+        //animate({width: 'toggle'});
+    });
+  });
+  </script>
 </body>
 </html>

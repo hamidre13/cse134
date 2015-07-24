@@ -126,7 +126,7 @@ $(function() {
 	$("#createAccount").hide();
 
 	/* Attach handler to login modal */
-	$("#login").click(function() {
+	$(".login").click(function() {
 		$("#loginModal").slideDown();
 
 		$("body > *").not(".modal").css("opacity", 0.5);
