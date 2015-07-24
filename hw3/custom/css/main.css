@@ -76,7 +76,7 @@ h1 { font-size: 2em; font-weight: normal; }
 h2 { font-size: 1.7em; margin: 0em 0em 1em 0em; }
 h3 { font-size: 1.5em; margin: 0em 0em 1em 0em; }
 a {  text-decoration: none;}
-a:hover { color: #1ED495; }
+a:hover { color: #241ED4; }
 .mainNav {
 	margin-top: -49px;
 }
@@ -130,22 +130,24 @@ a:hover { color: #1ED495; }
 	color: white;
 }
 .textLogo{
-  font-size: 6em;
-  font-family: monospace;
-  margin-top: 30px;
-  display: block;
-  height: 50px;
-  background-color: white;
-  width: 285px;
-  padding: 1%;
-  padding-top: 6%;
-  text-align: center;
+    font-size: 6em;
+    font-family: monospace;
+    /* margin-top: 30px; */
+    display: block;
+    /* height: 50px; */
+    /* background-color: white; */
+    width: 285px;
+    /* padding: 1%; */
+    padding-top: 6%;
+    /* text-align: center; */
 }
 .tagLine {
-	background-color: white;
-	width: 250px;
-	text-align: center;
-	padding: 13px;
+	    background-color: white;
+    width: 250px;
+    text-align: left;
+    padding-top: 27px;
+    margin: 0;
+        margin-bottom: 10px;
 }
 .mainNavWrapper {
 	width: 100%;
@@ -159,7 +161,7 @@ a:hover { color: #1ED495; }
 .mainNav ul li a {
 	color: #fff;
 	display: block;
-	padding: 15px 35px;
+	padding: 15px;
 }
 .mainNav ul li a:hover {
  	border-top: solid 7px white;
@@ -176,9 +178,18 @@ a:hover { color: #1ED495; }
     float: right;
 }
 main {
-	margin-top:100px;
+	margin-top:20px;
 	padding: 0 30px;
 }
+.headerImg {
+	width: 90%;
+	background-image: url("../img/headr-modified.jpg");
+	height: 400px;
+	background-attachment: fixed;
+	margin: 0 auto;
+	margin-top: 55px;
+}
+
 .logo {
 	  width: 8%;
 	  float: left;
