@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>modals</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<!-- jQuery -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- custom script -->
+	<script src="../js/main.js"></script>
+</head>
+<body>
+	<!-- Use jQuery to attach listener to login modal -->
+	<button type="button" id="login">Toggle Modal</button>
+
+	<section id="loginModal" class="modal">
+		<div class="modalHeader">
+			<a class="exit" href="#">Exit</a>
+			<h4 class="modalTitle">Login</h4>
+		</div>
+		<div class="modalBody">
+			<label for="eml" class="mdlLabl">Email</label>
+			<br>
+			<input class="txtin" type="email" id="eml" name="email">
+			<br>
+			<label for="passwd" class="mdlLabl">Password</label>
+			<br>
+			<input class="txtin" type="password" id="passwd" name="password">
+			<br>
+			<label for="rememb" class="mdlLabl">Remember me: </label>
+			<input type="checkbox" id="rememb" name="rememberMe">
+		</div>
+		<div class="modalFooter">
+			<button type="button" id="signin">Sign in</button>
+			<a class="forgot" href="#forgotPasswd">Forgot password</a>
+			<a class="createAcc" href="#createAccount">Create Account</a>
+		</div>
+	</section>
+
+	<section id="forgotPasswd" class="modal">
+		<div class="modalHeader">
+			<a class="exit" href="#">Exit</a>
+			<h4 class="modalTitle">Forgot Password</h4>
+		</div>
+		<div class="modalBody">
+			<label for="eml" class="mdlLabl">Email</label>
+			<br>
+			<input class="txtin" type="email" id="eml" name="email">
+			<br>
+			<!-- Going to display security question here -->
+			<label for="passwd" class="mdlLabl">Answer to Security Question</label>
+			<br>
+			<input class="txtin" type="text" id="passwd" name="password">
+			<br>
+		</div>
+		<div class="modalFooter">
+			<button type="button" id="sendpasswd">Send Email</button>
+			<a class="backToLogin" href="#loginModal">Back to Login</a>
+			<a class="createAcc" href="#createAccount">Create Account</a>
+		</div>
+	</section>
+
+	<section id="createAccount" class="modal">
+		<div class="modalHeader">
+			<a class="exit" href="#">Exit</a>
+			<h4 class="modalTitle">Create Account</h4>
+		</div>
+		<div class="modalBody">
+			<label for="eml" class="mdlLabl">Email</label>
+			<br>
+			<input class="txtin" type="email" id="eml" name="email">
+			<br>
+			<label for="passwd" class="mdlLabl">Password</label>
+			<br>
+			<input class="txtin" type="password" id="passwd" name="password">
+			<br>
+			<label for="secQues" class="mdlLabl">Password</label>
+			<br>
+			<input class="txtin" type="text" id="secQues" name="securityQuestion">
+			<br>
+			<label for="secAns" class="mdlLabl">Password</label>
+			<br>
+			<input class="txtin" type="text" id="secAns" name="securityAnswer">
+		</div>
+		<div class="modalFooter">
+			<button type="button" id="newAcc">Create Account</button>
+			<a class="backToLogin" href="#loginModal">Back to Login</a>
+			<a class="forgot" href="#forgotPasswd">Forgot password</a>
+		</div>
+	</section>
+
+	<input type="text"></input>
+
+</body>
+</html>
