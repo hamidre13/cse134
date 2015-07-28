@@ -85,8 +85,8 @@ window.onload = function() {
 	});
 }
 function delete_element(element) {
-	var parent = document.getElementById(element.dataset.tagname)
 	databaseRef.child("tags").child(element.dataset.tagname).remove();
+	document.getElementById(element.dataset.tagname).parentNode.removeChild(document.getElementById(element.dataset.tagname));
 }
 </script>
 </body>
