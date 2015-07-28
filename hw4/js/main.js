@@ -2,6 +2,9 @@
 var tabLinks = new Array();
 var contentDivs = new Array();
 
+//global variable to hold data from Firebase
+var db;
+
 function init() {
 	//Get the links and content from the page, put them in their arrays
 
@@ -52,9 +55,6 @@ function init() {
 
 		i++;
 	}
-	
-	/* Now initialize the accordion tabs */
-	
 }
 
 /* This is called whenever a certain tab is clicked.
@@ -109,6 +109,22 @@ function getHash(url) {
 
 /* document.ready() */
 $(function() {
+	//add handlers to all links that lead to tag info pages
+	var tagLinks = document.getElementsByClassName('tagLink');
+
+	//holds name of tag, angled braces stripped off
+	var tagName;
+
+	//add href attribute to each tag link
+	for (var i = 0; i < tagLinks.length; i++) {
+		tagName = tagLinks[i].innerHTML;
+
+		//slice off first and last characters
+		tagName = tagName.substring(5,tagName.length - 4);
+
+		tagLinks[i].href = "tag-page.html?tag=" + tagName; 
+	}
+
 	/* Compatible Attributes tabs */
 	$(".attr").click(function() {
 		//remove all, add relevant one back
@@ -169,4 +185,37 @@ $(function() {
 		//slide in forgot password modal
 		$("#loginModal").slideDown();
 	});
+
+
+	//------ Firebase Code - read out entire database --------
+	//only execute if we are on a tag page
+	if ($("#purl").length) {
+		console.log("must be on tag page");
+		var databaseRef = new Firebase("https://cse134.firebaseio.com/");
+
+		//first param = event
+		//second param = on success
+		//third param = on permissions denial
+		databaseRef.on("value", function(snapshot) {
+			db = snapshot.val();
+			console.log(snapshot.val());
+		}, function(err) {
+			console.log("Can't read due to error " + err);
+		});
+
+		
+		console.log(db);
+
+		//now load data from firebase
+
+		//first, get tag name from query string
+
+		console.log("name: " + db['tags']);
+		tagTitle = $.url().param('tag');
+
+
+	
+	}
+
+	
 });

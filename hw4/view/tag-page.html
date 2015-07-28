@@ -10,7 +10,13 @@
         <!-- jQuery -->    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+
         <script src="../js/main.js"></script>
+
+        <!-- Custom library for parsing query strings easily -->
+        <script id="purl" src="../js/purl.js"></script>
 
 </head>
     <body id="tagBody" onload="init()">
@@ -138,7 +144,7 @@
                     <p>Definition</p>
                 </div>
                 <div class="secBody">
-                    <p>The &lt;input&gt; tag defines an input field where
+                    <p id="def">The &lt;input&gt; tag defines an input field where
                 the user can enter data. This element is used inside the 
                 &lt;form&gt; tag to provide interactive controls for user 
                 data entry.</p>
