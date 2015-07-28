@@ -56,7 +56,7 @@ window.onload = function() {
 		for(var el in data) {
 			var tabelRow = document.createElement("tr");
 			var tdElemnt = document.createElement("td");
-			tdElemnt.innerHTML = data[el].tagName;
+			tdElemnt.innerHTML = "<a href='edit.html?tag="+data[el].tagName+"'>"+data[el].tagName+"</a>";
 			tabelRow.appendChild(tdElemnt);
 			var tdElemnt1 = document.createElement("td");
 			tdElemnt1.innerHTML = data[el].tagTitle;

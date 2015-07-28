@@ -1,6 +1,7 @@
 <!doctype htmnl>
 <html lang="en">
 <head>
+	<title>Edit Tag</title>
 	<meta charset="utf-8">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -70,6 +71,7 @@
 <button onclick="new_related()"> New tag</button>
 <button onclick="set_data()"> Submit</button>
 </main>
+
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
@@ -92,7 +94,6 @@ for (var i=0;i<relatedCounter+1;i++) {
 }
 databaseRef.child("tags").child(document.getElementById("tagName").value).set({
 	 tagName       : document.getElementById("tagName").value,
-	 tagTitle      : document.getElementById("tagTitle").value,
 	 tagDefenition : document.getElementById("editor1").value,
 	 chrome        : document.getElementById("chromeAttr").value,
 	 safari        : document.getElementById("safariAttr").value,
@@ -100,7 +101,6 @@ databaseRef.child("tags").child(document.getElementById("tagName").value).set({
 	 fireFox       : document.getElementById("fireFoxAttr").value,
 	 opera         : document.getElementById("operaAttr").value,
 	 example       : document.getElementById("exampleTxt").value,
-	 syntax        : document.getElementById("syntax").value,
 	 attrs         : attrs,
 	 relatedTags   : tags
 },function(error) {
@@ -139,19 +139,6 @@ function new_related() {
 	document.getElementById("relatedTagsSection").appendChild(breakNode);
 	document.getElementById("relatedTagsSection").appendChild(clonedRelatedLabel);
 	document.getElementById("relatedTagsSection").appendChild(clonedRelatedTag);
-}
-
-window.onload = function () {
-	if (window.location.search != "") {
-		var url = window.location.search.substring(1);
-		var query = url.split('=');
-		for (var i = 0; i < query.length; i++) {
-			if (query[i] == "tag" && query[i+1] != "" ) {
-				databaseRef.child("tags")
-				break;
-			};
-		};
-	};
 }
 </script>
 </body>
