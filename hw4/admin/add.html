@@ -1,174 +1,184 @@
 <!doctype htmnl>
 <html lang="en">
-<head>
-	<title>ADD TAG</title>
-	<meta charset="utf-8">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-       
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>
-
-<body>
-
-<header>
-<nav >
-	<ul>
-<li><a href="index.html">View all tags</a></li>
-</ul>
-</nav>
-</header>
-<main class="container-fluid">
-<form class="form-horizontal" role="form">
-<div class="form-group">
-<label class="control-label col-sm-2" for="tagName">Tag Name:</label>
-<div class="col-sm-4">
-<input type="text" id="tagName" class="form-control" placeholder="Enter Tag"><br>
-</div>
-</div>
-<div class="form-group">
-<label class="col-sm-2 control-label" for="formGroupInputLarge">Defeniton:</label>
-<textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag defenition goes here." style="width: 376px;">
-</textarea>
-</div>
-<div class="form-group">
-<label class="col-sm-2 control-label" for="formGroupInputLarge">Add Attribute:</label>
-<div class="col-sm-2">
-<input type="text" id="attrName0" class="form-control" placeholder="Attr Name">
-<br>
-<input type="text" id="attrDefenition0" class="form-control" placeholder="Attr Defenition">
-<br>
-<button type="button" class="btn btn-default" onclick="new_attr()"> Add new attr</button>
-</div>
-</div>
-
-<section class="control-label">
-	<h3>Browser compatibality</h3>
-	<label> Google chrome</label>
-	<textarea id="chromeAttr"> 
-	</textarea>
-	<label> Fire Fox</label>
-	<textarea id="fireFoxAttr"> 
-	</textarea>
-	<label> Safari</label>
-	<textarea id="safariAttr"> 
-	</textarea>
-	<label> Ie</label>
-	<textarea id="ieAttr"> 
-	</textarea>
-	<label> Opera</label>
-	<textarea id="operaAttr"> 
-	</textarea>
-</section>
-<section>
-	<label> Example</label>
-	<textarea id="exampleTxt" placeholder="Write tag example here.">
-	</textarea>
-</section>
-<section id="relatedTagsSection">
-	<label id="relatedLabel0">Related tag0 : </label>
-	<input type="text" id="relatedTag0">
-</section>
-<button onclick="new_related()"> New tag</button>
-<button onclick="set_data()"> Submit</button>
-</form>
-</main>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
-<script type="text/javascript">
-var databaseRef = new Firebase("https://cse134.firebaseio.com/");
-function set_data() {
-var attrs = {};
-for (var i = 0; i < attrCounter+1; i++) {
-	if (document.getElementById("attrName"+i).value != "") {
-		attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value
-	};
-};
-var tags = [];
-for (var i=0;i<relatedCounter+1;i++) {
-	if(document.getElementById("relatedTag"+i).value != 0) {
-		tags.push(document.getElementById("relatedTag"+i).value);
-	}
-}
-databaseRef.child("tags").child(document.getElementById("tagName").value).set({
-	 tagName       : document.getElementById("tagName").value,
-	 tagDefenition : document.getElementById("tagDefenition").value,
-	 chrome        : document.getElementById("chromeAttr").value,
-	 safari        : document.getElementById("safariAttr").value,
-	 ie            : document.getElementById("ieAttr").value,
-	 fireFox       : document.getElementById("fireFoxAttr").value,
-	 opera         : document.getElementById("operaAttr").value,
-	 example       : document.getElementById("exampleTxt").value,
-	 attrs         : attrs,
-	 relatedTags   : tags
-},function(error) {
-	if (error) {
-    alert("Data could not be saved." + error);
-  } else {
-    alert("Data saved successfully.");
-  }
-});
-
-}
-var attrCounter = 0;
-function new_attr () {
-	var clonedAttrName       = document.getElementById("attrName0").cloneNode(false);
-	var clonedAttrDefenition = document.getElementById("attrDefenition0").cloneNode(false);
-	attrCounter ++;
-	clonedAttrName.id       = "attrName"+attrCounter;
-	clonedAttrDefenition.id = "attrDefenition"+attrCounter;
-	clonedAttrName.value = "";
-	clonedAttrDefenition.value = "";
-	var breakNode = document.createElement("br");
-	document.getElementById("attrs").appendChild(breakNode);
-	document.getElementById("attrs").appendChild(clonedAttrName);
-	document.getElementById("attrs").appendChild(clonedAttrDefenition);
-}
-var relatedCounter = 0;
-function new_related() {
-	var clonedRelatedLabel = document.getElementById("relatedLabel0").cloneNode(true);
-	var clonedRelatedTag   = document.getElementById("relatedTag0").cloneNode(true);
-	relatedCounter ++;
-	clonedRelatedLabel.innerHTML = "Related tag" +relatedCounter+" : ";
-	clonedRelatedLabel.id = "relatedLabel"+relatedCounter;
-	clonedRelatedTag.id   = "relatedTag"+relatedCounter;
-	clonedRelatedTag.value = "";
-	var breakNode = document.createElement("br");
-	document.getElementById("relatedTagsSection").appendChild(breakNode);
-	document.getElementById("relatedTagsSection").appendChild(clonedRelatedLabel);
-	document.getElementById("relatedTagsSection").appendChild(clonedRelatedTag);
-}
-
-
-window.onload = function () {
-	if (window.location.search != "") {
-		var url = window.location.search.substring(1);
-		var query = url.split('=');
-		for (var i = 0; i < query.length; i++) {
-			if (query[i] == "tag" && query[i+1] != "" ) {
-				databaseRef.child("tags").child(query[i+1]).once ("value",function(snap){
-					var data = snap.val();
-					document.getElementById("tagName").value       = data["tagName"];
-					document.getElementById("tagDefenition").value = data["tagDefenition"];
-					document.getElementById("chromeAttr").value  = data["chrome"];
-					document.getElementById("safariAttr").value  = data["safari"];
-					document.getElementById("ieAttr").value      = data["ie"];
-					document.getElementById("fireFoxAttr").value = data["fireFox"];
-					document.getElementById("operaAttr").value   = data["opera"];
-					document.getElementById("exampleTxt").value  = data["example"];
-				});
-				break;
+	<head>
+		<title>ADD TAG</title>
+		<meta charset="utf-8">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+	<body>
+		<header>
+			<nav >
+				<ul>
+					<li><a href="index.html">View all tags</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container-fluid">
+		<form class="form-horizontal" role="form">
+			<h3>Add Tag</h3>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="tagName">Tag Name:</label>
+				<div class="col-sm-4">
+					<input type="text" id="tagName" class="form-control" placeholder="Enter Tag"><br>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Defeniton:</label>
+				<textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag defenition goes here." style="width: 376px;">
+				</textarea>
+			</div>
+			<hr>
+			<div class="form-group" id="attrs">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Add Attribute:</label>
+				<div class="col-sm-2">
+					<input type="text" id="attrName0" class="form-control" placeholder="Attr Name">
+					<br>
+					<input type="text" id="attrDefenition0" class="form-control" placeholder="Attr Defenition">
+					<br>
+					<button type="button" class="btn btn-default" onclick="new_attr()"> Add new attr</button>
+				</div>
+			</div>
+		</form>
+		<form class="form-horizontal" role="form">
+			<hr>
+			<h3>Browser Compatibality</h3>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Chrome:</label>
+				<textarea class="form-control" id="chromeAttr" rows="4" cols="20" placeholder="Chrome Compatibality" style="width: 376px;">
+				</textarea>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Fire Fox:</label>
+				<textarea class="form-control" id="fireFoxAttr" rows="4" cols="20" placeholder="Fire Fox Compatibality" style="width: 376px;">
+				</textarea>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Safari:</label>
+				<textarea class="form-control" id="safariAttr" rows="4" cols="20" placeholder="Safari Compatibality" style="width: 376px;">
+				</textarea>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">IE:</label>
+				<textarea class="form-control" id="ieAttr" rows="4" cols="20" placeholder="IE Compatibality" style="width: 376px;">
+				</textarea>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Opera:</label>
+				<textarea class="form-control" id="operaAttr" rows="4" cols="20" placeholder="Opera Compatibality" style="width: 376px;">
+				</textarea>
+			</div>
+			
+			<hr>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroupInputLarge">Example:</label>
+				<textarea class="form-control" id="exampleTxt" rows="10" cols="50" placeholder="Write tag example here." style="width: 376px;">
+				</textarea>
+			</div>
+			<hr>
+			<div class="form-group" id="relatedTagsSection">
+				<label class="control-label col-sm-2" id="relatedLabel0">Related Tag:</label>
+				<div class="col-sm-4">
+					<input type="text" id="relatedTag0" class="form-control" placeholder="Enter Related Tag"><br>
+				</div>
+			</div>
+		</form>
+		<button type="button" class="btn btn-default" onclick="new_related()"> New tag</button><br><br>
+		<button type="button" class="btn btn-info" onclick="set_data()">Save Tag</button>
+		</main>
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+		<script type="text/javascript">
+		var databaseRef = new Firebase("https://cse134.firebaseio.com/");
+		function set_data() {
+		var attrs = {};
+		for (var i = 0; i < attrCounter+1; i++) {
+			if (document.getElementById("attrName"+i).value != "") {
+				attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value
 			};
 		};
-	};
-}
-
-</script>
-</body>
+		var tags = [];
+		for (var i=0;i<relatedCounter+1;i++) {
+			if(document.getElementById("relatedTag"+i).value != 0) {
+				tags.push(document.getElementById("relatedTag"+i).value);
+			}
+		}
+		databaseRef.child("tags").child(document.getElementById("tagName").value).set({
+			tagName       : document.getElementById("tagName").value,
+			tagDefenition : document.getElementById("tagDefenition").value,
+			chrome        : document.getElementById("chromeAttr").value,
+			safari        : document.getElementById("safariAttr").value,
+			ie            : document.getElementById("ieAttr").value,
+			fireFox       : document.getElementById("fireFoxAttr").value,
+			opera         : document.getElementById("operaAttr").value,
+			example       : document.getElementById("exampleTxt").value,
+			attrs         : attrs,
+			relatedTags   : tags
+		},function(error) {
+			if (error) {
+		alert("Data could not be saved." + error);
+		} else {
+		alert("Data saved successfully.");
+		}
+		});
+		}
+		var attrCounter = 0;
+		function new_attr () {
+			var clonedAttrName       = document.getElementById("attrName0").cloneNode(false);
+			var clonedAttrDefenition = document.getElementById("attrDefenition0").cloneNode(false);
+			attrCounter ++;
+			clonedAttrName.id       = "attrName"+attrCounter;
+			clonedAttrDefenition.id = "attrDefenition"+attrCounter;
+			clonedAttrName.value = "";
+			clonedAttrDefenition.value = "";
+			var breakNode = document.createElement("br");
+			document.getElementById("attrs").appendChild(breakNode);
+			document.getElementById("attrs").appendChild(clonedAttrName);
+			document.getElementById("attrs").appendChild(clonedAttrDefenition);
+		}
+		var relatedCounter = 0;
+		function new_related() {
+			var clonedRelatedLabel = document.getElementById("relatedLabel0").cloneNode(true);
+			var clonedRelatedTag   = document.getElementById("relatedTag0").cloneNode(true);
+			relatedCounter ++;
+			clonedRelatedLabel.innerHTML = "Related tag" +relatedCounter+" : ";
+			clonedRelatedLabel.id = "relatedLabel"+relatedCounter;
+			clonedRelatedTag.id   = "relatedTag"+relatedCounter;
+			clonedRelatedTag.value = "";
+			var breakNode = document.createElement("br");
+			document.getElementById("relatedTagsSection").appendChild(breakNode);
+			document.getElementById("relatedTagsSection").appendChild(clonedRelatedLabel);
+			document.getElementById("relatedTagsSection").appendChild(clonedRelatedTag);
+		}
+		window.onload = function () {
+			if (window.location.search != "") {
+				var url = window.location.search.substring(1);
+				var query = url.split('=');
+				for (var i = 0; i < query.length; i++) {
+					if (query[i] == "tag" && query[i+1] != "" ) {
+						databaseRef.child("tags").child(query[i+1]).once ("value",function(snap){
+							var data = snap.val();
+							document.getElementById("tagName").value       = data["tagName"];
+							document.getElementById("tagDefenition").value = data["tagDefenition"];
+							document.getElementById("chromeAttr").value  = data["chrome"];
+							document.getElementById("safariAttr").value  = data["safari"];
+							document.getElementById("ieAttr").value      = data["ie"];
+							document.getElementById("fireFoxAttr").value = data["fireFox"];
+							document.getElementById("operaAttr").value   = data["opera"];
+							document.getElementById("exampleTxt").value  = data["example"];
+						});
+						break;
+					};
+				};
+			};
+		}
+		</script>
+	</body>
 </html>
-
