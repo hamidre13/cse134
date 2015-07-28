@@ -117,12 +117,9 @@ $(function() {
 
 	//add href attribute to each tag link
 	for (var i = 0; i < tagLinks.length; i++) {
-		tagName = tagLinks[i].innerHTML;
+		tagKey = tagLinks[i].getAttribute("data-name");
 
-		//slice off first and last characters
-		tagName = tagName.substring(5,tagName.length - 4);
-
-		tagLinks[i].href = "tag-page.html?tag=" + tagName; 
+		tagLinks[i].href = "tag-page.html?tag=" + tagKey; 
 	}
 
 	/* Compatible Attributes tabs */
@@ -136,6 +133,7 @@ $(function() {
 		$($(this).attr("name")).removeClass("hide");
 	});
 
+	//for all pages
 	//no modals should be seen when document first loads
 	$("#loginModal").hide();
 	$("#forgotPasswd").hide();
@@ -186,36 +184,31 @@ $(function() {
 		$("#loginModal").slideDown();
 	});
 
+	/* ------ Firebase Code - read out entire database --------
+	   All view files have a script tag with firebase cdn ---*/
+	var databaseRef = new Firebase("https://cse134.firebaseio.com/");
 
-	//------ Firebase Code - read out entire database --------
-	//only execute if we are on a tag page
+	//first param = event
+	//second param = on success
+	//third param = on permissions denial
+	databaseRef.on("value", function(snapshot) {
+		console.log("loading in db no matter where you entered site");
+		db = snapshot.val();
+		console.log(db);
+	}, function(err) {
+		console.log("Can't read due to error " + err);
+	});
+
+
+	//only execute if we are on a tag page, and if db exists
 	if ($("#purl").length) {
 		console.log("must be on tag page");
-		var databaseRef = new Firebase("https://cse134.firebaseio.com/");
-
-		//first param = event
-		//second param = on success
-		//third param = on permissions denial
-		databaseRef.on("value", function(snapshot) {
-			db = snapshot.val();
-			console.log(snapshot.val());
-		}, function(err) {
-			console.log("Can't read due to error " + err);
-		});
-
-		
-		console.log(db);
 
 		//now load data from firebase
 
 		//first, get tag name from query string
-
-		console.log("name: " + db['tags']);
 		tagTitle = $.url().param('tag');
-
-
-	
 	}
 
-	
+	console.log(db);
 });
