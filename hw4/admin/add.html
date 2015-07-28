@@ -1,6 +1,7 @@
 <!doctype htmnl>
 <html lang="en">
 <head>
+	<title>ADD TAG</title>
 	<meta charset="utf-8">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -20,27 +21,30 @@
 </nav>
 </header>
 <main class="container-fluid">
-<div class="row">
-<label> Tag</label>
-<input type="text" id="tagName"><br>	
+<form class="form-horizontal" role="form">
+<div class="form-group">
+<label class="control-label col-sm-2" for="email">Tag Name:</label>
+<div class="col-sm-4">
+<input type="text" id="tagTitle" class="form-control" placeholder="Enter Tag"><br>
 </div>
-<div class="row">
-<label for="tagTitle" class="col-md-1">Tag Title : </label>
-<input type="text" id="tagTitle" class="col-md-4"><br>
 </div>
-<section class="row">
-<label for="tagDefenition"> Defeniton</label>
-<textarea name="editor1" id="editor1" rows="10" cols="50" placeholder="Tag defenition goes here.">
+<div class="form-group">
+<label class="col-sm-2 control-label" for="formGroupInputLarge">Defeniton:</label>
+<textarea class="form-control" name="editor1" id="editor1" rows="10" cols="50" placeholder="Tag defenition goes here." style="width: 376px;">
 </textarea>
-<label>Syntax</label>
-<textarea id="syntax" placeholder="Write the generic tag syntax here"></textarea>
-</section>
-<section class="row" id="attrs">
-		<input type="text" id="attrName0" placeholder = "Attr name ">
-		<input type="text" id="attrDefenition0" placeholder = "Attr defenition">
-</section>
-<button onclick="new_attr()"> Add new attr</button>
-<section class="row">
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" for="formGroupInputLarge">Add Attribute:</label>
+<div class="col-sm-2">
+<input type="text" id="tagTitle" class="form-control" placeholder="Attr Name">
+<br>
+<input type="text" id="tagTitle" class="form-control" placeholder="Attr Defenition">
+<br>
+<button type="sybmit" class="btn btn-default" onclick="new_attr()"> Add new attr</button>
+</div>
+</div>
+
+<section class="control-label">
 	<h3>Browser compatibality</h3>
 	<label> Google chrome</label>
 	<textarea id="chromeAttr"> 
@@ -69,9 +73,8 @@
 </section>
 <button onclick="new_related()"> New tag</button>
 <button onclick="set_data()"> Submit</button>
+</form>
 </main>
-<!-- Ck editor -->
-<script src="//cdn.ckeditor.com/4.5.1/standard/ckeditor.js"></script>
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
@@ -94,7 +97,6 @@ for (var i=0;i<relatedCounter+1;i++) {
 }
 databaseRef.child("tags").child(document.getElementById("tagName").value).set({
 	 tagName       : document.getElementById("tagName").value,
-	 tagTitle      : document.getElementById("tagTitle").value,
 	 tagDefenition : document.getElementById("editor1").value,
 	 chrome        : document.getElementById("chromeAttr").value,
 	 safari        : document.getElementById("safariAttr").value,
@@ -102,7 +104,6 @@ databaseRef.child("tags").child(document.getElementById("tagName").value).set({
 	 fireFox       : document.getElementById("fireFoxAttr").value,
 	 opera         : document.getElementById("operaAttr").value,
 	 example       : document.getElementById("exampleTxt").value,
-	 syntax        : document.getElementById("syntax").value,
 	 attrs         : attrs,
 	 relatedTags   : tags
 },function(error) {
@@ -142,12 +143,7 @@ function new_related() {
 	document.getElementById("relatedTagsSection").appendChild(clonedRelatedLabel);
 	document.getElementById("relatedTagsSection").appendChild(clonedRelatedTag);
 }
-	CKEDITOR.replace( 'editor1');
-	CKEDITOR.replace( 'chromeAttr');
-	CKEDITOR.replace( 'fireFoxAttr');
-	CKEDITOR.replace( 'safariAttr');
-	CKEDITOR.replace( 'ieAttr');
-	CKEDITOR.replace( 'operaAttr');
+
 </script>
 </body>
 </html>
