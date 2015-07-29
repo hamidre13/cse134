@@ -9,6 +9,7 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        </script>
 	</head>
 	<body>
 		<header>
@@ -49,21 +50,20 @@
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="formGroupInputLarge">Defeniton:</label>
-				<textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag defenition goes here." style="width: 376px;">
+				<textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag definition goes here." style="width: 376px;">
 				</textarea>
 			</div>
 			<hr>
-			<div class="form-group" >
+			<div class="form-group" id="attrs">
 				<label class="col-sm-2 control-label" for="formGroupInputLarge">Add Attribute:</label>
-				<div class="col-sm-2" id="attrs">
+				<div class="col-sm-2">
 					<input type="text" id="attrName0" class="form-control" placeholder="Attr Name">
-					
+					<br>
 					<input type="text" id="attrDefenition0" class="form-control" placeholder="Attr Defenition">
 					<br>
-					
+					<button type="button" class="btn btn-default" onclick="new_attr()"> Add new attr</button>
 				</div>
 			</div>
-			<button type="button" class="btn btn-default" onclick="new_attr()"> Add new attr</button>
 		</form>
 		<form class="form-horizontal" role="form">
 			<hr>
@@ -101,10 +101,9 @@
 				</textarea>
 			</div>
 			<hr>
-			<div class="form-group" >
-				
-				<div class="col-sm-4" id="relatedTagsSection">
-				<label class="control-label" id="relatedLabel0">Related Tag:</label>
+			<div class="form-group" id="relatedTagsSection">
+				<label class="control-label col-sm-2" id="relatedLabel0">Related Tag:</label>
+				<div class="col-sm-4">
 					<input type="text" id="relatedTag0" class="form-control" placeholder="Enter Related Tag"><br>
 				</div>
 			</div>
@@ -158,7 +157,6 @@
 			var clonedAttrDefenition = document.getElementById("attrDefenition0").cloneNode(false);
 			attrCounter ++;
 			clonedAttrName.id       = "attrName"+attrCounter;
-			clonedAttrName.class    = "form-control";
 			clonedAttrDefenition.id = "attrDefenition"+attrCounter;
 			clonedAttrName.value = "";
 			clonedAttrDefenition.value = "";
@@ -174,7 +172,6 @@
 			relatedCounter ++;
 			clonedRelatedLabel.innerHTML = "Related tag" +relatedCounter+" : ";
 			clonedRelatedLabel.id = "relatedLabel"+relatedCounter;
-			clonedRelatedLabel.class = "form-control";
 			clonedRelatedTag.id   = "relatedTag"+relatedCounter;
 			clonedRelatedTag.value = "";
 			var breakNode = document.createElement("br");
@@ -198,6 +195,7 @@
 							document.getElementById("fireFoxAttr").value = data["fireFox"];
 							document.getElementById("operaAttr").value   = data["opera"];
 							document.getElementById("exampleTxt").value  = data["example"];
+				
 						});
 						break;
 					};
@@ -207,4 +205,3 @@
 		</script>
 	</body>
 </html>
-

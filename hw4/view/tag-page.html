@@ -10,7 +10,15 @@
         <!-- jQuery -->    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+
+        <!-- Custom library for parsing query strings easily -->
+        <script id="purl" src="../js/purl.js"></script>
+
         <script src="../js/main.js"></script>
+
+        <script src="../js/fileGenerator.js"></script>
 
 </head>
     <body id="tagBody" onload="init()">
@@ -21,13 +29,13 @@
             <h4 class="modalTitle">Login</h4>
         </div>
         <div class="modalBody">
-            <label for="eml" class="mdlLabl">Email</label>
+            <label for="eml0" class="mdlLabl">Email</label>
             <br>
-            <input class="txtin" type="email" id="eml" name="email">
+            <input class="txtin" type="email" id="eml0" name="email">
             <br>
-            <label for="passwd" class="mdlLabl">Password</label>
+            <label for="passwd0" class="mdlLabl">Password</label>
             <br>
-            <input class="txtin" type="password" id="passwd" name="password">
+            <input class="txtin" type="password" id="passwd0" name="password">
             <br>
             <label for="rememb" class="mdlLabl">Remember me: </label>
             <input type="checkbox" id="rememb" name="rememberMe">
@@ -45,14 +53,14 @@
             <h4 class="modalTitle">Forgot Password</h4>
         </div>
         <div class="modalBody">
-            <label for="eml" class="mdlLabl">Email</label>
+            <label for="eml1" class="mdlLabl">Email</label>
             <br>
-            <input class="txtin" type="email" id="eml" name="email">
+            <input class="txtin" type="email" id="eml1" name="email">
             <br>
             <!-- Going to display security question here -->
-            <label for="passwd" class="mdlLabl">Answer to Security Question</label>
+            <label for="passwd1" class="mdlLabl">Answer to Security Question</label>
             <br>
-            <input class="txtin" type="text" id="passwd" name="password">
+            <input class="txtin" type="text" id="passwd1" name="password">
             <br>
         </div>
         <div class="modalFooter">
@@ -68,19 +76,19 @@
             <h4 class="modalTitle">Create Account</h4>
         </div>
         <div class="modalBody">
-            <label for="eml" class="mdlLabl">Email</label>
+            <label for="eml2" class="mdlLabl">Email</label>
             <br>
-            <input class="txtin" type="email" id="eml" name="email">
+            <input class="txtin" type="email" id="eml2" name="email">
             <br>
-            <label for="passwd" class="mdlLabl">Password</label>
+            <label for="passwd2" class="mdlLabl">Password</label>
             <br>
-            <input class="txtin" type="password" id="passwd" name="password">
+            <input class="txtin" type="password" id="passwd2" name="password">
             <br>
-            <label for="secQues" class="mdlLabl">Password</label>
+            <label for="secQues" class="mdlLabl">Security Question</label>
             <br>
             <input class="txtin" type="text" id="secQues" name="securityQuestion">
             <br>
-            <label for="secAns" class="mdlLabl">Password</label>
+            <label for="secAns" class="mdlLabl">Answer to your security question</label>
             <br>
             <input class="txtin" type="text" id="secAns" name="securityAnswer">
         </div>
@@ -104,7 +112,7 @@
             <nav class="mainNav">
 
                 <div class="mainNavWrapper">
-                    <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
+                    <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10"></a>
                     <ul>
                         <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="educational.html">Learn</a></li>
                         
@@ -113,8 +121,8 @@
                         <li><a href="#">About us</a></li>
                         <li><a href="#">Contact us</a></li>
                         <li><a href="tags-page-showall-custom.html">All</a></li>
-                        <li><a href="tags-page-favorite-custom.html">favorit</a></li>
-                        <li class="small"><a href="#"><input type="text" placeholder="search"></a></li>
+                        <li><a href="tags-page-favorite-custom.html">Favorites</a></li>
+                        <li class="small"><input type="text" placeholder="search"></li>
                         <li class="small"><a class="login" href="#">Login</a></li>
                     </ul>
                 </div>
@@ -131,17 +139,14 @@
     <!---->
 </section>
     <main>
-                <h3 id="tagName">&lt;input&gt;</h3>
+                <h3 id="tagName"><!-- Tag name goes here --></h3>
             
             <section id="definition" class="section">
                 <div class="secHead">
                     <p>Definition</p>
                 </div>
                 <div class="secBody">
-                    <p>The &lt;input&gt; tag defines an input field where
-                the user can enter data. This element is used inside the 
-                &lt;form&gt; tag to provide interactive controls for user 
-                data entry.</p>
+                    <p id="def"><!-- Definition of the tag goes here --></p>
 
                 </div>
             </section>
@@ -153,9 +158,7 @@
                 <div class="secBody">
                     <div id="accordion" role="tablist">
                         <ul id="attrTabs">
-                            <li><a href="javascript:;" name="#type" class="attr">type</a></li>
-                            <li><a href="javascript:;" name="#accept" class="attr">accept</a></li>
-                            <li><a href="javascript:;" name="#autocap" class="attr">autocapitalize</a></li>
+                            <!-- Attribute names go here -->
                         </ul>
                     </div>
 
@@ -163,20 +166,7 @@
                     <!-- Adding 'hide' class to other contents to prevent them
                         from flashing -->
                     <div id="attributes">
-                        <div class="tabContent" id="type">
-                            <p>Specifies the type of input the user can enter,
-                                    and provides the correct controls. This attribute
-                                    can be numerous values.</p>
-                        </div>
-                        <div class="tabContent hide" id="accept">
-                            <p>If input type is file, then this indicates what type of 
-                            files are accepted by the server.</p>
-                        </div>
-                        <div class="tabContent hide" id="autocap">
-                            <p>Nonstandard, used by iOS and Safari. Controls whether and 
-                            how the data entered should be capitalized as it is entered 
-                            by the user.</p>
-                        </div>
+                        <!-- Info about each attribute goes here -->
                     </div>
                 </div>
             </section>
@@ -188,7 +178,7 @@
                     <!-- The actual tabs are marked up as an unordered list -->
                     <ul id="tabs">
                         <li><a href="#chrome">
-                            <img src="http://www.iconarchive.com/download/i59249/franksouza183/fs/Apps-google-chrome.ico" alt="google chrome"
+                            <img src="../img/chrome.png" alt="google chrome"
                             height="100" width="100">
                             </a>
                         </li>
@@ -217,21 +207,11 @@
                     <!-- The content for each tag is in its own <div> container -->
                     <!-- Adding 'hide' class to other contents to prevent them
                         from flashing -->
-                    <div class="tabContent" id="chrome">
-                    	<p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
-                    <div class="tabContent hide" id="firefox">
-                    	<p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
-                    <div class="tabContent hide" id="safari">
-                    	<p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
-                    <div class="tabContent hide" id="internetExplorer">
-                    	<p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
-                    <div class="tabContent hide" id="opera">
-                    	<p class="browserInfo">Supported since version <var>x</var></p>
-                    </div>
+                    <div class="tabContent" id="chrome"><p class="browserInfo"><!-- Browser compat. info goes here --></p></div>
+                    <div class="tabContent hide" id="firefox"><p class="browserInfo"></p></div>
+                    <div class="tabContent hide" id="safari"><p class="browserInfo"></p></div>
+                    <div class="tabContent hide" id="internetExplorer"><p class="browserInfo"></p></div>
+                    <div class="tabContent hide" id="opera"><p class="browserInfo"></p></div>
                 </div>
             </section>
             <section id="examples" class="section">
@@ -242,40 +222,12 @@
                     <!-- Place the code and result in separate iframes -->
                     <div id="exCode">
                         <pre>
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Input example&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p&gt;A checkbox input!&lt;/p&gt;
-        &lt;input type="checkbox" onclick="action()"&gt;
-        
-        &lt;p&lt;A password input!&lt;/p&gt;
-        &lt;input type="password" onclick="action()"&gt;
-        
-        &lt;p&gt;You can also make an input of 
-            type button, but using the &lt;button&gt; 
-            tag is more common.
-        &lt;/p&gt;
-        &lt;input type="button" onclick="action()"
-            value="click!"&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
+                            <!-- Ex. code goes here -->
                         </pre>
                     </div>
                     
                     <div id="exResult">
-                        <p>A checkbox input!</p>
-                        <input type="checkbox" onclick="action()">
-                        
-                        <p>A password input!</p>
-                        <input type="password" onclick="action()">
-                        
-                        <p>You can also make an input of type button, but using the &lt;button&gt;
-                            tag is more common.
-                        </p>
-                        <input type="button" onclick="action()" value="click!">
+                        <!-- Rendered ex. code goes here -->
                     </div>
                 </div>
             </section>
@@ -283,9 +235,8 @@
                 <div class="secHead">
                     Related Tags
                 </div>
-                <div class="secBody">
-                    <a href="#">&lt;button&gt;</a>, <a href="#">&lt;form&gt;</a>, 
-                    <a href="#">&lt;label&gt;</a>
+                <div class="secBody" id="relTags">
+                    <!-- Related tags go here -->
                 </div>
             </section>
         </main>

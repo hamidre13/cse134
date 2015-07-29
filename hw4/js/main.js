@@ -2,6 +2,9 @@
 var tabLinks = new Array();
 var contentDivs = new Array();
 
+//global variable to hold data from Firebase
+var db;
+
 function init() {
 	//Get the links and content from the page, put them in their arrays
 
@@ -52,9 +55,6 @@ function init() {
 
 		i++;
 	}
-	
-	/* Now initialize the accordion tabs */
-	
 }
 
 /* This is called whenever a certain tab is clicked.
@@ -109,17 +109,20 @@ function getHash(url) {
 
 /* document.ready() */
 $(function() {
-	/* Compatible Attributes tabs */
-	$(".attr").click(function() {
-		//remove all, add relevant one back
-		$(".attr").removeClass("selected");
-		$(this).addClass("selected");
+	//add handlers to all links that lead to tag info pages
+	var tagLinks = document.getElementsByClassName('tagLink');
 
-		//hide all, uncover relevant one
-		$("#attributes").children().addClass("hide");
-		$($(this).attr("name")).removeClass("hide");
-	});
+	//holds name of tag, angled braces stripped off
+	var tagName;
 
+	//add href attribute to each tag link
+	for (var i = 0; i < tagLinks.length; i++) {
+		tagKey = tagLinks[i].getAttribute("data-name");
+
+		tagLinks[i].href = "tag-page.html?tag=" + tagKey; 
+	}
+
+	//for all pages
 	//no modals should be seen when document first loads
 	$("#loginModal").hide();
 	$("#forgotPasswd").hide();
@@ -154,7 +157,6 @@ $(function() {
 
 	$(".exit").click(function() {
 		$(this).parent().parent().slideUp();
-
 		$("body *").css("opacity", 1);
 
 		//re-enable everything else on the page
@@ -169,4 +171,129 @@ $(function() {
 		//slide in forgot password modal
 		$("#loginModal").slideDown();
 	});
+
+	/* ------ Firebase Code - read out entire database --------
+	   All view files have a script tag with firebase cdn ---*/
+	var databaseRef = new Firebase("https://cse134.firebaseio.com/");
+
+	//first param = event
+	//second param = on success
+	//third param = on permissions denial
+	databaseRef.on("value", function(snapshot) {
+		db = snapshot.val();
+		console.log(db);
+		//make sure we are on a tag page
+		if ($("#purl").length) {
+			console.log("must be on tag page");
+
+			//now load data from firebase
+
+			//first, get tag name from query string
+			tagTitle = $.url().param('tag');
+
+			//fill in tag name
+			document.getElementById("tagName").innerHTML = "&lt;" + db['tags'][tagTitle]['tagName'] + "&gt;";
+
+			//fill in tag definition
+			document.getElementById("def").innerHTML = db['tags'][tagTitle]['tagDefenition'];
+
+			//fill in attributes and their descriptions
+			//first get overall containers so don't need to
+			//keep fetching them
+			var attrList = document.getElementById('attrTabs');
+			var container = document.getElementById("attributes");
+
+			//only properties we inserted will be in db object, 
+			//so don't need to filter them
+			for (var key in db['tags'][tagTitle]['attrs']) {
+
+				console.log(key.toString());
+
+				//create a list item
+				var attrItem = document.createElement('li');
+
+				//create an anchor to be a child of the list item
+				var attr = document.createElement('a');
+
+				attr.href = "javascript:;"
+				attr.setAttribute("data-name", "#" + key);
+				attr.className = "attr";
+				attr.innerHTML = key;
+
+				//append the anchor tag to the list item
+				attrItem.appendChild(attr);
+
+				//append the list item to the list
+				attrList.appendChild(attrItem);
+
+				//create div to nest underneath element we just got
+				var descHolder = document.createElement('div');
+
+				//will need to change so display first tab, but not rest
+				descHolder.className = "tabContent hide";
+				descHolder.id = key;
+
+				//create HTMLParagraphElement to nest under descHolder
+				var desc = document.createElement('p');
+
+				//string to access the attribute's description
+				var str = "db['tags'][tagTitle]['attrs']." + key;
+
+				console.log(str);
+
+				desc.innerHTML = eval(str);
+
+				descHolder.appendChild(desc);
+
+				container.appendChild(descHolder);
+
+				/* Bind handler for all compatible attributes */
+				$(".attr").bind("click", function() {
+					//remove all, add relevant one back
+					$(".attr").removeClass("selected");
+					$(this).addClass("selected");
+
+					//hide all, uncover relevant one
+					$("#attributes").children().addClass("hide");
+					$($(this).attr("data-name")).removeClass("hide");
+				});
+			}
+
+			//Browser compatibility
+			//console.log("chrome info: " + document.getElementById("chrome").firstChild.innerHTML);
+			document.getElementById("chrome").firstChild.innerHTML = db['tags'][tagTitle]['chrome'];
+			document.getElementById("firefox").firstChild.innerHTML = db['tags'][tagTitle]['fireFox'];
+			document.getElementById("safari").firstChild.innerHTML = db['tags'][tagTitle]['safari'];
+			document.getElementById("internetExplorer").firstChild.innerHTML = db['tags'][tagTitle]['ie'];
+			document.getElementById("opera").firstChild.innerHTML = db['tags'][tagTitle]['opera'];
+
+			//Example - unrendered code
+			//console.log(document.getElementById('exCode').firstChild);
+			$("#exCode").children().first().text(db['tags'][tagTitle]['example']);
+			//document.getElementById('exCode').firstChild.innerHTML = db['tags'][tagTitle]['example'];
+
+			//Example - rendered code
+			document.getElementById('exResult').innerHTML = db['tags'][tagTitle]['example'];
+
+			//related tags
+			for (var tag in db['tags'][tagTitle]['relatedTags']) {
+				//create an anchor tag
+				var newTag = document.createElement('a');
+				newTag.href = db['tags'][tagTitle]['relatedTags'][tag] + ".html";
+
+				newTag.innerHTML = "&lt;" + db['tags'][tagTitle]['relatedTags'][tag] + "&gt;";
+
+				document.getElementById('relTags').appendChild(newTag);
+
+				//append a line break
+				document.getElementById('relTags').appendChild(document.createElement('br'));
+			}
+		}
+		else {
+			alert("You shouldn't be running this script on this page!");
+		}
+	}, function(err) {
+		console.log("Can't read due to error " + err);
+	});
+
 });
