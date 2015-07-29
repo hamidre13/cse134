@@ -157,7 +157,6 @@ $(function() {
 
 	$(".exit").click(function() {
 		$(this).parent().parent().slideUp();
-
 		$("body *").css("opacity", 1);
 
 		//re-enable everything else on the page
@@ -173,7 +172,7 @@ $(function() {
 		$("#loginModal").slideDown();
 	});
 
-		/* ------ Firebase Code - read out entire database --------
+	/* ------ Firebase Code - read out entire database --------
 	   All view files have a script tag with firebase cdn ---*/
 	var databaseRef = new Firebase("https://cse134.firebaseio.com/");
 
@@ -278,16 +277,17 @@ $(function() {
 
 			//related tags
 			for (var tag in db['tags'][tagTitle]['relatedTags']) {
-				//console.log(tag);
 				//create an anchor tag
 				var newTag = document.createElement('a');
-				//newTag.href = tag + ".html";
+				newTag.href = db['tags'][tagTitle]['relatedTags'][tag] + ".html";
 
+				newTag.innerHTML = "&lt;" + db['tags'][tagTitle]['relatedTags'][tag] + "&gt;";
 
-				//document.getElementById('relTags').
+				document.getElementById('relTags').appendChild(newTag);
+
+				//append a line break
+				document.getElementById('relTags').appendChild(document.createElement('br'));
 			}
-
-
 		}
 		else {
 			alert("You shouldn't be running this script on this page!");
@@ -295,4 +295,5 @@ $(function() {
 	}, function(err) {
 		console.log("Can't read due to error " + err);
 	});
+
 });
