@@ -106,6 +106,9 @@ function getHash(url) {
 	return url.substring(hashPos + 1);
 }
 
+//on submit of search form
+
+
 
 /* document.ready() */
 $(function() {
@@ -179,7 +182,7 @@ $(function() {
 	//first param = event
 	//second param = on success
 	//third param = on permissions denial
-	databaseRef.on("value", function(snapshot) {
+	databaseRef.once("value", function(snapshot) {
 		db = snapshot.val();
 		console.log(db);
 		//make sure we are on a tag page
@@ -277,9 +280,10 @@ $(function() {
 
 			//related tags
 			for (var tag in db['tags'][tagTitle]['relatedTags']) {
+				console.log("rel. tag name: " + db['tags'][tagTitle]['relatedTags'][tag]);
 				//create an anchor tag
 				var newTag = document.createElement('a');
-				newTag.href = db['tags'][tagTitle]['relatedTags'][tag] + ".html";
+				newTag.href = "tag-page.html?tag=" + db['tags'][tagTitle]['relatedTags'][tag];
 
 				newTag.innerHTML = "&lt;" + db['tags'][tagTitle]['relatedTags'][tag] + "&gt;";
 
