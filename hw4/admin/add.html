@@ -9,6 +9,15 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<!-- WYSIWYG editor for entering examples -->
+		<script type="text/javascript" src="../includes/tinymce/js/tinymce/tinymce.min.js"></script>
+		<script type="text/javascript">
+		console.log("executing");
+        tinymce.init({
+            selector: "#exampleTxt"
+        });
+        </script>
 	</head>
 	<body>
 		<header>
@@ -29,7 +38,7 @@
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="formGroupInputLarge">Defeniton:</label>
-				<textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag defenition goes here." style="width: 376px;">
+				<textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag definition goes here." style="width: 376px;">
 				</textarea>
 			</div>
 			<hr>
@@ -74,10 +83,9 @@
 			</div>
 			
 			<hr>
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="formGroupInputLarge">Example:</label>
-				<textarea class="form-control" id="exampleTxt" rows="10" cols="50" placeholder="Write tag example here." style="width: 376px;">
-				</textarea>
+			<div class="form-group" style="width: 40%; margin-left: 200px;">
+				<p><strong>Example: </p>
+				<textarea id="exampleTxt"></textarea>
 			</div>
 			<hr>
 			<div class="form-group" id="relatedTagsSection">
