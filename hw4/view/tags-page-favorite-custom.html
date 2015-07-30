@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>HTML5 Refrence</title>
+    <meta charset="utf-8">
+    <title>HTML5 Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1" />
 
     <!-- jQuery -->    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- custom script -->
     <script src="../js/main.js"></script>
-
-  <style>
-    .text-center{
-      text-align:center;
-    }
-  </style>
 </head>
 <body>
+
 <!-- Modals -->
 <section id="loginModal" class="modal" style="display: none;">
     <div class="modalHeader">
@@ -80,7 +76,7 @@
         <br>
         <input class="txtin" type="password" id="passwd" name="password">
         <br>
-        <label for="secQues" class="mdlLabl">Security question</label>
+        <label for="secQues" class="mdlLabl">Security Question</label>
         <br>
         <input class="txtin" type="text" id="secQues" name="securityQuestion">
         <br>
@@ -94,41 +90,44 @@
         <a class="forgot" href="#forgotPasswd">Forgot password</a>
     </div>
 </section>
-<!-- Page title-->
+
+<!-- Page tilte-->
 <header class="mainHeader">
-        <div class="topNavWrapper">
-            <div class="topNav">
-            <a href="#" id="menuToggle">  Menu </a>
-                <ul class="rightNav">
-                    <li class ="hasInput"> <input type="text" placeholder="search"></li>
-                    <li><a class="login" href=#>Login</a></li>
-                </ul>
 
-                <div class="clear"></div>
-                <nav class="mainNav">
+    <div class="topNavWrapper">
+        <div class="topNav">
+        <a class="login" href=#>Login</a>
+        <a href="#" id="menuToggle">  Menu </a>
+            <div class="clear"></div>
+            <nav class="mainNav">
 
-                    <div class="mainNavWrapper">
-                        <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
-                        <ul>
-                            <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="#">Learn</a></li>
-                            
-                            <li><a href="#">Reference</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact us</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                 
-            </div>
-            
+                <div class="mainNavWrapper">
+                    <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
+                    <ul>
+                        <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
+                        
+                        <li><a href="#">Reference</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="tags-page-showall-custom.html">All</a></li>
+                        <li><a href="tags-page-favorite-custom.html">Favorites</a></li>
+                    </ul>
+
+                    <ul class="rightNav">
+                        <li class ="hasInput"><form id="srch" method="post" action="search.html?str=bbb" >
+                            <input type="text" id="searchBar" placeholder="search"></input>
+                        </form></li>
+                    </ul>
+                </div>
+            </nav>
+             
         </div>
-    </header>
-    <div class="clear"></div>
-    <section class="headerImg">
-    <h1 class="textLogo">HTML5</h1>
-    <h2 class="tagLine">Reference guide</h2>
-    </section>
+        
+    </div>
+
+</header>
+<div style="margin-top: 120px;"></div>
 <main class="favoritMain">
   <h3 class="pageTitle">Favorite Tags</h3>
   <section class="homectgs">

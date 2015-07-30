@@ -18,6 +18,8 @@
 
         <script src="../js/main.js"></script>
 
+        <script src="../js/fileGenerator.js"></script>
+
 </head>
     <body id="tagBody" onload="init()">
     <!-- Modals -->
@@ -96,23 +98,20 @@
             <a class="forgot" href="#forgotPasswd">Forgot password</a>
         </div>
     </section>
-    <header class="mainHeader">
+<!-- Page title-->
+<header class="mainHeader">
 
     <div class="topNavWrapper">
         <div class="topNav">
+        <a class="login" href=#>Login</a>
         <a href="#" id="menuToggle">  Menu </a>
-            <ul class="rightNav">
-                <li class ="hasInput"> <input type="text" placeholder="search"></li>
-                <li><a class="login" href=#>Login</a></li>
-            </ul>
-
             <div class="clear"></div>
             <nav class="mainNav">
 
                 <div class="mainNavWrapper">
-                    <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10"></a>
+                    <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
                     <ul>
-                        <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="educational.html">Learn</a></li>
+                        <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
                         
                         <li><a href="#">Reference</a></li>
                         <li><a href="#">Forum</a></li>
@@ -120,8 +119,12 @@
                         <li><a href="#">Contact us</a></li>
                         <li><a href="tags-page-showall-custom.html">All</a></li>
                         <li><a href="tags-page-favorite-custom.html">Favorites</a></li>
-                        <li class="small"><input type="text" placeholder="search"></li>
-                        <li class="small"><a class="login" href="#">Login</a></li>
+                    </ul>
+
+                    <ul class="rightNav">
+                        <li class ="hasInput"><form id="srch" method="post" action="search.html?str=bbb" >
+                            <input type="text" id="searchBar" placeholder="search"></input>
+                        </form></li>
                     </ul>
                 </div>
             </nav>
@@ -131,11 +134,7 @@
     </div>
 
 </header>
-<div class="clear"></div>
-<section class="headerImg">
-    <!---->
-    <!---->
-</section>
+<div style="margin-top: 100px;" ></div>
     <main>
                 <h3 id="tagName"><!-- Tag name goes here --></h3>
             
@@ -191,7 +190,7 @@
                             </a>
                         </li>
                         <li><a href="#internetExplorer">
-                            <img src="https://pbs.twimg.com/profile_images/378800000859413957/H7zBWwEm.png" alt="Internet Explorer" height="100" 
+                            <img src="../img/ie.png" alt="Internet Explorer" height="100" 
                             width="100">                    
                             </a>
                         </li>
