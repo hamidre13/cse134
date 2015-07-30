@@ -99,13 +99,12 @@ a:hover { color: #241ED4; }
 	margin: 0 auto;	
 }
 .rightNav {
-	float: right;
-	width: 35%;
+	position: absolute;
+	right: 0px;
 }
+
 .rightNav li {
-	float: left;
 	color: white;
-	position: relative;
 	padding: 9px 30px 9px 0px;
 	height: 30px;
 }
