@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>HTML5 Refrence</title>
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <meta charset="utf-8">
+    <title>HTML5 Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1" />
 
-  <!-- jQuery -->    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- jQuery -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-  <script src="../js/main.js"></script>
-
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <!--<link rel="stylesheet" href="https://jqueryui/resources/demos/style.css">-->
-
-  <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
-  </script>
-  <style>
-    .text-center{
-      text-align: center;
-    }
-  </style>
+    <!-- custom script -->
+    <script src="../js/main.js"></script>
 </head>
 <body>
+
+<!-- Modals -->
 <section id="loginModal" class="modal" style="display: none;">
     <div class="modalHeader">
         <a class="exit" href="#">Exit</a>
@@ -102,24 +91,20 @@
     </div>
 </section>
 
-<!-- Page title-->
-   <header class="mainHeader">
+<!-- Page tilte-->
+<header class="mainHeader">
 
     <div class="topNavWrapper">
         <div class="topNav">
+        <a class="login" href=#>Login</a>
         <a href="#" id="menuToggle">  Menu </a>
-            <ul class="rightNav">
-                <li class ="hasInput"> <input type="text" placeholder="search"></li>
-                <li><a class="login" href=#>Login</a></li>
-            </ul>
-
             <div class="clear"></div>
             <nav class="mainNav">
 
                 <div class="mainNavWrapper">
                     <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
                     <ul>
-                        <li class="active" title="in the js version we will assing active class dynamiclaly "><a href="educational.html">Learn</a></li>
+                        <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
                         
                         <li><a href="#">Reference</a></li>
                         <li><a href="#">Forum</a></li>
@@ -127,8 +112,12 @@
                         <li><a href="#">Contact us</a></li>
                         <li><a href="tags-page-showall-custom.html">All</a></li>
                         <li><a href="tags-page-favorite-custom.html">Favorites</a></li>
-                        <li class="small"><a href="#"><input type="text" placeholder="search"></a></li>
-                        <li class="small"><a class="login" href="#">Login</a></li>
+                    </ul>
+
+                    <ul class="rightNav">
+                        <li class ="hasInput"><form id="srch" method="post" action="search.html?str=bbb" >
+                            <input type="text" id="searchBar" placeholder="search"></input>
+                        </form></li>
                     </ul>
                 </div>
             </nav>
@@ -138,11 +127,7 @@
     </div>
 
 </header>
-<div class="clear"></div>
-<section class="headerImg">
-    <!---->
-    <!---->
-</section>
+<div style="margin-top: 120px;"></div>
 
 <main class="favoritMain">
   <h3 class="pageTitle">All tags</h3>

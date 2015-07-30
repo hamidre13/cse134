@@ -5,6 +5,9 @@ var contentDivs = new Array();
 //global variable to hold data from Firebase
 var db;
 
+//global variable that holds search string
+var searchStr
+
 function init() {
 	//Get the links and content from the page, put them in their arrays
 
@@ -107,11 +110,19 @@ function getHash(url) {
 }
 
 //on submit of search form
-
+function fetchResults(txt) {
+	console.log(searchStr);
+}
 
 
 /* document.ready() */
 $(function() {
+	//bind action of form to search page plus query string
+	$("#searchBar").keypress(function(event) {
+			$("#srch").attr("action", 
+				"search.html?str=" + document.getElementById('searchBar').value);
+	});
+
 	//add handlers to all links that lead to tag info pages
 	var tagLinks = document.getElementsByClassName('tagLink');
 

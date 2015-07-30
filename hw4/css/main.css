@@ -100,7 +100,8 @@ a:hover { color: #241ED4; }
 }
 .rightNav {
 	position: absolute;
-	right: 0px;
+	right: 10px;
+	display: inline-block;
 }
 
 .rightNav li {
@@ -115,14 +116,23 @@ a:hover { color: #241ED4; }
 	height: 20px;
 	padding: 6px 12px;
 }
-.hasInput {
 
+.login {
+	float: right;
+	color: #fff;
+	padding-right: 30px;
+	margin-right: 10px;
 }
+
+.login:hover {
+	color: white;
+	text-decoration: underline;
+}
+
 
 .rightNav li a {
 	color: white;
 	margin-top: 5px;
-  	display: inline-block;
 }
 
 .rightNav li a:hover {
@@ -163,8 +173,8 @@ a:hover { color: #241ED4; }
 	padding: 15px;
 }
 .mainNav ul li a:hover {
- 	border-top: solid 7px white;
-  	padding-top: 9px;
+ 	border-bottom: solid 1px white;
+  	padding-bottom: 9px;
 }
 .mainNav ul .active a {
 	color:#000;
@@ -289,7 +299,7 @@ main {
 /*This si for educational view page*/
 .ctgsedu li {
 	width: 80%;
-	height: 60px;
+	height: 80px;
 	background-color: #28ABE3;
 	padding: 40px;
 	text-align: center;
