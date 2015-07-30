@@ -13,7 +13,21 @@
 <body>
 
 <header>
+<nav class="navbar navbar-default">
+				 <div class="container-fluid">
+				   <!-- Brand and toggle get grouped for better mobile display -->
+				   <div class="navbar-header">
+				     <a class="navbar-brand" href="#">HTML5</a>
+				   </div>
 
+				   <!-- Collect the nav links, forms, and other content for toggling -->
+				   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				     <ul class="nav navbar-nav">
+				       <li><a href="add.html">Add tag</a></li>
+				     </ul>
+				   </div><!-- /.navbar-collapse -->
+				 </div><!-- /.container-fluid -->
+				</nav>
 </header>
 <main class="container-fluid">
 <table class="table table-striped" id="allTags">
@@ -75,6 +89,7 @@ window.onload = function() {
 			var tdElemnt5 = document.createElement("td");
 			var btn = document.createElement("Button");
 			btn.innerHTML = "Delete";
+
 			
 			btn.setAttribute("onClick","delete_element(this)");
 			btn.setAttribute("data-tagName",data[el].tagName);
@@ -85,9 +100,14 @@ window.onload = function() {
 	});
 }
 function delete_element(element) {
-	databaseRef.child("tags").child(element.dataset.tagname).remove();
-	document.getElementById(element.dataset.tagname).parentNode.removeChild(document.getElementById(element.dataset.tagname));
+	if (confirm("Are you sure you want to delete?")) {
+		databaseRef.child("tags").child(element.dataset.tagname).remove();
+		document.getElementById(element.dataset.tagname).parentNode.removeChild(document.getElementById(element.dataset.tagname));
+	}
 }
+
+
+
 </script>
 </body>
 </html>
