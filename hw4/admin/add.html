@@ -129,6 +129,7 @@ TODO's:
 var attrCounter = 0;
 var relatedCounter = 0;
 var databaseRef = new Firebase("https://cse134.firebaseio.com/");
+
 function set_data() {
   var attrs = {};
   for (var i = 0; i < attrCounter+1; i++) {
@@ -140,21 +141,34 @@ function set_data() {
 
           attrPair[document.getElementById("tagName").value] = document.getElementById("tagName").value;
 
-      	//add the tag name under current attribute in the 'attributes' branch
-		databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).set(attrPair, function(error) {
-			if (error) {
-				alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
-			}
-		});
+        //add the tag name under current attribute in the 'attributes' branch
+    databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).set(attrPair, function(error) {
+      if (error) {
+        alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
+      }
+    });
       }
   }
-  
+
   var tags = [];
   for (var i=0;i<relatedCounter+1;i++) {
       if(document.getElementById("relatedTag"+i).value != 0) {
           tags.push(document.getElementById("relatedTag"+i).value);
       }
   }
+
+  //create object that will hold name of tag as both key and value, and place it into the correct category
+  var attrPair = {};
+
+  attrPair[document.getElementById("tagName").value] = document.getElementById("tagName").value;
+
+  //set cateogory branch data
+  databaseRef.child("categories").child(document.getElementById("tagCategory").value).set(attrPair, function(error) {
+      if (error) {
+        alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
+      }
+  });
+
   databaseRef.child("tags").child(document.getElementById("tagName").value).set({
       tagName       : document.getElementById("tagName").value,
       tagDefenition : document.getElementById("tagDefenition").value,
@@ -201,6 +215,7 @@ function set_data() {
       }
   });
 }
+
 function new_attr () {
     var clonedAttrName       = document.getElementById("attrName0").cloneNode(false);
     var clonedAttrDefenition = document.getElementById("attrDefenition0").cloneNode(false);
