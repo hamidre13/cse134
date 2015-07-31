@@ -144,6 +144,18 @@ $(function() {
 		tagLinks[i].href = "tag-page.html?tag=" + tagKey; 
 	}
 
+	//add handlers to all links that lead to a category-specific tags page
+	var catLinks = document.getElementsByClassName('catLink');
+
+	//holds name of category
+	var catLink;
+
+	for (var i = 0; i < catLinks.length; i++) {
+		catLink = catLinks[i].getAttribute("data-cat");
+
+		catLinks[i].href = "category-specific-tags.html?cat=" + catLink; 
+	}
+
 	//for all pages
 	//no modals should be seen when document first loads
 	$("#loginModal").hide();
