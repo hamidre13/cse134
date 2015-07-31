@@ -136,13 +136,9 @@ function set_data() {
       if (document.getElementById("attrName"+i).value != "") {
           attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value
 
-          //make javascript object outside of set()
-          var attrPair = {};
-
-          attrPair[document.getElementById("tagName").value] = document.getElementById("tagName").value;
-
         //add the tag name under current attribute in the 'attributes' branch
-    databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).set(attrPair, function(error) {
+    databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).push(
+      document.getElementById("tagName").value, function(error) {
       if (error) {
         alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
       }
@@ -157,13 +153,9 @@ function set_data() {
       }
   }
 
-  //create object that will hold name of tag as both key and value, and place it into the correct category
-  var attrPair = {};
-
-  attrPair[document.getElementById("tagName").value] = document.getElementById("tagName").value;
-
   //set cateogory branch data
-  databaseRef.child("categories").child(document.getElementById("tagCategory").value).set(attrPair, function(error) {
+  databaseRef.child("categories").child(document.getElementById("tagCategory").value).push(
+    document.getElementById("tagName").value, function(error) {
       if (error) {
         alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
       }

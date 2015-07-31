@@ -28,19 +28,32 @@
         //for each tag in the database under that cateogory, make a spot
         //on the page for it
         databaseRef.once("value", function(snapshot) {
-            for (var tag in snapshot.val().categories[category]) {
+            for (var key in snapshot.val().categories[category]) {
               //<li ><a data-name="input" href="tag-page.html" class="tagLink">&lt;input&gt;</a></li>
               var listItem = document.createElement('li');
               var anchor = document.createElement('a');
 
-              anchor.setAttribute("data-name", tag);
+              anchor.setAttribute("data-name", snapshot.val().categories[category][key]);
               anchor.href="tag-page.html";
               anchor.className = "tagLink";
-              anchor.innerHTML = "&lt;" + tag + "&gt;"
+              anchor.innerHTML = "&lt;" + snapshot.val().categories[category][key] + "&gt;"
 
               listItem.appendChild(anchor);
 
               document.getElementById("ctgyTags").appendChild(listItem);
+            }
+
+            //add handlers to all links that lead to tag info pages
+            var tagLinks = document.getElementsByClassName('tagLink');
+
+            //holds name of tag, angled braces stripped off
+            var tagName;
+
+            //add href attribute to each tag link
+            for (var i = 0; i < tagLinks.length; i++) {
+                tagKey = tagLinks[i].getAttribute("data-name");
+
+                tagLinks[i].href = "tag-page.html?tag=" + tagKey; 
             }
         });
     </script>
@@ -190,22 +203,11 @@
 </header>
 <div style="margin-top: 120px;"></div>
 <main>
-  <h3 class="pageTitle">Forms and Input</h3>
+  <h3 class="pageTitle" id="categ"></h3>
   <section class="homectgs">
     <section class="ulwrapper">
       <ul class="ctgs" id="ctgyTags">
-        <li ><a data-name="form" href="#" style="display: block;height: 100%;width: 100%;" class="tagLink">&lt;form&gt;</a></li>
-        <li ><a data-name="input" href="tag-page.html" class="tagLink">&lt;input&gt;</a></li>
-        <li ><a data-name="textarea" href="#" class="tagLink">&lt;textarea&gt;</a></li>
-        <li ><a data-name="button" href="#" class="tagLink">&lt;button&gt;</a></li>
-        <li ><a data-name="select" href="#" class="tagLink">&lt;select&gt;</a></li>
-        <li ><a data-name="optgroup" href="#" class="tagLink">&lt;optgroup&gt;</a></li> 
-        <li ><a data-name="option" href="#" class="tagLink">&lt;option&gt;</a></li>
-        <li ><a data-name="label" href="#" class="tagLink">&lt;label&gt;</a></li>
-        <li ><a data-name="fieldset" href="#" class="tagLink">&lt;fieldset&gt;</a></li>
-        <li ><a data-name="legend" href="#" class="tagLink">&lt;legend&gt;</a></li>
-        <li ><a data-name="datalist" href="#" class="tagLink">&lt;datalist&gt;</a></li>
-        <li ><a data-name="output" href="#" class="tagLink">&lt;output&gt;</a></li>
+            <!-- Dynamically generated tiles go here -->
       </ul>
       <div class="clear"></div>
     </section>
