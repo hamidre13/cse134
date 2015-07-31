@@ -185,11 +185,27 @@
                     <ul class="rightNav">
                         <li class ="hasInput"><form id="srch" method="post">
                             <input type="text" id="searchBar" placeholder="search"></input>
+                            <select style="display:none;" id="catSelect">
+                                <option value="basic-html">Basic HTML</option>
+                                <option value="formatting">Formatting</option>
+                                <option value="forms-and-input">Forms and Input</option>
+                                <option value="frames">Frames</option>
+                                <option value="images">Images</option>
+                                <option value="audio-video">Audio/Video</option>
+                                <option value="links">Links</option>
+                                <option value="lists">Lists</option>
+                                <option value="tables">Tables</option>
+                                <option value="styles-and-semantics">Styles and Semantics</option>
+                                <option value="meta-info">Meta Info</option>
+                                <option value="programming">Programming</option>
+                            </select>
+                            <button style="display: none;" id="catSrch" type="button" onclick="goToCategory()">Search</button>
                         </form></li>
                         <li>
                             <select id="searchType" required>
                                 <option selected value="tag">By Tag</option>
                                 <option value="attribute">By Attribute</option>
+                                <option value="category">By Category</option>
                             </select>
                         </li>
                     </ul>
