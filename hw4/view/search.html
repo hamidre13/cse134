@@ -19,7 +19,6 @@
     <script src="../js/main.js"></script>
 
     <script>
-    window.onload = function() {
         //populate the page based on query string
 
         //get firebase ref.
@@ -92,20 +91,20 @@
             } else if (searchType == 'attribute') {
                 //loop through all atributes
                 for (var att in snapshot.val().attributes) {
-                    console.log(ss);
+                    console.log(att);
                     if( att == searchStr) {
                         //found a result. Loop through all tags attached to attribute
                         for (var tg in snapshot.val().attributes[searchStr]) {
                             var el = document.createElement('li');
                             var anchor = document.createElement('a');
-                            anchor.href = "tag-page.html?tag=" + tg;
+                            anchor.href = "tag-page.html?tag=" + snapshot.val().attributes[searchStr][tg];
                             anchor.className = "searchName";
-                            anchor.innerHTML = tg;
+                            anchor.innerHTML = snapshot.val().attributes[searchStr][tg];
 
                             //create a 'p' tag that holds the definition
                             var def = document.createElement('p');
                             def.className = 'searchDef';
-                            def.innerHTML = snapshot.val()['tags'][ss]['tagDefenition'];
+                            def.innerHTML = snapshot.val()['tags'][snapshot.val().attributes[searchStr][tg]]['tagDefenition'];
 
                             //attach the tag name first, definition next
                             el.appendChild(anchor);
@@ -127,7 +126,6 @@
                 }
             }
         });
-    }
     </script>
 </head>
 <body>
