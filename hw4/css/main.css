@@ -177,7 +177,7 @@ a:hover { color: #241ED4; }
   	padding-bottom: 9px;
 }
 .mainNav ul .active a {
-	color:#000;
+	color:#fff;
 }
 .clear {
 	clear: both;
@@ -226,6 +226,21 @@ main {
 	-float: left;
 	border: solid 2px white;
 	border-top: solid 4px white;
+}
+
+#name, #email {
+	height: 20px;
+	font-size: 14px;
+	margin-left: 31px;
+}
+
+#message {
+	margin-left: 10px;
+	font-size: 14px;
+	display: inline-block;
+	margin-top: 20px;
+	height: 100px;
+	width: 200px;
 }
 
 .ctgs li a {
@@ -589,6 +604,7 @@ div.tabContent.hide {
 /* Styling related to accordion list for attributes on tag info page */
 .attr {
     width: 100%;
+    color: #337ab7;
 }
 
 
@@ -641,7 +657,7 @@ div.tabContent.hide {
     color: #337ab7;
 }
 
-#signin, #sendPasswd, #newAcc {
+#signin, #sendPasswd, #newAcc, #sendContact {
     padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
@@ -659,4 +675,13 @@ div.tabContent.hide {
 
 .txtin {
     border: 2px inset;
+}
+
+/* Styles for search page */
+.searchDef {
+	font-size: 12px;
+}
+
+.searchName {
+	color: #337ab7;
 }

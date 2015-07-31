@@ -16,7 +16,7 @@
     <script id="purl" src="../js/purl.js"></script>
 
     <!-- custom script -->
-    <!-- <script src="../js/main.js"></script> -->
+    <script src="../js/main.js"></script>
 
     <script>
         //populate the page based on query string
@@ -24,8 +24,93 @@
         //get firebase ref.
         var databaseRef = new Firebase("https://cse134.firebaseio.com/");
 
-        
+        //get query string
+        var searchStr = $.url().param('str');
 
+        //get type of search
+        var searchType = $.url().param('type');
+
+        //variable that keeps track of how many results were found
+        var resCount = 0;
+
+        //search firebase tags        
+        databaseRef.once("value", function(snapshot) {
+            //check what type of search we are doing
+            if (searchType == 'tag') {
+                console.log(snapshot.val().tags);
+                for (var ss in snapshot.val().tags) {
+                    console.log(ss);
+                    if( ss == searchStr) {
+                        //found a result. Create list item
+                        var el = document.createElement('li');
+                        var anchor = document.createElement('a');
+                        anchor.href = "tag-page.html?tag=" + searchStr;
+                        anchor.className = "searchName";
+                        anchor.innerHTML = "&lt;" + searchStr + "&gt;";
+
+                        //create a 'p' tag that holds the definition
+                        var def = document.createElement('p');
+                        def.className = 'searchDef';
+                        def.innerHTML = snapshot.val()['tags'][ss]['tagDefenition'];
+
+                        //attach the tag name first, definition next
+                        el.appendChild(anchor);
+                        el.appendChild(def);
+
+                        //attach the list element to the list
+                        document.getElementById('results').appendChild(el);
+                        document.getElementById('results').appendChild(document.createElement('hr'));
+                        resCount++;
+                    }
+                }
+
+                if (resCount == 0) {
+                    //if loop ends but no results were found
+                    var el = document.createElement('p');
+                    el.innerHTML = "No results found! Did you search by the right criteria?";
+
+                    //attach to tree
+                    document.getElementById('results').appendChild(el);
+                }
+                //if the user was searching by attribute...
+            } else if (searchType == 'attribute') {
+                //loop through all atributes
+                for (var att in snapshot.val().attributes) {
+                    console.log(ss);
+                    if( att == searchStr) {
+                        //found a result. Loop through all tags attached to attribute
+                        for (var tg in snapshot.val().attributes[searchStr]) {
+                            var el = document.createElement('li');
+                            var anchor = document.createElement('a');
+                            anchor.href = "tag-page.html?tag=" + tg;
+                            anchor.className = "searchName";
+                            anchor.innerHTML = tg;
+
+                            //create a 'p' tag that holds the definition
+                            var def = document.createElement('p');
+                            def.className = 'searchDef';
+                            def.innerHTML = snapshot.val()['tags'][ss]['tagDefenition'];
+
+                            //attach the tag name first, definition next
+                            el.appendChild(anchor);
+                            el.appendChild(def);
+                            document.getElementById('results').appendChild(el);
+                            document.getElementById('results').appendChild(document.createElement('hr'));
+                            resCount++;
+                        }
+                    }
+                }
+                //if no results were found
+                if (resCount == 0) {
+                    //if loop ends but no results were found
+                    var el = document.createElement('p');
+                    el.innerHTML = "No results found! Did you search by the right criteria?";
+
+                    //attach to tree
+                    document.getElementById('results').appendChild(el);
+                }
+            }
+        });
     </script>
 </head>
 <body>
@@ -107,6 +192,26 @@
     </div>
 </section>
 
+<section id="contactUs" class="modal" style="display: none;">
+    <div class="modalHeader">
+        <a class="exit" href="#">Exit</a>
+        <h4 class="modalTitle">Contact Us</h4>
+    </div>
+    <div class="modalBody">
+        <label for="name" class="mdlLabl"> Name :</label>
+        <input type="text" id="name" class="txtin" placeholder="Name" required>
+        <br>
+        <label for="email" class="mdlLabl">Email :</label>
+        <input type="text" id="email" class="txtin" placeholder="Email" required>
+        <br>
+        <label for="message" class="mdlLabl"> Message :</label>
+        <textarea id="message" placeholder="Message"></textarea>
+    </div>
+    <div class="modalFooter">
+        <button type="button" id="sendContact">Send</button>
+    </div>
+</section>
+
 <!-- Page title-->
 <header class="mainHeader">
 
@@ -118,22 +223,26 @@
             <nav class="mainNav">
 
                 <div class="mainNavWrapper">
-                    <a href="#"><img src="../img/logo.jpg" alt="Brand" class="logo" width="10%"></a>
+                    <img src="../img/logo.jpg" alt="Brand" class="logo" width="10%">
                     <ul>
                         <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
                         
-                        <li><a href="#">Reference</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="tags-page-showall-custom.html">All</a></li>
-                        <li><a href="tags-page-favorite-custom.html">Favorites</a></li>
+                        <li title="Switch to reference mode"><a href="index.html">Reference</a></li>
+                        <li title="Show all tags"><a href="tags-page-showall-custom.html">All</a></li>
+                        <li title="Show favorite tags"><a href="tags-page-favorite-custom.html">Favorites</a></li>
+                        <li title="Contact Us"><a class="contactUs" href="#">Contact us</a></li>
                     </ul>
 
                     <ul class="rightNav">
-                        <li class ="hasInput"><form id="srch" method="post" action="search.html?str=bbb" >
+                        <li class ="hasInput"><form id="srch" method="post">
                             <input type="text" id="searchBar" placeholder="search"></input>
                         </form></li>
+                        <li>
+                            <select id="searchType" required>
+                                <option selected value="tag">By Tag</option>
+                                <option value="attribute">By Attribute</option>
+                            </select>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -143,10 +252,11 @@
     </div>
 
 </header>
+<div style="margin-top: 120px;"></div>
 <div class="clear"></div>
 
 <main> <!-- unordered list of search results -->
-    <ul>
+    <ul id="results">
         <!-- Search results will be dynamically generated here -->
     </ul>
 </main>

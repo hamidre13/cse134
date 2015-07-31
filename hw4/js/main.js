@@ -120,7 +120,15 @@ $(function() {
 	//bind action of form to search page plus query string
 	$("#searchBar").keypress(function(event) {
 			$("#srch").attr("action", 
-				"search.html?str=" + document.getElementById('searchBar').value);
+				"search.html?str=" + document.getElementById('searchBar').value + 	
+					"&type=" + document.getElementById('searchType').value);
+	});
+
+	//bind an action to changing the search type
+	$("#searchType").change(function(event) {
+			$("#srch").attr("action", 
+				"search.html?str=" + document.getElementById('searchBar').value + 	
+					"&type=" + document.getElementById('searchType').value);
 	});
 
 	//add handlers to all links that lead to tag info pages
@@ -186,18 +194,31 @@ $(function() {
 		$("#loginModal").slideDown();
 	});
 
-	/* ------ Firebase Code - read out entire database --------
-	   All view files have a script tag with firebase cdn ---*/
-	var databaseRef = new Firebase("https://cse134.firebaseio.com/");
+	/* Attach handler to login modal */
+	$(".contactUs").click(function() {
+		console.log("we here");
+		$("#contactUs").slideDown();
 
-	//first param = event
-	//second param = on success
-	//third param = on permissions denial
-	databaseRef.once("value", function(snapshot) {
-		db = snapshot.val();
-		console.log(db);
+		$("body > *").not(".modal").css("opacity", 0.5);
+		//$("body *").css("background-color", "#fff");
+
+		//disable everything else on the page
+		$("body > *").not(".modal").prop('disabled', true);
+	});
+
+	//only execute if body id is tagBody
+	if ($("body").attr("id") == "tagBody") {
+		/* ------ Firebase Code - read out entire database --------
+		   All view files have a script tag with firebase cdn ---*/
+		var databaseRef = new Firebase("https://cse134.firebaseio.com/");
+
+		//first param = event
+		//second param = on success
+		//third param = on permissions denial
+		databaseRef.once("value", function(snapshot) {
+			db = snapshot.val();
+			console.log(db);
 		//make sure we are on a tag page
-		if ($("#purl").length) {
 			console.log("must be on tag page");
 
 			//now load data from firebase
@@ -303,12 +324,8 @@ $(function() {
 				//append a line break
 				document.getElementById('relTags').appendChild(document.createElement('br'));
 			}
-		}
-		else {
-			alert("You shouldn't be running this script on this page!");
-		}
-	}, function(err) {
-		console.log("Can't read due to error " + err);
-	});
-
+		}, function(err) {
+			console.log("Can't read due to error " + err);
+		});
+	}
 });
