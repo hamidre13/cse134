@@ -114,8 +114,19 @@
 		for (var i = 0; i < attrCounter+1; i++) {
 			if (document.getElementById("attrName"+i).value != "") {
 				attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value
-			};
-		};
+
+				//add the tag name under current attribute in the 'attributes' branch
+				databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).set({
+					"tag"	: document.getElementById("tagName").value
+				}, function(error) {
+					if (error) {
+						alert("Attributes branch could not be saved." + error);
+						break;
+					}
+				});
+			}
+		}
+
 		var tags = [];
 		for (var i=0;i<relatedCounter+1;i++) {
 			if(document.getElementById("relatedTag"+i).value != 0) {
