@@ -34,6 +34,7 @@
 	<thead>
 		<tr>
 			<th>Tag</th>
+			<th>Category</th>
 			<th>Tag defenition</th>
 			<th>Example</th>
 			<th>Edit</th>
@@ -45,6 +46,7 @@
 	<tfoot id="foot">
 		<tr>
 			<td><a href="add.html">Add tag</a></td>
+			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -68,17 +70,25 @@ window.onload = function() {
 	databaseRef.child("tags").once("value",function(snapShot){
 		var data = snapShot.val();
 		for(var el in data) {
+
 			var tabelRow = document.createElement("tr");
 			var tdElemnt = document.createElement("td");
 			tdElemnt.innerHTML = data[el].tagName;
 			tabelRow.id = data[el].tagName
 			tabelRow.appendChild(tdElemnt);
+
+			var tdElemnt77 = document.createElement("td");
+			tdElemnt77.innerHTML = data[el].category;
+			tabelRow.appendChild(tdElemnt77);
+
 			var tdElemnt2 = document.createElement("td");
 			tdElemnt2.innerHTML = data[el].tagDefenition;
 			tabelRow.appendChild(tdElemnt2);
+
 			var tdElemnt3 = document.createElement("td");
 			tdElemnt3.innerHTML = "<textarea disabled>"+data[el].example + "</textarea>";
 			tabelRow.appendChild(tdElemnt3);
+
 			var tdElemnt4 = document.createElement("td");
 			var editlnk = document.createElement("a");
 			editlnk.innerHTML = "Edit";
