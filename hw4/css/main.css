@@ -677,6 +677,16 @@ div.tabContent.hide {
     border: 2px inset;
 }
 
+/* Select box next to search in header */
+#searchType {
+   padding: 5px;
+   font-size: 14px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 20px;
+   }
+
 /* Styles for search page */
 .searchDef {
 	font-size: 12px;

@@ -119,9 +119,11 @@
 		var attrs = {};
 		for (var i = 0; i < attrCounter+1; i++) {
 			if (document.getElementById("attrName"+i).value != "") {
-				attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value
-			};
+				attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value;
+				
+			}
 		};
+
 		var tags = [];
 		for (var i=0;i<relatedCounter+1;i++) {
 			if(document.getElementById("relatedTag"+i).value != 0) {
@@ -141,9 +143,9 @@
 			relatedTags   : tags
 		},function(error) {
 			if (error) {
-		alert("Data could not be saved." + error);
+		alert("Tags branch could not be saved." + error);
 		} else {
-		alert("Data saved successfully.");
+		alert("Tags branch saved successfully.");
 		}
 		});
 		}

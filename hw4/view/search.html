@@ -27,6 +27,21 @@
         //get query string
         var searchStr = $.url().param('str');
 
+
+        //two checks are for if you search by tag with braces around
+        //if first character is left angle brace, remove
+        if (searchStr[0] == "<") {
+            searchStr = searchStr.substring(1);
+            console.log(searchStr);
+        }
+
+        //if last character is right angle brace, remove
+        if (searchStr[searchStr.length-1] == ">") {
+            searchStr = searchStr.substring(0, searchStr.length-1);
+            console.log(searchStr);
+        }
+
+
         //get type of search
         var searchType = $.url().param('type');
 
