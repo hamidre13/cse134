@@ -11,9 +11,22 @@
 
     <!-- custom script -->
     <script src="../js/main.js"></script>
+
+    <!-- THOSE ARE IMPORTANT -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        $(function() {
+        $( "#tabs" ).tabs();
+        });
+    </script>
+    <!--IMPORTANT-->
+
 </head>
 <body>
-
+<noscript>
+<h1>Unfortunatly Your browser does not support Javascript.Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</h1>
+</noscript>
 <!-- Modals -->
 <section id="loginModal" class="modal" style="display: none;">
     <div class="modalHeader">
@@ -45,14 +58,14 @@
         <h4 class="modalTitle">Forgot Password</h4>
     </div>
     <div class="modalBody">
-        <label for="eml" class="mdlLabl">Email</label>
+        <label for="eml1" class="mdlLabl">Email</label>
         <br>
-        <input class="txtin" type="email" id="eml" name="email">
+        <input class="txtin" type="email" id="eml1" name="email">
         <br>
         <!-- Going to display security question here -->
-        <label for="passwd" class="mdlLabl">Answer to Security Question</label>
+        <label for="passwd1" class="mdlLabl">Answer to Security Question</label>
         <br>
-        <input class="txtin" type="text" id="passwd" name="password">
+        <input class="txtin" type="text" id="passwd1" name="password">
         <br>
     </div>
     <div class="modalFooter">
@@ -68,13 +81,13 @@
         <h4 class="modalTitle">Create Account</h4>
     </div>
     <div class="modalBody">
-        <label for="eml" class="mdlLabl">Email</label>
+        <label for="eml2" class="mdlLabl">Email</label>
         <br>
-        <input class="txtin" type="email" id="eml" name="email">
+        <input class="txtin" type="email" id="eml2" name="email">
         <br>
-        <label for="passwd" class="mdlLabl">Password</label>
+        <label for="passwd2" class="mdlLabl">Password</label>
         <br>
-        <input class="txtin" type="password" id="passwd" name="password">
+        <input class="txtin" type="password" id="passwd2" name="password">
         <br>
         <label for="secQues" class="mdlLabl">Security Question</label>
         <br>
@@ -116,25 +129,24 @@
 
     <div class="topNavWrapper">
         <div class="topNav">
-        <a class="login" href=#>Login</a>
         <a href="#" id="menuToggle">  Menu </a>
             <div class="clear"></div>
             <nav class="mainNav">
 
                 <div class="mainNavWrapper">
-                    <img src="../img/logo.jpg" alt="Brand" class="logo" width="10%">
-                    <ul>
-                        <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
-                        
+                    <img src="../img/logo.jpg" alt="Brand" class="logo">
+                    <ul class="leftNav">
                         <li title="Switch to reference mode"><a href="index.html">Reference</a></li>
+                        <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
                         <li title="Show all tags"><a href="tags-page-showall-custom.html">All</a></li>
                         <li title="Show favorite tags"><a href="tags-page-favorite-custom.html">Favorites</a></li>
                         <li title="Contact Us"><a class="contactUs" href="#">Contact us</a></li>
+                        <li class="showSmall"><a class="login" href=#>Login</a></li>
                     </ul>
 
                     <ul class="rightNav">
                         <li class ="hasInput"><form id="srch" method="post">
-                            <input type="text" id="searchBar" placeholder="search"></input>
+                            <input type="text" id="searchBar" placeholder="search">
                             <select style="display:none;" id="catSelect">
                                 <option value="basic-html">Basic HTML</option>
                                 <option value="formatting">Formatting</option>
@@ -150,14 +162,17 @@
                                 <option value="programming">Programming</option>
                             </select>
                             <button style="display: none;" id="catSrch" type="button" onclick="goToCategory()">Search</button>
-                        </form></li>
-                        <li>
+                        </form>
                             <select id="searchType" required>
+                                <option value="">Select One</option>
                                 <option selected value="tag">By Tag</option>
                                 <option value="attribute">By Attribute</option>
                                 <option value="category">By Category</option>
                             </select>
+
                         </li>
+                        <li class="hideSmall"><a class="login" href=#>Login</a></li>
+
                     </ul>
                 </div>
             </nav>
@@ -189,7 +204,6 @@
             <li><a data-name="audio" href="#" class="tagLink"> &lt;audio&gt;</a></li>
           </ul>
           <hr>
-
           <h4>B</h4>
           <ul>
             <li><a data-name="b" href="#" class="tagLink"> &lt;b&gt;</a></li>
@@ -201,24 +215,331 @@
             <li><a data-name="br" href="#" class="tagLink"> &lt;br&gt;</a></li>
             <li><a data-name="button" href="#" class="tagLink"> &lt;button&gt;</a></li>
           </ul>
+          <hr>
+          <h4>C</h4>
+          <ul>
+            <li><a data-name="canvas" href="#" class="tagLink"> &lt;canvas&gt;</a></li>
+            <li><a data-name="caption" href="#" class="tagLink"> &lt;caption&gt;</a></li>
+            <li><a data-name="cite" href="#" class="tagLink"> &lt;cite&gt;</a></li>
+            <li><a data-name="code" href="#" class="tagLink"> &lt;code&gt;</a></li>
+            <li><a data-name="col" href="#" class="tagLink"> &lt;col&gt;</a></li>
+            <li><a data-name="colgroup" href="#" class="tagLink"> &lt;colgroup&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>D</h4>
+          <ul>
+            <li><a data-name="data" href="#" class="tagLink"> &lt;data&gt;</a></li>
+            <li><a data-name="datalist" href="#" class="tagLink"> &lt;datalist&gt;</a></li>
+            <li><a data-name="dd" href="#" class="tagLink"> &lt;dd&gt;</a></li>
+            <li><a data-name="del" href="#" class="tagLink"> &lt;del&gt;</a></li>
+            <li><a data-name="details" href="#" class="tagLink"> &lt;details&gt;</a></li>
+            <li><a data-name="dfn" href="#" class="tagLink"> &lt;dfn&gt;</a></li>
+            <li><a data-name="dialog" href="#" class="tagLink"> &lt;dialog&gt;</a></li>
+            <li><a data-name="div" href="#" class="tagLink"> &lt;div&gt;</a></li>
+            <li><a data-name="dl" href="#" class="tagLink"> &lt;dl&gt;</a></li>
+            <li><a data-name="dt" href="#" class="tagLink"> &lt;dt&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>E</h4>
+          <ul>
+            <li><a data-name="em" href="#" class="tagLink"> &lt;em&gt;</a></li>
+            <li><a data-name="embed" href="#" class="tagLink"> &lt;embed&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>F</h4>
+          <ul>
+            <li><a data-name="fieldset" href="#" class="tagLink"> &lt;fieldset&gt;</a></li>
+            <li><a data-name="figcaption" href="#" class="tagLink"> &lt;figcaption&gt;</a></li>
+            <li><a data-name="figure" href="#" class="tagLink"> &lt;figure&gt;</a></li>
+            <li><a data-name="footer" href="#" class="tagLink"> &lt;footer&gt;</a></li>
+            <li><a data-name="form" href="#" class="tagLink"> &lt;form&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>H</h4>
+          <ul>
+            <li><a data-name="h" href="#" class="tagLink"> &lt;h1&gt;-&lt;h6&gt;</a></li>
+            <li><a data-name="head" href="#" class="tagLink"> &lt;head&gt;</a></li>
+            <li><a data-name="header" href="#" class="tagLink"> &lt;header&gt;</a></li>
+            <li><a data-name="hr" href="#" class="tagLink"> &lt;hr&gt;</a></li>
+            <li><a data-name="html" href="#" class="tagLink"> &lt;html&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>I</h4>
+          <ul>
+            <li><a data-name="i" href="#" class="tagLink"> &lt;i&gt;</a></li>
+            <li><a data-name="iframe" href="#" class="tagLink"> &lt;iframe&gt;</a></li>
+            <li><a data-name="img" href="#" class="tagLink"> &lt;img&gt;</a></li>
+            <li><a data-name="input" href="#" class="tagLink"> &lt;input&gt;</a></li>
+            <li><a data-name="ins" href="#" class="tagLink"> &lt;ins&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>K</h4>
+          <ul>
+            <li><a data-name="kbd" href="#" class="tagLink"> &lt;kbd&gt;</a></li>
+            <li><a data-name="keygen" href="#" class="tagLink"> &lt;keygen&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>L</h4>
+          <ul>
+            <li><a data-name="label" href="#" class="tagLink"> &lt;label&gt;</a></li>
+            <li><a data-name="legend" href="#" class="tagLink"> &lt;legend&gt;</a></li>
+            <li><a data-name="li" href="#" class="tagLink"> &lt;li&gt;</a></li>
+            <li><a data-name="link" href="#" class="tagLink"> &lt;link&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>M</h4>
+          <ul>
+            <li><a data-name="main" href="#" class="tagLink"> &lt;main&gt;</a></li>
+            <li><a data-name="map" href="#" class="tagLink"> &lt;map&gt;</a></li>
+            <li><a data-name="mark" href="#" class="tagLink"> &lt;mark&gt;</a></li>
+            <li><a data-name="menu" href="#" class="tagLink"> &lt;menu&gt;</a></li>
+            <li><a data-name="menuitem" href="#" class="tagLink"> &lt;menuitem&gt;</a></li>
+            <li><a data-name="meta" href="#" class="tagLink"> &lt;meta&gt;</a></li>
+            <li><a data-name="meter" href="#" class="tagLink"> &lt;meter&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>N</h4>
+          <ul>
+            <li><a data-name="nav" href="#" class="tagLink"> &lt;nav&gt;</a></li>
+            <li><a data-name="noscript" href="#" class="tagLink"> &lt;noscript&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>O</h4>
+          <ul>
+            <li><a data-name="object" href="#" class="tagLink"> &lt;object&gt;</a></li>
+            <li><a data-name="ol" href="#" class="tagLink"> &lt;ol&gt;</a></li>
+            <li><a data-name="optgroup" href="#" class="tagLink"> &lt;optgroup&gt;</a></li>
+            <li><a data-name="option" href="#" class="tagLink"> &lt;option&gt;</a></li>
+            <li><a data-name="output" href="#" class="tagLink"> &lt;output&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>P</h4>
+          <ul>
+            <li><a data-name="p" href="#" class="tagLink"> &lt;p&gt;</a></li>
+            <li><a data-name="param" href="#" class="tagLink"> &lt;param&gt;</a></li>
+            <li><a data-name="pre" href="#" class="tagLink"> &lt;pre&gt;</a></li>
+            <li><a data-name="progress" href="#" class="tagLink"> &lt;progress&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>Q</h4>
+          <ul>
+            <li><a data-name="q" href="#" class="tagLink"> &lt;q&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>R</h4>
+          <ul>
+            <li><a data-name="rb" href="#" class="tagLink"> &lt;rb&gt;</a></li>
+            <li><a data-name="rp" href="#" class="tagLink"> &lt;rp&gt;</a></li>
+            <li><a data-name="rt" href="#" class="tagLink"> &lt;rt&gt;</a></li>
+            <li><a data-name="rtc" href="#" class="tagLink"> &lt;rtc&gt;</a></li>
+            <li><a data-name="ruby" href="#" class="tagLink"> &lt;ruby&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>S</h4>
+          <ul>
+            <li><a data-name="s" href="#" class="tagLink"> &lt;s&gt;</a></li>
+            <li><a data-name="samp" href="#" class="tagLink"> &lt;samp&gt;</a></li>
+            <li><a data-name="script" href="#" class="tagLink"> &lt;script&gt;</a></li>
+            <li><a data-name="section" href="#" class="tagLink"> &lt;section&gt;</a></li>
+            <li><a data-name="select" href="#" class="tagLink"> &lt;select&gt;</a></li>
+            <li><a data-name="small" href="#" class="tagLink"> &lt;small&gt;</a></li>
+            <li><a data-name="source" href="#" class="tagLink"> &lt;source&gt;</a></li>
+            <li><a data-name="span" href="#" class="tagLink"> &lt;span&gt;</a></li>
+            <li><a data-name="strong" href="#" class="tagLink"> &lt;strong&gt;</a></li>
+            <li><a data-name="style" href="#" class="tagLink"> &lt;style&gt;</a></li>
+            <li><a data-name="sub" href="#" class="tagLink"> &lt;sub&gt;</a></li>
+            <li><a data-name="summary" href="#" class="tagLink"> &lt;summary&gt;</a></li>
+            <li><a data-name="sup" href="#" class="tagLink"> &lt;sup&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>T</h4>
+          <ul>
+            <li><a data-name="table" href="#" class="tagLink"> &lt;table&gt;</a></li>
+            <li><a data-name="tbody" href="#" class="tagLink"> &lt;tbody&gt;</a></li>
+            <li><a data-name="td" href="#" class="tagLink"> &lt;td&gt;</a></li>
+            <li><a data-name="textarea" href="#" class="tagLink"> &lt;textarea&gt;</a></li>
+            <li><a data-name="template" href="#" class="tagLink"> &lt;template&gt;</a></li>
+            <li><a data-name="tfoot" href="#" class="tagLink"> &lt;tfoot&gt;</a></li>
+            <li><a data-name="th" href="#" class="tagLink"> &lt;th&gt;</a></li>
+            <li><a data-name="thead" href="#" class="tagLink"> &lt;thead&gt;</a></li>
+            <li><a data-name="time" href="#" class="tagLink"> &lt;time&gt;</a></li>
+            <li><a data-name="title" href="#" class="tagLink"> &lt;title&gt;</a></li>
+            <li><a data-name="tr" href="#" class="tagLink"> &lt;tr&gt;</a></li>
+            <li><a data-name="track" href="#" class="tagLink"> &lt;track&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>U</h4>
+          <ul>
+            <li><a data-name="u" href="#" class="tagLink"> &lt;u&gt;</a></li>
+            <li><a data-name="ul" href="#" class="tagLink"> &lt;ul&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>V</h4>
+          <ul>
+            <li><a data-name="var" href="#" class="tagLink"> &lt;var&gt;</a></li>
+            <li><a data-name="video" href="#" class="tagLink"> &lt;video&gt;</a></li>
+          </ul>
+          <hr>
+          <h4>W</h4>
+          <ul>
+            <li><a data-name="wbr" href="#" class="tagLink"> &lt;wbr&gt;</a></li>
+          </ul>
       </div>
       <div id="category">
-        <h4>Basic Elements</h4>
+        <h4>Basic HTML</h4>
         <ul>
-          <li><a href="#"> &lt;html&gt;</a></li>
+          <li><a data-name="body" href="#" class="tagLink"> &lt;body&gt;</a></li>
+          <li><a data-name="br" href="#" class="tagLink"> &lt;br&gt;</a></li>
+          <li><a data-name="h" href="#" class="tagLink"> &lt;h1&gt;-&lt;h6&gt;</a></li>
+          <li><a data-name="hr" href="#" class="tagLink"> &lt;hr&gt;</a></li>
+          <li><a data-name="html" href="#" class="tagLink"> &lt;html&gt;</a></li>
+          <li><a data-name="p" href="#" class="tagLink"> &lt;p&gt;</a></li>
+          <li><a data-name="title" href="#" class="tagLink"> &lt;title&gt;</a></li>
         </ul>
         <hr>
-        <h4>Content Sectioning</h4>
+        <h4>Audio/Video</h4>
         <ul>
+          <li><a data-name="audio" href="#" class="tagLink"> &lt;audio&gt;</a></li>
+          <li><a data-name="source" href="#" class="tagLink"> &lt;source&gt;</a></li>
+          <li><a data-name="track" href="#" class="tagLink"> &lt;track&gt;</a></li>
+          <li><a data-name="video" href="#" class="tagLink"> &lt;video&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Formatting</h4>
+        <ul>
+          <li><a data-name="abbr" href="#" class="tagLink"> &lt;abbr&gt;</a></li>
           <li><a data-name="address" href="#" class="tagLink"> &lt;address&gt;</a></li>
+          <li><a data-name="b" href="#" class="tagLink"> &lt;b&gt;</a></li>
+          <li><a data-name="bdi" href="#" class="tagLink"> &lt;bdi&gt;</a></li>
+          <li><a data-name="bdo" href="#" class="tagLink"> &lt;bdo&gt;</a></li>
+          <li><a data-name="blockquote" href="#" class="tagLink"> &lt;blockquote&gt;</a></li>
+          <li><a data-name="cite" href="#" class="tagLink"> &lt;cite&gt;</a></li>
+          <li><a data-name="code" href="#" class="tagLink"> &lt;code&gt;</a></li>
+          <li><a data-name="del" href="#" class="tagLink"> &lt;del&gt;</a></li>
+          <li><a data-name="dfn" href="#" class="tagLink"> &lt;dfn&gt;</a></li>
+          <li><a data-name="em" href="#" class="tagLink"> &lt;em&gt;</a></li>
+          <li><a data-name="i" href="#" class="tagLink"> &lt;i&gt;</a></li>
+          <li><a data-name="ins" href="#" class="tagLink"> &lt;ins&gt;</a></li>
+          <li><a data-name="kbd" href="#" class="tagLink"> &lt;kbd&gt;</a></li>
+          <li><a data-name="mark" href="#" class="tagLink"> &lt;mark&gt;</a></li>
+          <li><a data-name="meter" href="#" class="tagLink"> &lt;meter&gt;</a></li>
+          <li><a data-name="pre" href="#" class="tagLink"> &lt;pre&gt;</a></li>
+          <li><a data-name="progress" href="#" class="tagLink"> &lt;progress&gt;</a></li>
+          <li><a data-name="q" href="#" class="tagLink"> &lt;q&gt;</a></li>
+          <li><a data-name="rb" href="#" class="tagLink"> &lt;rb&gt;</a></li>
+          <li><a data-name="rp" href="#" class="tagLink"> &lt;rp&gt;</a></li>
+          <li><a data-name="rt" href="#" class="tagLink"> &lt;rt&gt;</a></li>
+          <li><a data-name="rtc" href="#" class="tagLink"> &lt;rtc&gt;</a></li>
+          <li><a data-name="ruby" href="#" class="tagLink"> &lt;ruby&gt;</a></li>
+          <li><a data-name="s" href="#" class="tagLink"> &lt;s&gt;</a></li>
+          <li><a data-name="samp" href="#" class="tagLink"> &lt;samp&gt;</a></li>
+          <li><a data-name="small" href="#" class="tagLink"> &lt;small&gt;</a></li>
+          <li><a data-name="strong" href="#" class="tagLink"> &lt;strong&gt;</a></li>
+          <li><a data-name="sub" href="#" class="tagLink"> &lt;sub&gt;</a></li>
+          <li><a data-name="sup" href="#" class="tagLink"> &lt;sup&gt;</a></li>
+          <li><a data-name="time" href="#" class="tagLink"> &lt;time&gt;</a></li>
+          <li><a data-name="u" href="#" class="tagLink"> &lt;u&gt;</a></li>
+          <li><a data-name="var" href="#" class="tagLink"> &lt;var&gt;</a></li>
+          <li><a data-name="wbr" href="#" class="tagLink"> &lt;wbr&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Forms and Input</h4>
+        <ul>
+          <li><a data-name="button" href="#" class="tagLink"> &lt;button&gt;</a></li>
+          <li><a data-name="datalist" href="#" class="tagLink"> &lt;datalist&gt;</a></li>
+          <li><a data-name="fieldset" href="#" class="tagLink"> &lt;fieldset&gt;</a></li>
+          <li><a data-name="form" href="#" class="tagLink"> &lt;form&gt;</a></li>
+          <li><a data-name="input" href="#" class="tagLink"> &lt;input&gt;</a></li>
+          <li><a data-name="keygen" href="#" class="tagLink"> &lt;keygen&gt;</a></li>
+          <li><a data-name="label" href="#" class="tagLink"> &lt;label&gt;</a></li>
+          <li><a data-name="legend" href="#" class="tagLink"> &lt;legend&gt;</a></li>
+          <li><a data-name="optgroup" href="#" class="tagLink"> &lt;optgroup&gt;</a></li>
+          <li><a data-name="option" href="#" class="tagLink"> &lt;option&gt;</a></li>
+          <li><a data-name="output" href="#" class="tagLink"> &lt;output&gt;</a></li>
+          <li><a data-name="select" href="#" class="tagLink"> &lt;select&gt;</a></li>
+          <li><a data-name="textarea" href="#" class="tagLink"> &lt;textarea&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Frames</h4>
+        <ul>
+          <li><a data-name="iframe" href="#" class="tagLink"> &lt;iframe&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Images</h4>
+        <ul>
+          <li><a data-name="area" href="#" class="tagLink"> &lt;area&gt;</a></li>
+          <li><a data-name="canvas" href="#" class="tagLink"> &lt;canvas&gt;</a></li>
+          <li><a data-name="figcaption" href="#" class="tagLink"> &lt;figcaption&gt;</a></li>
+          <li><a data-name="figure" href="#" class="tagLink"> &lt;figure&gt;</a></li>
+          <li><a data-name="img" href="#" class="tagLink"> &lt;img&gt;</a></li>
+          <li><a data-name="map" href="#" class="tagLink"> &lt;map&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Links</h4>
+        <ul>
+          <li><a data-name="a" href="#" class="tagLink"> &lt;a&gt;</a></li>
+          <li><a data-name="link" href="#" class="tagLink"> &lt;link&gt;</a></li>
+          <li><a data-name="nav" href="#" class="tagLink"> &lt;nav&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Lists</h4>
+        <ul>
+          <li><a data-name="dd" href="#" class="tagLink"> &lt;dd&gt;</a></li>
+          <li><a data-name="dl" href="#" class="tagLink"> &lt;dl&gt;</a></li>
+          <li><a data-name="dt" href="#" class="tagLink"> &lt;dt&gt;</a></li>
+          <li><a data-name="li" href="#" class="tagLink"> &lt;li&gt;</a></li>
+          <li><a data-name="menu" href="#" class="tagLink"> &lt;menu&gt;</a></li>
+          <li><a data-name="menuitem" href="#" class="tagLink"> &lt;menuitem&gt;</a></li>
+          <li><a data-name="ol" href="#" class="tagLink"> &lt;ol&gt;</a></li>
+          <li><a data-name="ul" href="#" class="tagLink"> &lt;ul&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Meta Info</h4>
+        <ul>
+          <li><a data-name="base" href="#" class="tagLink"> &lt;base&gt;</a></li>
+          <li><a data-name="head" href="#" class="tagLink"> &lt;head&gt;</a></li>
+          <li><a data-name="meta" href="#" class="tagLink"> &lt;meta&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Programming</h4>
+        <ul>
+          <li><a data-name="embed" href="#" class="tagLink"> &lt;embed&gt;</a></li>
+          <li><a data-name="noscript" href="#" class="tagLink"> &lt;noscript&gt;</a></li>
+          <li><a data-name="object" href="#" class="tagLink"> &lt;object&gt;</a></li>
+          <li><a data-name="param" href="#" class="tagLink"> &lt;param&gt;</a></li>
+          <li><a data-name="script" href="#" class="tagLink"> &lt;script&gt;</a></li>
+          <li><a data-name="template" href="#" class="tagLink"> &lt;template&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Styles and Semantics</h4>
+        <ul>
           <li><a data-name="article" href="#" class="tagLink"> &lt;article&gt;</a></li>
-          <li><a data-name="body" href="#" class="tagLink"> &lt;body&gt;</a></li>
+          <li><a data-name="aside" href="#" class="tagLink"> &lt;aside&gt;</a></li>
+          <li><a data-name="data" href="#" class="tagLink"> &lt;data&gt;</a></li>
+          <li><a data-name="details" href="#" class="tagLink"> &lt;details&gt;</a></li>
+          <li><a data-name="dialog" href="#" class="tagLink"> &lt;dialog&gt;</a></li>
+          <li><a data-name="div" href="#" class="tagLink"> &lt;div&gt;</a></li>
           <li><a data-name="footer" href="#" class="tagLink"> &lt;footer&gt;</a></li>
           <li><a data-name="header" href="#" class="tagLink"> &lt;header&gt;</a></li>
-          <li><a data-name="h" href="#" class="tagLink"> &lt;h1&gt;-&lt;h6&gt;</a></li>
-          <li><a data-name="hgroup" href="#" class="tagLink"> &lt;hgroup&gt;</a></li>
-          <li><a data-name="nav" href="#" class="tagLink"> &lt;nav&gt;</a></li>
+          <li><a data-name="main" href="#" class="tagLink"> &lt;main&gt;</a></li>
           <li><a data-name="section" href="#" class="tagLink"> &lt;section&gt;</a></li>
+          <li><a data-name="span" href="#" class="tagLink"> &lt;span&gt;</a></li>
+          <li><a data-name="style" href="#" class="tagLink"> &lt;style&gt;</a></li>
+          <li><a data-name="summary" href="#" class="tagLink"> &lt;summary&gt;</a></li>
+        </ul>
+        <hr>
+        <h4>Tables</h4>
+        <ul>
+          <li><a data-name="caption" href="#" class="tagLink"> &lt;caption&gt;</a></li>
+          <li><a data-name="col" href="#" class="tagLink"> &lt;col&gt;</a></li>
+          <li><a data-name="colgroup" href="#" class="tagLink"> &lt;colgroup&gt;</a></li>
+          <li><a data-name="table" href="#" class="tagLink"> &lt;table&gt;</a></li>
+          <li><a data-name="tbody" href="#" class="tagLink"> &lt;tbody&gt;</a></li>
+          <li><a data-name="td" href="#" class="tagLink"> &lt;td&gt;</a></li>
+          <li><a data-name="tfoot" href="#" class="tagLink"> &lt;tfoot&gt;</a></li>
+          <li><a data-name="th" href="#" class="tagLink"> &lt;th&gt;</a></li>
+          <li><a data-name="thead" href="#" class="tagLink"> &lt;thead&gt;</a></li>
+          <li><a data-name="tr" href="#" class="tagLink"> &lt;tr&gt;</a></li>
         </ul>
       </div>
     </div>

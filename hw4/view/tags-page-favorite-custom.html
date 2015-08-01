@@ -13,7 +13,9 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
-
+<noscript>
+<h1>Unfortunatly Your browser does not support Javascript.Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</h1>
+</noscript>
 <!-- Modals -->
 <section id="loginModal" class="modal" style="display: none;">
     <div class="modalHeader">
@@ -45,14 +47,14 @@
         <h4 class="modalTitle">Forgot Password</h4>
     </div>
     <div class="modalBody">
-        <label for="eml" class="mdlLabl">Email</label>
+        <label for="eml1" class="mdlLabl">Email</label>
         <br>
-        <input class="txtin" type="email" id="eml" name="email">
+        <input class="txtin" type="email" id="eml1" name="email">
         <br>
         <!-- Going to display security question here -->
-        <label for="passwd" class="mdlLabl">Answer to Security Question</label>
+        <label for="passwd1" class="mdlLabl">Answer to Security Question</label>
         <br>
-        <input class="txtin" type="text" id="passwd" name="password">
+        <input class="txtin" type="text" id="passwd1" name="password">
         <br>
     </div>
     <div class="modalFooter">
@@ -68,13 +70,13 @@
         <h4 class="modalTitle">Create Account</h4>
     </div>
     <div class="modalBody">
-        <label for="eml" class="mdlLabl">Email</label>
+        <label for="eml2" class="mdlLabl">Email</label>
         <br>
-        <input class="txtin" type="email" id="eml" name="email">
+        <input class="txtin" type="email" id="eml2" name="email">
         <br>
-        <label for="passwd" class="mdlLabl">Password</label>
+        <label for="passwd2" class="mdlLabl">Password</label>
         <br>
-        <input class="txtin" type="password" id="passwd" name="password">
+        <input class="txtin" type="password" id="passwd2" name="password">
         <br>
         <label for="secQues" class="mdlLabl">Security Question</label>
         <br>
@@ -116,25 +118,24 @@
 
     <div class="topNavWrapper">
         <div class="topNav">
-        <a class="login" href=#>Login</a>
         <a href="#" id="menuToggle">  Menu </a>
             <div class="clear"></div>
             <nav class="mainNav">
 
                 <div class="mainNavWrapper">
-                    <img src="../img/logo.jpg" alt="Brand" class="logo" width="10%">
-                    <ul>
+                    <img src="../img/logo.jpg" alt="Brand" class="logo">
+                    <ul class="leftNav">
+                        <li title="Switch to reference mode"><a href="index.html">Home</a></li>
                         <li class="active" title="Switch to learn mode"><a href="educational.html">Learn</a></li>
-                        
-                        <li title="Switch to reference mode"><a href="index.html">Reference</a></li>
                         <li title="Show all tags"><a href="tags-page-showall-custom.html">All</a></li>
                         <li title="Show favorite tags"><a href="tags-page-favorite-custom.html">Favorites</a></li>
                         <li title="Contact Us"><a class="contactUs" href="#">Contact us</a></li>
+                        <li class="showSmall"><a class="login" href=#>Login</a></li>
                     </ul>
 
                     <ul class="rightNav">
                         <li class ="hasInput"><form id="srch" method="post">
-                            <input type="text" id="searchBar" placeholder="search"></input>
+                            <input type="text" id="searchBar" placeholder="search">
                             <select style="display:none;" id="catSelect">
                                 <option value="basic-html">Basic HTML</option>
                                 <option value="formatting">Formatting</option>
@@ -150,14 +151,17 @@
                                 <option value="programming">Programming</option>
                             </select>
                             <button style="display: none;" id="catSrch" type="button" onclick="goToCategory()">Search</button>
-                        </form></li>
-                        <li>
+                        </form>
                             <select id="searchType" required>
+                                <option value="">Select One</option>
                                 <option selected value="tag">By Tag</option>
                                 <option value="attribute">By Attribute</option>
                                 <option value="category">By Category</option>
                             </select>
+
                         </li>
+                        <li class="hideSmall"><a class="login" href=#>Login</a></li>
+
                     </ul>
                 </div>
             </nav>
