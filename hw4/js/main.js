@@ -114,6 +114,9 @@ function fetchResults(txt) {
 	console.log(searchStr);
 }
 
+function goToCategory() {
+	window.location = "category-specific-tags.html?cat=" + document.getElementById('catSelect').value;
+}
 
 /* document.ready() */
 $(function() {
@@ -129,6 +132,12 @@ $(function() {
 			$("#srch").attr("action", 
 				"search.html?str=" + document.getElementById('searchBar').value + 	
 					"&type=" + document.getElementById('searchType').value);
+
+			if ($("#searchType").val() == "category") {
+				$("#searchBar").hide();
+				$("#catSelect").show();
+				$("#catSrch").show();
+			}
 	});
 
 	//add handlers to all links that lead to tag info pages

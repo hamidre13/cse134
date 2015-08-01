@@ -91,20 +91,20 @@
             } else if (searchType == 'attribute') {
                 //loop through all atributes
                 for (var att in snapshot.val().attributes) {
-                    console.log(ss);
+                    console.log(att);
                     if( att == searchStr) {
                         //found a result. Loop through all tags attached to attribute
                         for (var tg in snapshot.val().attributes[searchStr]) {
                             var el = document.createElement('li');
                             var anchor = document.createElement('a');
-                            anchor.href = "tag-page.html?tag=" + tg;
+                            anchor.href = "tag-page.html?tag=" + snapshot.val().attributes[searchStr][tg];
                             anchor.className = "searchName";
-                            anchor.innerHTML = tg;
+                            anchor.innerHTML = snapshot.val().attributes[searchStr][tg];
 
                             //create a 'p' tag that holds the definition
                             var def = document.createElement('p');
                             def.className = 'searchDef';
-                            def.innerHTML = snapshot.val()['tags'][ss]['tagDefenition'];
+                            def.innerHTML = snapshot.val()['tags'][snapshot.val().attributes[searchStr][tg]]['tagDefenition'];
 
                             //attach the tag name first, definition next
                             el.appendChild(anchor);
@@ -251,11 +251,27 @@
                     <ul class="rightNav">
                         <li class ="hasInput"><form id="srch" method="post">
                             <input type="text" id="searchBar" placeholder="search"></input>
+                            <select style="display:none;" id="catSelect">
+                                <option value="basic-html">Basic HTML</option>
+                                <option value="formatting">Formatting</option>
+                                <option value="forms-and-input">Forms and Input</option>
+                                <option value="frames">Frames</option>
+                                <option value="images">Images</option>
+                                <option value="audio-video">Audio/Video</option>
+                                <option value="links">Links</option>
+                                <option value="lists">Lists</option>
+                                <option value="tables">Tables</option>
+                                <option value="styles-and-semantics">Styles and Semantics</option>
+                                <option value="meta-info">Meta Info</option>
+                                <option value="programming">Programming</option>
+                            </select>
+                            <button style="display: none;" id="catSrch" type="button" onclick="goToCategory()">Search</button>
                         </form></li>
                         <li>
                             <select id="searchType" required>
                                 <option selected value="tag">By Tag</option>
                                 <option value="attribute">By Attribute</option>
+                                <option value="category">By Category</option>
                             </select>
                         </li>
                     </ul>

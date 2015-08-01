@@ -678,7 +678,7 @@ div.tabContent.hide {
 }
 
 /* Select box next to search in header */
-#searchType {
+#searchType, #catSelect {
    padding: 5px;
    font-size: 14px;
    line-height: 1;
