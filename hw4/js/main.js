@@ -120,6 +120,10 @@ function goToCategory() {
 
 /* document.ready() */
 $(function() {
+	//Toggles main menu at top
+	$("#menuToggle").click(function(){
+        $(".mainNavWrapper .leftNav").slideToggle(); 
+    });
 	//bind action of form to search page plus query string
 	$("#searchBar").keypress(function(event) {
 			$("#srch").attr("action", 

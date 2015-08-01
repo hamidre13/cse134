@@ -1,13 +1,4 @@
-<!-- 
-TODO's:
-1-COMMENT CODE
-2- AFTER SAVE ALL THE ATTRS SHOULD GET DELETED EXCEPT THE FIRST ONE THE SAME GOES FOR THE RELATED TAG
-3- IN EDIT MAKE IT SO IT HAS ALL THE ATTRS and related tags
-
-
-
--->
-<!doctype htmnl>
+<!doctype html>
 <html lang="en">
     <head>
         <title>ADD TAG</title>
@@ -19,6 +10,9 @@ TODO's:
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
     <body>
+    <noscript>
+<h1>Unfortunatly Your browser does not support Javascript.Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</h1>
+</noscript>
         <header>
             <nav class="navbar navbar-default">
                  <div class="container-fluid">
@@ -30,9 +24,8 @@ TODO's:
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                      </button>
-                     <a class="navbar-brand" href="#">HTML5 Refrence</a>
+                     <a class="navbar-brand" href="../view/">HTML5 Refrence</a>
                    </div>
-
                    <!-- Collect the nav links, forms, and other content for toggling -->
                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                      <ul class="nav navbar-nav">
@@ -43,7 +36,7 @@ TODO's:
                 </nav>
         </header>
         <main class="container-fluid">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal">
             <h3>Add Tag</h3>
             <div class="form-group" id="taglabel">
                 <label class="control-label col-sm-2" for="tagName">Tag Name:</label>
@@ -52,19 +45,19 @@ TODO's:
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Defeniton:</label>
+                <label class="col-sm-2 control-label" >Defeniton:</label>
                 <textarea class="form-control" id="tagDefenition" rows="10" cols="50" placeholder="Tag defenition goes here." style="width: 376px;">
                 </textarea>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Category:</label>
-                <div class="col-sm-2" id="attrs">
+                <label class="col-sm-2 control-label" >Category:</label>
+                <div class="col-sm-2">
                   <input type="text" id="tagCategory" class="form-control" placeholder="Tag Category">
                 </div>
             </div>
             <hr>
             <div class="form-group" >
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Add Attribute:</label>
+                <label class="col-sm-2 control-label" >Add Attribute:</label>
                 <div class="col-sm-2" id="attrs">
                     <input type="text" id="attrName0" class="form-control" placeholder="Attr Name">
                     <input type="text" id="attrDefenition0" class="form-control" placeholder="Attr Defenition">
@@ -73,38 +66,38 @@ TODO's:
             </div>
             <button type="button" class="btn btn-default" onclick="new_attr()"> Add new attr</button>
         </form>
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal">
             <hr>
             <h3>Browser Compatibality</h3>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Chrome:</label>
+                <label class="col-sm-2 control-label" >Chrome:</label>
                 <textarea class="form-control" id="chromeAttr" rows="4" cols="20" placeholder="Chrome Compatibality" style="width: 376px;">
                 </textarea>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Fire Fox:</label>
+                <label class="col-sm-2 control-label" >Fire Fox:</label>
                 <textarea class="form-control" id="fireFoxAttr" rows="4" cols="20" placeholder="Fire Fox Compatibality" style="width: 376px;">
                 </textarea>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Safari:</label>
+                <label class="col-sm-2 control-label" >Safari:</label>
                 <textarea class="form-control" id="safariAttr" rows="4" cols="20" placeholder="Safari Compatibality" style="width: 376px;">
                 </textarea>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">IE:</label>
+                <label class="col-sm-2 control-label" >IE:</label>
                 <textarea class="form-control" id="ieAttr" rows="4" cols="20" placeholder="IE Compatibality" style="width: 376px;">
                 </textarea>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Opera:</label>
+                <label class="col-sm-2 control-label" >Opera:</label>
                 <textarea class="form-control" id="operaAttr" rows="4" cols="20" placeholder="Opera Compatibality" style="width: 376px;">
                 </textarea>
             </div>
             
             <hr>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="formGroupInputLarge">Example:</label>
+                <label class="col-sm-2 control-label" >Example:</label>
                 <textarea class="form-control" id="exampleTxt" rows="10" cols="50" placeholder="Write tag example here." style="width: 376px;">
                 </textarea>
             </div>
@@ -136,13 +129,13 @@ function set_data() {
       if (document.getElementById("attrName"+i).value != "") {
           attrs[document.getElementById("attrName"+i).value ] = document.getElementById("attrDefenition"+i).value
 
-      	//add the tag name under current attribute in the 'attributes' branch
-		databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).push(
+        //add the tag name under current attribute in the 'attributes' branch
+    databaseRef.child("attributes").child(document.getElementById("attrName"+i).value).push(
       document.getElementById("tagName").value, function(error) {
-			if (error) {
-				alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
-			}
-		});
+      if (error) {
+        alert("Attribute " + document.getElementById("tagName").value + " could not be saved." + error);
+      }
+    });
       }
   }
 
@@ -299,5 +292,6 @@ function data_ready(data) {
   console.log(data);
 }
 </script>
+
     </body>
 </html>
